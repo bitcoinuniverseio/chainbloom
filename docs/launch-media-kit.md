@@ -312,10 +312,9 @@ issues through the repository's vulnerability-disclosure process.
 
 ## Social copy
 
-Attach a separately reviewed social image from the local, Git-ignored `media/`
-workspace and the exact repository release link. Do not append price, token,
-mint, or trading hashtags. Media exports are distributed separately from this
-code-only repository.
+Attach the [official social image](../site/assets/chainbloom-og.png) and the
+exact repository release link. Do not append price, token, mint, or trading
+hashtags.
 
 ### Short post
 

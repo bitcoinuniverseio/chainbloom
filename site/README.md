@@ -6,10 +6,9 @@ The site is dependency-free and can be served from this directory:
 npx serve site
 ```
 
-It uses semantic HTML, inline code-based vector elements, system fonts,
-reduced-motion support, and no analytics, cookies, forms, committed media, or
-third-party runtime assets. Documentation links resolve to the canonical public
-repository.
+It uses semantic HTML, local SVG assets, system fonts, reduced-motion support,
+and no analytics, cookies, forms, or third-party runtime assets. Documentation
+links resolve to the canonical public repository.
 
 ## Honest live status
 
@@ -28,6 +27,5 @@ displayed as unavailable or degraded.
 The Pages workflow publishes `site/` at
 `https://bitcoinuniverse.github.io/chainbloom/` after a push to `main` or a
 manual dispatch. The repository owner must enable GitHub Pages with GitHub
-Actions as the source before the first deployment. Canonical and sitemap URLs
-assume this public location and the default `main` branch. Deployments may
-supply separately managed social-preview media outside this source repository.
+Actions as the source before the first deployment. Canonical, sitemap, and
+social-image URLs assume this public location and the default `main` branch.

@@ -133,19 +133,22 @@ trading screens, rockets, luxury cues, token badges, or implied Bitcoin
 endorsement. Do not place a Bitcoin currency symbol where viewers could mistake
 it for a ChainBloom token symbol.
 
-## Brand implementation and local media
+## Official assets
 
-The public site's compact bloom and wordmark are implemented directly in HTML
-and CSS so the source repository remains code-only. Exported logos, screenshots,
-Open Graph cards, press images, and social-media derivatives are deliberately
-not versioned here. Keep local working and rendered copies under the
-repository-root `media/` directory, which is ignored by Git, and distribute an
-approved media packet separately from a tagged source release.
+The canonical repository assets are:
 
-Record the source release, dimensions, format, creator, license, review date,
-and checksum alongside any separately distributed media packet. Do not label a
-redrawn, recolored, sharpened, cropped, or generatively edited derivative as an
-official project asset without a fresh review.
+- [Full SVG logo](../site/assets/chainbloom-logo.svg) for headers, title pages,
+  press sheets, and wide placements.
+- [Square SVG mark](../site/assets/chainbloom-mark.svg) for favicons, avatars,
+  compact sponsor rows, and applications where the full name appears nearby.
+- [Open Graph and social image](../site/assets/chainbloom-og.png) for link
+  previews, release posts, media packets, and 1.91:1 landscape placements.
+
+Use the files directly whenever possible. SVGs are preferred for vector
+placements. The social image is 1730 by 909 pixels and includes the exact name,
+campaign line, two continuing lanes, and a central bloom. Do not re-typeset,
+redraw, trace, recolor, sharpen, or apply generative edits to an official asset
+and continue to label it official.
 
 ### Logo clear space and sizing
 
@@ -166,11 +169,11 @@ is confirmed.
 
 ### Social and press image usage
 
-Use an approved 1.91:1 landscape card uncropped when a platform accepts it. If
+Use `chainbloom-og.png` uncropped when a platform accepts a landscape card. If
 a platform forces a square or vertical crop, create a separately reviewed
-derivative rather than letting an automatic center crop remove the name or lane
-endpoints. Label derivatives with their dimensions and keep the source file in
-the ignored local `media/` workspace.
+derivative from the SVG assets rather than letting an automatic center crop
+remove the name or lane endpoints. Label derivatives with their dimensions and
+keep the source file beside them.
 
 Recommended alt text:
 
@@ -181,7 +184,7 @@ Do not use the social image as proof of a deployment, partnership, audit,
 adoption level, or Bitcoin endorsement. Place release-specific facts in the
 post or caption, not inside an unversioned image.
 
-For press packets, provide the separately managed approved media, this guide, the
+For press packets, provide the original assets, this guide, the
 [litepaper](./litepaper.md), the [technical whitepaper](./technical-whitepaper.md),
 the [launch and media kit](./launch-media-kit.md), the MIT license, and a link
 to the exact release commit or tag. A publication may resize the assets for
