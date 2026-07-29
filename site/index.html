@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ChainBloom is a Bitcoin-native fixed-lane UTXO relay protocol for collaborative, confirmed creative state."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ChainBloom" />
+    <meta property="og:title" content="ChainBloom — a living shared history on Bitcoin" />
+    <meta
+      property="og:description"
+      content="A Bitcoin-native fixed-lane UTXO relay protocol for collaborative, confirmed creative state."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ChainBloom — a living shared history on Bitcoin" />
+    <meta
+      name="twitter:description"
+      content="A Bitcoin-native fixed-lane UTXO relay protocol for collaborative, confirmed creative state."
+    />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="canonical" href="https://bitcoinuniverse.github.io/chainbloom/" />
+    <title>ChainBloom — grow a shared history on Bitcoin</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "ChainBloom",
+        "description": "A Bitcoin-native fixed-lane UTXO relay protocol for collaborative, confirmed creative state.",
+        "codeRepository": "https://github.com/bitcoinuniverse/chainbloom",
+        "license": "https://opensource.org/license/mit",
+        "programmingLanguage": "TypeScript",
+        "version": "0.1.0",
+        "url": "https://bitcoinuniverse.github.io/chainbloom/"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ChainBloom home">
+        <svg class="brand-emblem" viewBox="0 0 96 96" aria-hidden="true">
+          <rect width="96" height="96" rx="23"></rect>
+          <path d="M18 78C32 69 29 52 45 45M78 78C64 69 67 52 51 45"></path>
+          <g>
+            <ellipse cx="48" cy="25" rx="7" ry="15"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(72 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(144 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(216 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(288 48 43)"></ellipse>
+          </g>
+          <circle cx="48" cy="43" r="7"></circle>
+        </svg>
+        <span class="brand-word">ChainBloom</span>
+      </a>
+      <div class="header-actions">
+        <nav aria-label="Primary navigation">
+          <a href="#mechanism">How it works</a>
+          <a href="#uses">Use cases</a>
+          <a href="#status">Status</a>
+          <a href="#resources">Resources</a>
+          <a
+            class="nav-cta"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/SPECIFICATION.md"
+            >Read the spec</a
+          >
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+          <span aria-hidden="true">◐</span><span class="theme-label">Light</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Experimental Bitcoin protocol · v1</p>
+          <h1>A small UTXO.<br /><em>A living shared history.</em></h1>
+          <p class="lede">
+            ChainBloom turns confirmed Taproot carrier transitions into a collaborative
+            creative relay—compact enough to verify, strict enough for independent indexers
+            to agree.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/user-guide.md"
+              >Enter on signet <span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="button secondary"
+              href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/developer-guide.md"
+              >Build an integration</a
+            >
+          </div>
+          <p class="plain-note">
+            <strong>No token.</strong> No protocol fee, marketplace, reward, or price
+            mechanic.
+          </p>
+        </div>
+        <div
+          class="hero-art reveal"
+          aria-label="Abstract visualization of two ChainBloom lanes meeting and continuing"
+        >
+          <svg viewBox="0 0 620 620" role="img" aria-labelledby="garden-title garden-desc">
+            <title id="garden-title">Two living ChainBloom lanes</title>
+            <desc id="garden-desc">
+              Glowing event nodes connected through a rendezvous and continuing as two
+              lanes.
+            </desc>
+            <defs>
+              <filter id="soft-glow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+              </filter>
+              <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="#9eb5c7" opacity=".16"></circle>
+              </pattern>
+            </defs>
+            <circle class="halo h1" cx="314" cy="300" r="196"></circle>
+            <circle class="halo h2" cx="314" cy="300" r="250"></circle>
+            <rect x="0" y="0" width="620" height="620" fill="url(#dots)"></rect>
+            <path
+              class="stem stem-a"
+              d="M104 492 C168 437 154 358 236 324 S293 230 319 188"
+            ></path>
+            <path
+              class="stem stem-b"
+              d="M516 495 C452 436 466 360 384 325 S335 232 319 188"
+            ></path>
+            <path class="stem stem-c" d="M319 188 C300 130 276 94 247 64"></path>
+            <path class="stem stem-d" d="M319 188 C349 134 382 102 421 75"></path>
+            <g class="nodes">
+              <circle cx="104" cy="492" r="10"></circle>
+              <circle cx="158" cy="411" r="13"></circle>
+              <circle cx="222" cy="334" r="9"></circle>
+              <circle cx="516" cy="495" r="10"></circle>
+              <circle cx="461" cy="412" r="13"></circle>
+              <circle cx="394" cy="337" r="9"></circle>
+              <circle class="meeting" cx="319" cy="188" r="23"></circle>
+              <circle cx="247" cy="64" r="12"></circle>
+              <circle cx="421" cy="75" r="12"></circle>
+            </g>
+            <g class="petals" transform="translate(319 188)">
+              <ellipse rx="13" ry="36" transform="rotate(0) translate(0 -41)"></ellipse>
+              <ellipse rx="13" ry="36" transform="rotate(72) translate(0 -41)"></ellipse>
+              <ellipse rx="13" ry="36" transform="rotate(144) translate(0 -41)"></ellipse>
+              <ellipse rx="13" ry="36" transform="rotate(216) translate(0 -41)"></ellipse>
+              <ellipse rx="13" ry="36" transform="rotate(288) translate(0 -41)"></ellipse>
+            </g>
+          </svg>
+          <div class="artifact-card">
+            <span>confirmed event</span>
+            <code>CBLM · 01 · 04</code>
+            <strong>RENDEZVOUS</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Protocol essentials">
+        <div><strong>1,000</strong><span>sats per carrier</span></div>
+        <div><strong>≤ 72</strong><span>marker bytes</span></div>
+        <div><strong>1–8</strong><span>fixed lanes</span></div>
+        <div><strong>5</strong><span>exact operations</span></div>
+      </section>
+
+      <section class="section mechanism" id="mechanism">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> How it works</p>
+          <h2>Carry the thread forward.</h2>
+          <p>
+            Every valid event spends the current lane carrier and either creates its exact
+            successor or closes the lane. Bitcoin orders the history; tiny canonical markers
+            describe it.
+          </p>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="number">01</span>
+            <div>
+              <h3>Create a world</h3>
+              <p>
+                Choose a public seed, lifespan, step limit, and up to eight Taproot roots.
+                The CREATE txid becomes the world ID.
+              </p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="number">02</span>
+            <div>
+              <h3>Move a carrier</h3>
+              <p>
+                BLOOM and GRAFT add compact creative signals. The old carrier is input zero;
+                its 1,000-sat successor is output one.
+              </p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="number">03</span>
+            <div>
+              <h3>Meet, then continue</h3>
+              <p>
+                RENDEZVOUS links two confirmed lanes without merging them. Ordered inputs
+                map to two ordered successors.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section protocol" id="protocol">
+        <div class="protocol-panel reveal">
+          <div class="section-heading compact">
+            <p class="eyebrow"><span></span> Byte-level by design</p>
+            <h2>Small surface.<br />Hard edges.</h2>
+          </div>
+          <div class="marker" aria-label="ChainBloom marker byte layout">
+            <span class="magic">CBLM</span><span>01</span><span>03</span><span>02</span
+            ><span>04</span><span class="payload">07 03 02 c8</span>
+          </div>
+          <p class="marker-caption">
+            magic · version · network · opcode · length · exact payload
+          </p>
+          <a
+            class="text-link"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/SPECIFICATION.md"
+            >Inspect the complete wire format <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <div class="operation-grid">
+          <article class="reveal">
+            <b>01</b>
+            <h3>CREATE</h3>
+            <p>Begin a bounded world and its fixed lane roots.</p>
+          </article>
+          <article class="reveal">
+            <b>02</b>
+            <h3>BLOOM</h3>
+            <p>Add a glyph, palette, motion, and magnitude.</p>
+          </article>
+          <article class="reveal">
+            <b>03</b>
+            <h3>GRAFT</h3>
+            <p>Reference an earlier confirmed protocol event.</p>
+          </article>
+          <article class="reveal">
+            <b>04</b>
+            <h3>RENDEZVOUS</h3>
+            <p>Connect two histories while preserving both lanes.</p>
+          </article>
+          <article class="reveal">
+            <b>05</b>
+            <h3>CLOSE</h3>
+            <p>End one lane intentionally, with no successor.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section uses" id="uses">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> What people can make</p>
+          <h2>Shared canvases with a Bitcoin clock.</h2>
+          <p>
+            ChainBloom is a small coordination primitive, not a content platform. Rendering,
+            identity, moderation, and social features stay outside the protocol and can be
+            replaced without changing its history.
+          </p>
+        </div>
+        <div class="use-grid">
+          <article class="reveal">
+            <span>01</span>
+            <h3>Collaborative studies</h3>
+            <p>
+              Give separate participants fixed lanes and let their confirmed actions shape a
+              shared deterministic work.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>02</span>
+            <h3>Block-height exhibitions</h3>
+            <p>
+              Open and close a bounded world against public block heights, with every
+              accepted step independently replayable.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>03</span>
+            <h3>Protocol classrooms</h3>
+            <p>
+              Explore UTXO lineage, confirmation, reorgs, and careful PSBT review through a
+              visible five-operation state machine.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section security" id="security">
+        <div class="security-copy reveal">
+          <p class="eyebrow"><span></span> Security</p>
+          <h2>The carrier is real Bitcoin.</h2>
+          <p>
+            The creative state is derived; the spend is not. A malformed or ordinary
+            confirmed spend permanently abandons that lane. Isolate carrier UTXOs, verify
+            every output, and wait for confirmation.
+          </p>
+          <div class="warning">
+            <span aria-hidden="true">!</span>
+            <p>
+              <strong>Experimental software.</strong> Start on regtest or signet. Mainnet
+              use needs independent review and tested wallet controls.
+            </p>
+          </div>
+          <a
+            class="text-link light"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/security-model.md"
+            >Read the threat model <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <ul class="security-list reveal">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Confirmed means canonical</strong>
+              <p>Mempool views are provisional and never become lineage parents.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>All outputs committed</strong>
+              <p>Taproot DEFAULT/ALL; v0 SegWit ALL. Nothing weaker.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Reorgs replay cleanly</strong>
+              <p>Rollback to the common ancestor, then derive the new branch.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <strong>No recovery authority</strong>
+              <p>No admin key, covenant, freeze switch, or protocol rescue.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section status" id="status" data-status-endpoint="">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Transparent status</p>
+          <h2>Implementation facts, not activity theater.</h2>
+          <p>
+            The public indexer endpoint is intentionally unset until an operator publishes
+            and monitors it. This page never substitutes sample counts, fabricated users, or
+            stale chain data for a live response.
+          </p>
+        </div>
+        <div class="status-panel reveal" aria-labelledby="network-status-title">
+          <div class="status-line">
+            <div>
+              <span class="status-dot" aria-hidden="true"></span>
+              <strong id="network-status-title">Public indexer not configured</strong>
+            </div>
+            <span class="status-badge" id="network-status-badge">Unavailable</span>
+          </div>
+          <dl class="status-metrics">
+            <div>
+              <dt>Network</dt>
+              <dd id="status-network">—</dd>
+            </div>
+            <div>
+              <dt>Indexed height</dt>
+              <dd id="status-indexed-height">—</dd>
+            </div>
+            <div>
+              <dt>Bitcoin Core tip</dt>
+              <dd id="status-tip-height">—</dd>
+            </div>
+            <div>
+              <dt>Indexer lag</dt>
+              <dd id="status-lag">—</dd>
+            </div>
+          </dl>
+          <p id="status-message" class="status-message" aria-live="polite">
+            Use regtest or signet and verify against your own Bitcoin Core node.
+          </p>
+        </div>
+        <div class="capability-grid reveal">
+          <article>
+            <span>Implemented</span>
+            <p>
+              Specification, parser, validator, state engine, PSBT builders, CLI, vectors,
+              and independent indexer.
+            </p>
+          </article>
+          <article>
+            <span>Activation gates</span>
+            <p>
+              Independent security review, live-node regression, monitored deployment, and
+              operator approval.
+            </p>
+          </article>
+          <article>
+            <span>Not in CBLM v1</span>
+            <p>
+              Tokens, rewards, royalties, balances, public minting, transfers, trading, and
+              an official marketplace.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section resources" id="resources">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Open ecosystem</p>
+          <h2>Verify it. Integrate it. Question it.</h2>
+          <p>
+            The specification and vectors are the compatibility boundary. Bitcoin Universe
+            services are conveniences; none are required to reconstruct a ChainBloom world.
+          </p>
+        </div>
+        <div class="resource-grid">
+          <a
+            class="resource-card reveal"
+            href="https://github.com/bitcoinuniverse/chainbloom"
+          >
+            <span>Protocol</span><strong>Reference repository</strong
+            ><small>Code, schemas, vectors, CLI, SDK</small>
+          </a>
+          <a
+            class="resource-card reveal"
+            href="https://github.com/bitcoinuniverse/index-chainbloom"
+          >
+            <span>Infrastructure</span><strong>Independent indexer</strong
+            ><small>Core RPC, ZMQ, REST, events, repair tools</small>
+          </a>
+          <a
+            class="resource-card reveal"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/README.md"
+          >
+            <span>Learn</span><strong>Documentation map</strong
+            ><small>User, creator, developer, operator, commercial</small>
+          </a>
+          <a
+            class="resource-card reveal"
+            href="https://github.com/bitcoinuniverse/chainbloom/security"
+          >
+            <span>Protect</span><strong>Report a vulnerability</strong
+            ><small>Coordinated disclosure and response policy</small>
+          </a>
+        </div>
+
+        <div class="faq reveal">
+          <h3>Questions worth asking</h3>
+          <details>
+            <summary>Is ChainBloom a token or collectible marketplace?</summary>
+            <p>
+              No. CBLM v1 defines neither a token nor a transfer, listing, sale, royalty,
+              reward, balance, or price primitive.
+            </p>
+          </details>
+          <details>
+            <summary>What does controlling a lane mean?</summary>
+            <p>
+              The key able to spend the current 1,000-sat Taproot carrier can advance or
+              close that lane. ChainBloom does not create a separate legal or financial
+              ownership claim.
+            </p>
+          </details>
+          <details>
+            <summary>Why are confirmed parents required?</summary>
+            <p>
+              Confirmations give independent indexers a shared order. Mempool events remain
+              provisional, replaceable, and ineligible as canonical parents.
+            </p>
+          </details>
+          <details>
+            <summary>What happens after an invalid carrier spend?</summary>
+            <p>
+              The lane is abandoned. Bitcoin has no covenant enforcing a valid successor and
+              ChainBloom has no administrator or recovery key.
+            </p>
+          </details>
+          <details>
+            <summary>Is mainnet use recommended today?</summary>
+            <p>
+              No blanket recommendation is made. The implementation is experimental; begin
+              on regtest or signet and require independent review before risking mainnet
+              funds.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section invitation reveal">
+        <svg class="brand-emblem invitation-emblem" viewBox="0 0 96 96" aria-hidden="true">
+          <rect width="96" height="96" rx="23"></rect>
+          <path d="M18 78C32 69 29 52 45 45M78 78C64 69 67 52 51 45"></path>
+          <g>
+            <ellipse cx="48" cy="25" rx="7" ry="15"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(72 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(144 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(216 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(288 48 43)"></ellipse>
+          </g>
+          <circle cx="48" cy="43" r="7"></circle>
+        </svg>
+        <p class="eyebrow centered"><span></span> Open experiment <span></span></p>
+        <h2>Build a careful first garden.</h2>
+        <p>
+          Run the reference vectors, inspect the state machine, and create a signet world
+          others can independently verify.
+        </p>
+        <div class="hero-actions centered">
+          <a
+            class="button primary"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/creator-guide.md"
+            >Creator guide</a
+          >
+          <a
+            class="button secondary"
+            href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/infrastructure-guide.md"
+            >Run an indexer</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top" aria-label="ChainBloom home">
+        <svg class="brand-emblem" viewBox="0 0 96 96" aria-hidden="true">
+          <rect width="96" height="96" rx="23"></rect>
+          <path d="M18 78C32 69 29 52 45 45M78 78C64 69 67 52 51 45"></path>
+          <g>
+            <ellipse cx="48" cy="25" rx="7" ry="15"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(72 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(144 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(216 48 43)"></ellipse>
+            <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(288 48 43)"></ellipse>
+          </g>
+          <circle cx="48" cy="43" r="7"></circle>
+        </svg>
+        <span class="brand-word">ChainBloom</span>
+      </a>
+      <p>Bitcoin-native creative relay. No token. MIT licensed.</p>
+      <div>
+        <a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/SPECIFICATION.md"
+          >Specification</a
+        ><a
+          href="https://github.com/bitcoinuniverse/chainbloom/blob/main/docs/legal-review.md"
+          >Legal</a
+        ><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/SECURITY.md"
+          >Security</a
+        ><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/GOVERNANCE.md"
+          >Governance</a
+        ><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/CONTRIBUTING.md"
+          >Contribute</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.DS_Store
+Thumbs.db
+*.tgz
+
+# Local-only visual and social-media exports. Keep these out of source history.
+/media/

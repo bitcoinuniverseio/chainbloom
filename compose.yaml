@@ -1,0 +1,9 @@
+services:
+  chainbloom:
+    build:
+      context: .
+      target: cli
+    command: ['--help']
+    read_only: true
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,28 @@
+[
+  { "name": "truncated-header", "markerHex": "4342", "errorCode": "TRUNCATED_HEADER" },
+  {
+    "name": "wrong-magic",
+    "markerHex": "58424c4d01030204070302c8",
+    "errorCode": "INVALID_MAGIC"
+  },
+  {
+    "name": "reserved-network",
+    "markerHex": "43424c4d01090204070302c8",
+    "errorCode": "RESERVED_NETWORK"
+  },
+  {
+    "name": "reserved-opcode",
+    "markerHex": "43424c4d01030904070302c8",
+    "errorCode": "RESERVED_OPCODE"
+  },
+  {
+    "name": "trailing-byte",
+    "markerHex": "43424c4d01030204070302c800",
+    "errorCode": "INVALID_PAYLOAD_LENGTH"
+  },
+  {
+    "name": "bloom-glyph-out-of-range",
+    "markerHex": "43424c4d01030204200302c8",
+    "errorCode": "INTEGER_OUT_OF_RANGE"
+  }
+]

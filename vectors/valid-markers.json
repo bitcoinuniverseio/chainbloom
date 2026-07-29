@@ -1,0 +1,58 @@
+[
+  {
+    "name": "create-two-lanes",
+    "network": 3,
+    "markerHex": "43424c4d0103011b010200900005000102030405060708090a0b0c0d0e0f044461776e",
+    "payload": {
+      "operation": "CREATE",
+      "ruleset": 1,
+      "laneCount": 2,
+      "durationBlocks": 144,
+      "maxSteps": 5,
+      "seed": "000102030405060708090a0b0c0d0e0f",
+      "title": "Dawn"
+    }
+  },
+  {
+    "name": "bloom",
+    "network": 3,
+    "markerHex": "43424c4d01030204070302c8",
+    "payload": {
+      "operation": "BLOOM",
+      "glyph": 7,
+      "palette": 3,
+      "motion": 2,
+      "magnitude": 200
+    }
+  },
+  {
+    "name": "graft-display-order-txid",
+    "network": 3,
+    "markerHex": "43424c4d01030323000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f020c05",
+    "payload": {
+      "operation": "GRAFT",
+      "targetEventTxid": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "relation": 2,
+      "glyph": 12,
+      "palette": 5
+    }
+  },
+  {
+    "name": "rendezvous",
+    "network": 2,
+    "markerHex": "43424c4d01020404041209dc",
+    "payload": {
+      "operation": "RENDEZVOUS",
+      "bridgeStyle": 4,
+      "glyph": 18,
+      "palette": 9,
+      "intensity": 220
+    }
+  },
+  {
+    "name": "close",
+    "network": 0,
+    "markerHex": "43424c4d0100050101",
+    "payload": { "operation": "CLOSE", "reason": 1 }
+  }
+]
