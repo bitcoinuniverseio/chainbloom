@@ -1,34 +1,28 @@
-# Governance handbook
+# Community stewardship
 
-## Roles
+ChainBloom is stewarded in the open with a simple goal: protect the clarity of
+the shared history while leaving creative culture free to grow.
 
-- Contributors propose and review changes.
-- Maintainers merge changes, cut releases, and enforce project policy.
-- Release managers verify artifacts and provenance; they do not gain protocol
-  authority.
-- Security responders handle embargoed reports and recuse themselves when
-  affected.
-- Independent implementers are the practical compatibility check and retain
-  full choice over upgrades.
+## What stewardship protects
 
-## Protocol proposal lifecycle
+- a stable meaning for confirmed ChainBloom actions;
+- clear separation between shared history and artistic presentation;
+- honest communication about fees, confirmation, and key control;
+- compatibility across creation, wallet, and exploration experiences; and
+- room for communities to build their own culture without implying official
+  endorsement.
 
-A proposal identifies motivation, exact normative change, byte examples,
-state-transition examples, backward compatibility, activation strategy,
-security/privacy analysis, and rejected alternatives. After triage it receives
-an identifier, at least 21 days of public review, and implementation in a topic
-branch with valid and invalid vectors. Two independent maintainers must approve;
-one must not be the author. Material unresolved objections are summarized in
-the decision record.
+## How change is discussed
 
-Clarifications that cannot change any valid/invalid classification may be
-merged normally. A change that could alter classification or state uses a new
-protocol version. Emergency software releases can fix crashes or disable an
-unsafe feature but cannot retroactively redefine version 1.
+Ideas are shared publicly with their motivation, user impact, safety impact,
+and effect on existing worlds. Major changes receive time for broad review and
+clear communication before they affect participant experiences.
 
-## Conflicts and commercial influence
+Security concerns are handled privately first when early publication could put
+people at risk. Outcomes are shared openly once a safe remedy is available.
 
-Reviewers disclose employment, funding, investments, and integrations that
-could reasonably affect judgment. Sponsorship cannot purchase roadmap priority,
-merge rights, compatibility claims, or security-report access. Meeting notes
-and release decisions are public unless a vulnerability embargo requires delay.
+## Community voice
+
+Creators, participants, artists, accessibility advocates, archivists, and
+service teams all bring useful perspectives. Stewardship works best when the
+people who feel an impact can explain it in their own words.

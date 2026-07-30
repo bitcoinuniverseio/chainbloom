@@ -16,24 +16,46 @@ const html = await readFile(new URL('../site/index.html', import.meta.url), 'utf
 const socialImage = await readFile(
   new URL('../site/assets/chainbloom-og.png', import.meta.url),
 );
+
 for (const requiredText of [
   'ChainBloom',
-  'How it works',
-  'No token',
-  'Security',
-  'Transparent status',
-  'Not in CBLM v1',
+  'Shared creation',
+  'Discover the experience',
+  'https://inscribe.bitcoinuniverse.io/?tab=chainbloom',
+  'Possibilities',
+  'Your choices',
+  'Fully built',
+  'No project token',
   'Questions worth asking',
   'theme-toggle',
 ]) {
   if (!html.includes(requiredText)) {
-    throw new Error(`site/index.html is missing required copy: ${requiredText}`);
+    throw new Error(`site/index.html is missing required public copy: ${requiredText}`);
   }
 }
 
 for (const requiredMetadata of ['og:image', 'twitter:card', 'summary_large_image']) {
   if (!html.includes(requiredMetadata)) {
     throw new Error(`site/index.html is missing social metadata: ${requiredMetadata}`);
+  }
+}
+
+const forbiddenPublicCopy = [
+  /\bv1\b/i,
+  /\bversion\b/i,
+  /\bexperimental\b/i,
+  /\bmainnet\b/i,
+  /\bsignet\b/i,
+  /\bregtest\b/i,
+  /\boperator\b/i,
+  /\bdeveloper\b/i,
+  /reference implementation/i,
+  /data-status-endpoint/i,
+  /SPECIFICATION\.md/i,
+];
+for (const pattern of forbiddenPublicCopy) {
+  if (pattern.test(html)) {
+    throw new Error(`site/index.html contains internal or provisional copy: ${pattern}`);
   }
 }
 
@@ -50,8 +72,14 @@ if (imageWidth < 1200 || imageHeight < 630 || imageRatio < 1.8 || imageRatio > 2
   );
 }
 
-if (!html.includes('data-status-endpoint=""')) {
-  throw new Error('the static release must not claim an unverified public status endpoint');
+for (const asset of [
+  './assets/chainbloom-logo.svg',
+  './assets/chainbloom-mark.svg',
+  'site/assets/chainbloom-og.png',
+]) {
+  if (!html.includes(asset)) {
+    throw new Error(`site/index.html does not use required asset: ${asset}`);
+  }
 }
 
-console.log('Static site checks passed.');
+console.log('Public site checks passed.');

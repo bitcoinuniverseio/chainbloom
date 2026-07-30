@@ -1,7 +1,7 @@
 {
   "name": "@chainbloom/protocol",
   "version": "0.1.0",
-  "description": "Reference implementation of the ChainBloom fixed-lane Bitcoin UTXO relay protocol",
+  "description": "ChainBloom shared creative history protocol for Bitcoin",
   "type": "module",
   "license": "MIT",
   "private": false,
@@ -30,7 +30,6 @@
     "vectors",
     "fixtures",
     "README.md",
-    "SPECIFICATION.md",
     "SECURITY.md",
     "LICENSE"
   ],

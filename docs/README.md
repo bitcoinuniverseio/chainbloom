@@ -1,40 +1,38 @@
-# Documentation map
+# Explore ChainBloom
 
-Start with the normative [protocol specification](../SPECIFICATION.md). It is
-the authority for bytes and state transitions. The documents here explain how
-to evaluate, operate, integrate, communicate, and govern the experiment without
-turning explanatory material into a second specification.
+These guides tell the ChainBloom story from the perspective of participants,
+creators, communities, and organizations.
 
-## Orientation
+## Begin here
 
-| Document                                          | Purpose                                                                                    |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Technical whitepaper](./technical-whitepaper.md) | Design rationale, fixed-lane model, validation boundary, security analysis, and open risks |
-| [Litepaper](./litepaper.md)                       | Accessible one-page introduction for participants, creators, and reviewers                 |
-| [Reference architecture](./architecture.md)       | Trust boundaries between node, parser, validator, state, wallet, API, and renderer         |
-| [Security model](./security-model.md)             | Threats, controls, signing checklist, denial-of-service, and privacy                       |
+- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom) to begin
+  or join a shared world.
+- [The ChainBloom story](./litepaper.md) explains the idea and the experience.
+- [Create a world](./creator-guide.md) turns an idea into a welcoming shared arc.
+- [Take part](./user-guide.md) explains what participants see and choose.
 
-## Build and operate
+## Imagine what is possible
 
-| Audience                  | Documents                                                           |
-| ------------------------- | ------------------------------------------------------------------- |
-| Participants              | [Participant guide](./user-guide.md)                                |
-| World creators            | [Creator guide](./creator-guide.md)                                 |
-| SDK and wallet developers | [Developer guide](./developer-guide.md)                             |
-| Indexer operators         | [Infrastructure guide](./infrastructure-guide.md)                   |
-| Product and data teams    | [Commercial and ecosystem integration](./commercial-integration.md) |
+- [Ideas for organizations](./organizations.md) covers exhibitions, cultural
+  programs, memberships, education, and community storytelling.
+- [The wider ecosystem](./ecosystem.md) shows how creation, wallets, galleries,
+  profiles, and discovery fit together.
+- [How the experience comes together](./architecture.md) explains the product
+  in plain language.
+- [The technical story](./technical-whitepaper.md) gives a deeper conceptual
+  account without requiring programming knowledge.
 
-## Publish and govern
+## Trust and continuity
 
-| Audience                | Documents                                                                                                                         |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Brand and press teams   | [Brand guidelines](./brand-guidelines.md), [launch and media kit](./launch-media-kit.md)                                          |
-| Product and legal teams | [Draft legal and transparency bundle](./legal-transparency-draft.md), [legal review checklist](./legal-review.md)                 |
-| Maintainers             | [Governance](./governance.md), [release process](./release-process.md), [vulnerability disclosure](./vulnerability-disclosure.md) |
+- [Trust and safety](./security-model.md)
+- [Transparency](./transparency.md)
+- [Plain-language legal context](./legal-context.md)
+- [Reliable access](./reliability.md)
+- [Product continuity](./continuity.md)
+- [Community stewardship](./governance.md)
+- [Report a security concern](./vulnerability-disclosure.md)
 
-The legal and transparency bundle is conspicuously a **draft for counsel
-review**, not operative terms or legal advice. It does not identify a service
-operator or make a legal-classification claim.
+## Share the story
 
-The project is experimental. Documentation examples use regtest or signet by
-default and are not financial, legal, tax, or security advice.
+- [Brand and community expression](./brand-guidelines.md)
+- [Public story and media kit](./launch-media-kit.md)

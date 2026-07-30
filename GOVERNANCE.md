@@ -1,18 +1,15 @@
-# Governance
+# ChainBloom community stewardship
 
-ChainBloom is specification-led. The checked-in specification, tagged source,
-vectors, and fixtures define a release; social posts and hosted renderers do
-not. Maintainers merge routine implementation and documentation changes after
-review. Protocol changes require an issue, a written proposal, two independent
-maintainer approvals, public review of at least 21 days, and updated vectors.
+ChainBloom is stewarded in the open to protect a clear shared history, honest
+participant communication, and creative freedom.
 
-No maintainer may unilaterally reinterpret confirmed history. Emergency fixes
-may disable unsafe software distribution, but changing accepted protocol state
-still follows the normal process. Decisions, dissent, conflicts of interest,
-and security-driven embargoes are recorded when disclosure is safe.
+Public conversations welcome creators, participants, artists, accessibility
+advocates, archivists, educators, and service teams. Ideas should explain their
+human benefit, safety impact, and effect on existing worlds in plain language.
 
-The project has no token-weighted voting, paid priority, foundation allocation,
-or on-chain governance key. Implementers remain free to reject a release. A
-backward-incompatible rule requires a new protocol version; version 1 data is
-never mutated in place. See [docs/governance.md](./docs/governance.md) for roles
-and the proposal lifecycle.
+Confirmed history should remain understandable over time. Significant changes
+deserve broad review and clear communication before they affect participant
+experiences.
+
+Security concerns are handled privately when early publication could put people
+at risk. Outcomes are shared openly once a safe remedy is available.

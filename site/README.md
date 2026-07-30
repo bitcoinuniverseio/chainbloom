@@ -1,31 +1,14 @@
-# ChainBloom public site
+# The ChainBloom public experience
 
-The site is dependency-free and can be served from this directory:
+The ChainBloom site introduces a complete shared creative experience in clear,
+human language. It focuses on why people take part, what creators and
+organizations can make, how wallet choice stays understandable, and where to
+learn more.
 
-```bash
-npx serve site
-```
+The site uses semantic HTML, local visual assets, system fonts, accessible
+focus states, reduced-motion support, and a light or dark theme. It contains no
+analytics, cookies, forms, live account data, or third-party runtime assets.
 
-It uses semantic HTML, local SVG assets, system fonts, reduced-motion support,
-and no analytics, cookies, forms, or third-party runtime assets. Documentation
-links resolve to the canonical public repository.
-
-## Honest live status
-
-The status panel fails closed and shows no synthetic values. To enable it in a
-deployment, set the `data-status-endpoint` attribute on the `#status` section to
-the absolute or same-origin v1 indexer status route. The response must be the
-top-level status object and include `network`, `coreChain`, `indexedHeight`,
-`indexedHash`, `tipHeight`, `tipHash`, `headerHeight`, `lag`, `nodeAvailable`,
-`initialBlockDownload`, `synced`, `degraded`, `syncStatus`, and `nodeError`.
-The page labels the service synchronized only when those fields prove exact
-canonical agreement; malformed, stale, forked, IBD, or unavailable data is
-displayed as unavailable or degraded.
-
-## Publishing
-
-The Pages workflow publishes `site/` at
-`https://bitcoinuniverse.github.io/chainbloom/` after a push to `main` or a
-manual dispatch. The repository owner must enable GitHub Pages with GitHub
-Actions as the source before the first deployment. Canonical, sitemap, and
-social-image URLs assume this public location and the default `main` branch.
+Public links lead only to the story, creator, participant, organization,
+safety, and transparency pages. Technical project material is intentionally
+kept outside the public experience.

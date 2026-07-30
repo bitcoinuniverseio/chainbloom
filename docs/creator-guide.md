@@ -1,28 +1,41 @@
-# World creator guide
+# Create a ChainBloom world
 
-A creator chooses a 16-byte seed, an ASCII title, lane count, duration, and
-maximum creative steps. These bounds are permanent properties of the world.
-They do not grant the creator ongoing control over distributed carriers.
+A memorable world begins with a simple invitation: what should people make
+together, and why should they return?
 
-## Design choices
+[Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom) when you
+are ready to shape the world.
 
-- More lanes enable parallel participation but require more carrier outputs and
-  careful distribution.
-- Duration is measured in confirmed block heights, not wall-clock promises.
-  The end height is exclusive.
-- `max_steps` bounds each lane separately; rendezvous advances both.
-- The seed should be random if unpredictable rendering is desired. It is public,
-  not a secret and not a wallet seed.
-- Titles are 0..32 bytes from the restricted ASCII alphabet; keep them useful
-  without including personal information or third-party marks.
+## Shape the idea
 
-Generate a fresh P2TR output key for each root. Build `CREATE` with fee inputs
-first in the PSBT input list, while the transaction outputs remain marker zero,
-then roots one through N, then change. Confirm every root is exactly 1,000 sats.
-After confirmation, record the world txid and distribute control of root keys or
-subsequent carrier keys through a secure channel.
+Choose a theme that leaves room for interpretation. A neighborhood garden, a
+festival diary, a collaborative score, a classroom constellation, or a season
+of small rituals can all become strong worlds.
 
-Publish participation rules separately and state clearly that they are social,
-not protocol-enforced. Avoid prize, investment-return, resale-price, or token
-language without qualified legal review. Have a moderation and incident plan
-for any public renderer or community service.
+Give the world a clear arc. Decide how many distinct paths support the idea,
+how long participation should remain open, and what a satisfying ending feels
+like.
+
+## Welcome participation
+
+Explain what a contribution means in ordinary language. Let people know that
+they will review and sign a real Bitcoin transaction, that network fees may
+apply, and that confirmed actions cannot be undone.
+
+Offer creative prompts rather than rigid answers. A small palette, motif, or
+question can create coherence while leaving each participant's voice intact.
+
+## Guide the shared arc
+
+Use blooms to move a path forward, echoes to acknowledge earlier moments, and
+meetings to connect two paths without erasing either one. Close a path when its
+story feels complete.
+
+## Care for the community
+
+Describe moderation and participation expectations before inviting a wide
+audience. Protect participant privacy, provide accessible text for visual
+material, and make it easy to distinguish a preview from confirmed history.
+
+The best ChainBloom worlds feel intentional from the first invitation to the
+last confirmed moment.

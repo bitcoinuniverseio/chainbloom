@@ -1,12 +1,14 @@
-# Code of conduct
+# Community conduct
 
-Be rigorous with ideas and considerate with people. Debate protocol tradeoffs
-with evidence, disclose conflicts of interest, credit prior work, and make room
-for newcomers to ask precise questions. Harassment, threats, doxxing,
-discrimination, deliberate deception, and financial promotion disguised as
-technical contribution are not acceptable.
+ChainBloom welcomes respectful participation across cultures, identities,
+disciplines, and levels of Bitcoin familiarity.
 
-Report conduct concerns privately to the maintainers. They may warn, moderate,
-remove, or ban participants to protect the project. Maintainers with a conflict
-must recuse themselves. This policy applies in project repositories, chats,
-events, and public representation of the project.
+Be kind, specific, and curious. Credit creative work. Respect consent and
+privacy. Make room for accessibility needs and different communication styles.
+
+Harassment, threats, discrimination, impersonation, doxxing, unwanted sexual
+attention, and attempts to obtain keys or seed phrases are not welcome.
+
+Report community concerns privately to the project maintainers. Reports are
+handled with care, confidentiality where possible, and attention to the safety
+of everyone involved.
