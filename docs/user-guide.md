@@ -1,6 +1,6 @@
 # Take part in ChainBloom
 
-[Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom) to find a
+[Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) to find a
 world or continue a path.
 
 ## Find a world

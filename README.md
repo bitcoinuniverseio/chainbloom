@@ -40,7 +40,7 @@ creation and shared memory.
 
 ## Explore ChainBloom
 
-- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom)
+- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom)
 - [The ChainBloom story](./docs/litepaper.md)
 - [Create a world](./docs/creator-guide.md)
 - [Take part safely](./docs/user-guide.md)

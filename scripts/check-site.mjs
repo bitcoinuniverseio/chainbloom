@@ -21,7 +21,7 @@ for (const requiredText of [
   'ChainBloom',
   'Shared creation',
   'Discover the experience',
-  'https://inscribe.bitcoinuniverse.io/?tab=chainbloom',
+  'https://inscribe.bitcoinuniverse.io/chainbloom',
   'Possibilities',
   'Your choices',
   'Fully built',

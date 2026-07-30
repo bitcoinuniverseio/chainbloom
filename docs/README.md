@@ -5,7 +5,7 @@ creators, communities, and organizations.
 
 ## Begin here
 
-- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom) to begin
+- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) to begin
   or join a shared world.
 - [The ChainBloom story](./litepaper.md) explains the idea and the experience.
 - [Create a world](./creator-guide.md) turns an idea into a welcoming shared arc.

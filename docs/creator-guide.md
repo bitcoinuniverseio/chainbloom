@@ -3,7 +3,7 @@
 A memorable world begins with a simple invitation: what should people make
 together, and why should they return?
 
-[Open ChainBloom](https://inscribe.bitcoinuniverse.io/?tab=chainbloom) when you
+[Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) when you
 are ready to shape the world.
 
 ## Shape the idea
