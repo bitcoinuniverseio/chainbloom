@@ -34,8 +34,7 @@ function output(value: unknown): void {
 
 const program = new Command()
   .name('chainbloom')
-  .description('ChainBloom v1 protocol reference CLI')
-  .version('0.1.0')
+  .description('Create and explore ChainBloom histories on Bitcoin')
   .showHelpAfterError();
 
 const marker = program.command('marker').description('Encode or decode canonical markers');
