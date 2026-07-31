@@ -1,5 +1,11 @@
 # Trust and safety
 
+> This page has moved. Read
+> [Security model](https://bitcoinuniverse.github.io/chainbloom/docs/reference/security-model/)
+> and
+> [Protecting a live path](https://bitcoinuniverse.github.io/chainbloom/docs/participate/protect-your-path/)
+> for the current version.
+
 ChainBloom combines creative choices with real Bitcoin transactions. A few
 simple habits keep participation clear and calm.
 

@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'content/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -25,6 +30,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # The documentation pages are generated from content/ and from the built
+      # package, so both have to exist before the site is uploaded.
+      - run: npm run build
+      - run: npm run build:docs
+      - run: npm run check:site
+      - run: npm run check:docs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -1,5 +1,9 @@
 # The ChainBloom story
 
+> This page has moved. Read
+> [Why ChainBloom exists](https://bitcoinuniverse.github.io/chainbloom/docs/start/why-chainbloom-exists/)
+> for the current version.
+
 ## A shared history should feel alive
 
 Most online collaboration happens in a feed. Moments arrive, disappear, and
@@ -30,12 +34,17 @@ An artist can render a bloom as a flower. A musician can turn it into a phrase.
 A museum can show it as a timeline. A community can give it local meaning. All
 can remain faithful to the same history.
 
-## A complete experience
+## What exists so far
 
-Creation, wallet protection, transaction review, exploration, profiles,
-bookmarks, watchlists, notifications, and visual journeys work together as one
-experience. People can begin a world, take part with confidence, and return to
-see the story grow.
+The rules are written and tested, and a world can be created and added to today
+in [InScribe](https://inscribe.bitcoinuniverse.io/chainbloom). A public index,
+wallet support for path outputs, and a browsing surface are not built yet.
+[What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+keeps an honest, dated list.
+
+Being early is not a footnote here. Nobody has yet decided what a good world
+looks like, how long it should stay open, or what an ending should mean. Those
+answers will come from the first worlds people actually make.
 
 ## Deliberately non-financial
 

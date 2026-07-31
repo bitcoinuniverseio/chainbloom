@@ -1,5 +1,9 @@
 # Product continuity
 
+> This page has moved. Read
+> [Version, changes and what is next](https://bitcoinuniverse.github.io/chainbloom/docs/reference/changelog/)
+> for the current version.
+
 ChainBloom is designed for worlds that remain understandable over time.
 
 Confirmed history stays anchored to Bitcoin rather than one website. Public

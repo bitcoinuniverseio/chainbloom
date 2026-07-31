@@ -9,3 +9,6 @@ Thumbs.db
 
 # Local-only visual and social-media exports. Keep these out of source history.
 /media/
+
+# Generated documentation pages. Built by "npm run build:docs".
+/site/docs/

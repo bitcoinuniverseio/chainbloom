@@ -1,60 +1,84 @@
 # ChainBloom
 
-ChainBloom is a shared creative experience carried by Bitcoin. People begin
-bounded worlds, add expressive moments, let paths meet, and return later to see
-how the history has grown.
+ChainBloom is a shared creative experience carried by Bitcoin. People open
+bounded worlds, add expressive moments, let paths meet, and come back later to
+see how the history has grown.
 
-The complete ChainBloom experience connects creation, signing, exploration,
-profiles, notifications, and community discovery across the Bitcoin Universe.
-Every confirmed contribution becomes part of a clear shared sequence while
-visual interpretation stays open to artists and communities.
+**Documentation: <https://bitcoinuniverse.github.io/chainbloom/docs/>**
 
-## Why ChainBloom feels different
+This repository holds the protocol: the marker format, the transaction
+builders, the validator, the state engine, the command line tool, the published
+test vectors, and the public site.
+
+## Why ChainBloom is shaped this way
 
 - **Shared without becoming chaotic.** Each participant follows a distinct
-  path, so collaboration stays legible even when many stories intersect.
-- **Bitcoin provides the rhythm.** Confirmations give everyone the same public
-  ordering for meaningful creative moments.
-- **Creative expression stays open.** The history is stable while galleries
-  and visual experiences can interpret it in many ways.
-- **Every world has shape.** A world has a clear beginning, a natural arc, and
-  an intentional ending instead of an endless feed.
-- **People keep control.** Participation happens through a wallet, with a clear
-  review before any Bitcoin transaction is signed.
+  path, so collaboration stays readable even when stories connect.
+- **Bitcoin provides the order.** Confirmations give everyone the same public
+  sequence for creative moments, with no referee.
+- **Interpretation stays open.** The history is stable while galleries can
+  present it in many ways.
+- **Every world has shape.** A world has a beginning, an arc, and an ending
+  instead of an endless feed.
+- **People keep control.** Every contribution is a real Bitcoin transaction the
+  person reviews and signs themselves.
 
 ChainBloom has no project token, reward scheme, royalty engine, public mint,
 price mechanic, or official trading market. Its purpose is collaborative
 creation and shared memory.
 
-## The experience
+## The five actions
 
-1. **Begin a world.** Choose its character, duration, and the paths that will
-   carry the story.
-2. **Invite participation.** Give people a clear place to add their own bloom.
-3. **Grow the history.** Each confirmed contribution advances one path and
-   becomes visible to everyone.
-4. **Create a meeting.** Two paths can acknowledge one another while keeping
-   their identities.
-5. **Complete the arc.** A path can close deliberately, leaving a finished
-   history that remains easy to explore.
+1. **Create** opens a world and its paths.
+2. **Bloom** adds one creative moment to a path.
+3. **Echo** adds a moment that points back at an earlier one.
+4. **Meet** lets two paths share a moment while both continue.
+5. **Complete** ends a path on purpose.
 
-## Explore ChainBloom
+## What is running today
 
-- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom)
-- [The ChainBloom story](./docs/litepaper.md)
-- [Create a world](./docs/creator-guide.md)
-- [Take part safely](./docs/user-guide.md)
-- [Ideas for communities and organizations](./docs/organizations.md)
-- [Trust and safety](./docs/security-model.md)
-- [Transparency](./docs/transparency.md)
-- [All public guides](./docs/README.md)
+The protocol package builds and passes its tests and its published vectors. The
+creation flow exists inside [InScribe](https://inscribe.bitcoinuniverse.io/chainbloom).
+A public read index is not switched on yet, no released wallet recognises
+ChainBloom path outputs, and the package is not published to npm.
+[What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+keeps that list current.
 
-## Friendly Bitcoin safety
+## Use the package
 
-A ChainBloom contribution is a real Bitcoin transaction. It can include a
-network fee and cannot be undone after confirmation. Review the complete
-transaction in your wallet, protect your keys, and use wallet features that
-identify ChainBloom carriers before ordinary spending. Unconfirmed activity is
-a preview; confirmed history is the shared record.
+```bash
+git clone https://github.com/bitcoinuniverse/chainbloom.git
+cd chainbloom
+npm ci
+npm run build
+node dist/cli.js vectors verify
+```
+
+Node 22 is required. See the
+[SDK guide](https://bitcoinuniverse.github.io/chainbloom/docs/reference/sdk/) and
+the [CLI reference](https://bitcoinuniverse.github.io/chainbloom/docs/reference/cli/).
+
+## Develop
+
+```bash
+npm ci
+npm run ci
+```
+
+`npm run ci` runs lint, type checking, tests with coverage, the package build,
+the interoperability vectors, the documentation build, and the site and
+documentation checks. To preview the site exactly as GitHub Pages serves it:
+
+```bash
+npm run build && npm run build:docs && npm run serve:docs
+```
+
+## Bitcoin safety
+
+A ChainBloom contribution is a real Bitcoin transaction. It costs a network fee
+and cannot be undone after confirmation. Review the complete transaction before
+signing, never share a seed phrase, and keep a live path output away from
+ordinary spending. Unconfirmed activity is a preview; confirmed history is the
+shared record.
 
 ChainBloom is open source under the MIT License.

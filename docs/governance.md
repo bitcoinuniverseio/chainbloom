@@ -1,5 +1,9 @@
 # Community stewardship
 
+> This page has moved. Read
+> [Governance](https://bitcoinuniverse.github.io/chainbloom/docs/reference/governance/)
+> for the current version.
+
 ChainBloom is stewarded in the open with a simple goal: protect the clarity of
 the shared history while leaving creative culture free to grow.
 

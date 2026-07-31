@@ -1,5 +1,9 @@
 # Reliable access
 
+> This page has moved. Read
+> [Reliability](https://bitcoinuniverse.github.io/chainbloom/docs/reference/reliability/)
+> for the current version.
+
 ChainBloom is designed so the shared history does not depend on one gallery or
 one company. Bitcoin provides the confirmed order, and multiple services can
 present the same worlds independently.

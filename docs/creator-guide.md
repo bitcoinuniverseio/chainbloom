@@ -1,5 +1,9 @@
 # Create a ChainBloom world
 
+> This page has moved. Read
+> [Creating a world from start to finish](https://bitcoinuniverse.github.io/chainbloom/docs/participate/create-a-world/)
+> for the current version, which lists every setting and its limits.
+
 A memorable world begins with a simple invitation: what should people make
 together, and why should they return?
 

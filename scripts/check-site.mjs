@@ -2,11 +2,16 @@ import { access, readFile } from 'node:fs/promises';
 
 const required = [
   '../site/index.html',
+  '../site/404.html',
   '../site/styles.css',
   '../site/app.js',
   '../site/assets/chainbloom-logo.svg',
   '../site/assets/chainbloom-mark.svg',
   '../site/assets/chainbloom-og.png',
+  '../site/assets/docs.css',
+  '../site/assets/docs.js',
+  '../site/assets/demos.js',
+  '../site/assets/marker.mjs',
   '../site/robots.txt',
   '../site/sitemap.xml',
 ];
@@ -24,10 +29,11 @@ for (const requiredText of [
   'https://inscribe.bitcoinuniverse.io/chainbloom',
   'Possibilities',
   'Your choices',
-  'Fully built',
+  'Built in the open',
   'No project token',
   'Questions worth asking',
   'theme-toggle',
+  './docs/',
 ]) {
   if (!html.includes(requiredText)) {
     throw new Error(`site/index.html is missing required public copy: ${requiredText}`);

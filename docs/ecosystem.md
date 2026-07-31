@@ -1,27 +1,38 @@
 # The ChainBloom ecosystem
 
-ChainBloom connects a complete set of experiences around one shared creative
-history.
+> This page has moved. Read
+> [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+> for a dated, checked account of every part.
 
-- **InScribe** is where worlds begin and contributions take shape.
-- **Universe Wallet** keeps control with the participant and makes each choice
-  clear before signing.
-- **Universe Explorer** turns histories into journeys people can revisit and
-  share.
-- **Profiles and social features** help people follow creators, bookmark worlds,
-  and receive meaningful updates.
-- **Community galleries** can present the same history through visual art,
-  sound, movement, education, or archival storytelling.
+ChainBloom is one shared creative history with several kinds of software around
+it. Some of those parts exist now, and some do not. The list below says which is
+which, because a plan should never be written as if it had already shipped.
 
-No single gallery owns the history. People can choose the experience that suits
-them while staying connected to the same confirmed sequence.
+## What exists
 
-## A foundation for new experiences
+- **The protocol package** in this repository: the marker format, the
+  transaction builders, the validator, the state engine with rollback, a
+  deterministic renderer, a command line tool, and published test vectors.
+- **InScribe** at <https://inscribe.bitcoinuniverse.io/chainbloom>, where a
+  world is created and a contribution is built, reviewed, signed, and broadcast.
 
-Museums can pair an installation with a lasting public journey. Communities can
-create recurring rituals. Artists can invite audiences into a bounded work.
-Schools can make confirmation and shared state tangible. Brands can sponsor a
-creative program without turning participation into a speculative product.
+## What does not exist yet
 
-The ecosystem grows through useful experiences, thoughtful partnerships, and
-respect for participant choice.
+- A public index that anyone can read confirmed worlds from.
+- A wallet that recognises a ChainBloom path output and keeps it out of ordinary
+  spending.
+- A public browsing surface with timelines, profiles, bookmarks, watchlists, or
+  notifications.
+- A published npm package. The library is built from this repository.
+
+## What anyone can build
+
+Because the rules are deterministic, any service that follows them rebuilds the
+same worlds. No gallery owns the history. A museum can pair an installation with
+a lasting public record, a community can create a recurring ritual, an artist
+can invite an audience into a bounded work, and a school can make ordering and
+shared state something students handle rather than hear about.
+
+The people who build the first of these decide what the conventions become. See
+[Integration guides](https://bitcoinuniverse.github.io/chainbloom/docs/reference/integration-wallets/)
+to start.

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — ChainBloom</title>
+    <meta
+      name="description"
+      content="That ChainBloom page does not exist. The documentation home lists everything."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('chainbloom-theme');
+          var preferred = window.matchMedia('(prefers-color-scheme: light)').matches
+            ? 'light'
+            : 'dark';
+          document.documentElement.dataset.theme =
+            stored === 'light' || stored === 'dark' ? stored : preferred;
+        } catch (error) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body class="docs-body">
+    <main class="docs-main" style="max-width: 46rem; margin: auto; padding: 12vh 22px 8vh">
+      <img
+        src="/chainbloom/assets/chainbloom-mark.svg"
+        width="72"
+        height="72"
+        alt=""
+        style="display: block; margin-bottom: 26px"
+      />
+      <h1 style="font-family: var(--serif); font-size: 2.6rem; margin: 0 0 12px">
+        Nothing grows here.
+      </h1>
+      <p style="font-size: 1.12rem; color: var(--muted-strong); margin: 0 0 30px">
+        That page does not exist. It may have moved, or the link may have been mistyped.
+      </p>
+      <div class="prose-cards">
+        <p>
+          <a href="/chainbloom/docs/"
+            ><strong>Documentation home</strong> Everything, grouped by what you want to
+            do.</a
+          >
+        </p>
+        <p>
+          <a href="/chainbloom/docs/start/"
+            ><strong>Start here</strong> Answer one question and get a reading path.</a
+          >
+        </p>
+        <p>
+          <a href="/chainbloom/docs/help/glossary/"
+            ><strong>Glossary</strong> Every word this project uses, defined once.</a
+          >
+        </p>
+        <p>
+          <a href="/chainbloom/"
+            ><strong>ChainBloom</strong> The short version of what this is.</a
+          >
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

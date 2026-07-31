@@ -46,7 +46,10 @@
     "test:coverage": "vitest run --coverage",
     "check:vectors": "tsx ./scripts/check-vectors.ts",
     "check:site": "node ./scripts/check-site.mjs",
-    "ci": "npm run lint && npm run typecheck && npm run test:coverage && npm run build && npm run check:vectors && npm run check:site",
+    "build:docs": "node ./scripts/build-docs.mjs",
+    "check:docs": "node ./scripts/check-docs.mjs",
+    "serve:docs": "node ./scripts/serve-docs.mjs",
+    "ci": "npm run lint && npm run typecheck && npm run test:coverage && npm run build && npm run check:vectors && npm run build:docs && npm run check:site && npm run check:docs",
     "prepublishOnly": "npm run ci"
   },
   "dependencies": {

@@ -1,5 +1,9 @@
 # Transparency and user expectations
 
+> This page has moved. Read
+> [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+> for a dated account of which parts of ChainBloom work, and which do not.
+
 ChainBloom is built around a simple promise: the shared creative history should
 be clear, independently observable, and separate from marketing claims.
 

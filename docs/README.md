@@ -1,38 +1,41 @@
-# Explore ChainBloom
+# ChainBloom guides
 
-These guides tell the ChainBloom story from the perspective of participants,
-creators, communities, and organizations.
+The full ChainBloom documentation is at
+**<https://bitcoinuniverse.github.io/chainbloom/docs/>**.
 
-## Begin here
+It is searchable, offers a reading path for each kind of reader, and keeps its
+technical pages in step with the code in this repository. The files in this
+folder stay so older links keep working. Each one now points at the page that
+replaced it.
 
-- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) to begin
-  or join a shared world.
-- [The ChainBloom story](./litepaper.md) explains the idea and the experience.
-- [Create a world](./creator-guide.md) turns an idea into a welcoming shared arc.
-- [Take part](./user-guide.md) explains what participants see and choose.
+| This file                                            | Replaced by                                                                                                 |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [litepaper.md](./litepaper.md)                       | [Why ChainBloom exists](https://bitcoinuniverse.github.io/chainbloom/docs/start/why-chainbloom-exists/)     |
+| [user-guide.md](./user-guide.md)                     | [Joining a world](https://bitcoinuniverse.github.io/chainbloom/docs/participate/join-a-world/)              |
+| [creator-guide.md](./creator-guide.md)               | [Creating a world](https://bitcoinuniverse.github.io/chainbloom/docs/participate/create-a-world/)           |
+| [organizations.md](./organizations.md)               | [Public programs](https://bitcoinuniverse.github.io/chainbloom/docs/programs/organizations/)                |
+| [security-model.md](./security-model.md)             | [Security model](https://bitcoinuniverse.github.io/chainbloom/docs/reference/security-model/)               |
+| [transparency.md](./transparency.md)                 | [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)                     |
+| [architecture.md](./architecture.md)                 | [Protocol architecture](https://bitcoinuniverse.github.io/chainbloom/docs/reference/protocol-architecture/) |
+| [technical-whitepaper.md](./technical-whitepaper.md) | [Technical reference](https://bitcoinuniverse.github.io/chainbloom/docs/reference/)                         |
+| [ecosystem.md](./ecosystem.md)                       | [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)                     |
+| [reliability.md](./reliability.md)                   | [Reliability](https://bitcoinuniverse.github.io/chainbloom/docs/reference/reliability/)                     |
+| [continuity.md](./continuity.md)                     | [Version and what is next](https://bitcoinuniverse.github.io/chainbloom/docs/reference/changelog/)          |
+| [governance.md](./governance.md)                     | [Governance](https://bitcoinuniverse.github.io/chainbloom/docs/reference/governance/)                       |
 
-## Imagine what is possible
+Four files have no replacement and stay here as the source:
 
-- [Ideas for organizations](./organizations.md) covers exhibitions, cultural
-  programs, memberships, education, and community storytelling.
-- [The wider ecosystem](./ecosystem.md) shows how creation, wallets, galleries,
-  profiles, and discovery fit together.
-- [How the experience comes together](./architecture.md) explains the product
-  in plain language.
-- [The technical story](./technical-whitepaper.md) gives a deeper conceptual
-  account without requiring programming knowledge.
+- [legal-context.md](./legal-context.md) — plain-language legal context.
+- [brand-guidelines.md](./brand-guidelines.md) — brand and community expression.
+- [launch-media-kit.md](./launch-media-kit.md) — public story and media kit.
+- [vulnerability-disclosure.md](./vulnerability-disclosure.md) — how to report a
+  security problem privately.
 
-## Trust and continuity
+## Where to start
 
-- [Trust and safety](./security-model.md)
-- [Transparency](./transparency.md)
-- [Plain-language legal context](./legal-context.md)
-- [Reliable access](./reliability.md)
-- [Product continuity](./continuity.md)
-- [Community stewardship](./governance.md)
-- [Report a security concern](./vulnerability-disclosure.md)
-
-## Share the story
-
-- [Brand and community expression](./brand-guidelines.md)
-- [Public story and media kit](./launch-media-kit.md)
+- [Start here](https://bitcoinuniverse.github.io/chainbloom/docs/start/) turns one
+  question into a reading path.
+- [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+  says which parts of ChainBloom work right now, and which do not.
+- [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) to create or
+  continue a world.

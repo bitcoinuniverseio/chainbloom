@@ -1,5 +1,10 @@
 # The technical story of ChainBloom
 
+> This page has moved. The
+> [technical reference](https://bitcoinuniverse.github.io/chainbloom/docs/reference/)
+> now carries the exact rules, byte layouts, data structures, error codes, and
+> test vectors. This page keeps the plain-language account.
+
 ## Design goal
 
 ChainBloom creates a shared creative history that independent observers can

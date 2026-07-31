@@ -1,5 +1,10 @@
 # ChainBloom for organizations
 
+> This page has moved. Read
+> [Public programs](https://bitcoinuniverse.github.io/chainbloom/docs/programs/organizations/)
+> for the current version, with planning checklists, exhibition notes, and
+> guidance on moderation, privacy, and access.
+
 ChainBloom gives organizations a distinctive way to invite participation
 without turning community creativity into a points program or financial
 product.

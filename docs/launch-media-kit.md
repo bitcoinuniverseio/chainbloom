@@ -10,9 +10,9 @@ artists and communities can interpret in many ways.
 
 ChainBloom turns a sequence of confirmed Bitcoin actions into a bounded
 collaborative world. Each path remains distinct, so participation stays easy to
-follow even when stories connect. Bitcoin provides a common order; creation,
-wallet, gallery, profile, and notification experiences make the history useful
-and inviting.
+follow even when stories connect. Bitcoin provides a common order, and the same
+history can be presented as a drawing, a score, a timeline, or a plain list
+without any of them being less true.
 
 The project does not create a token, reward scheme, royalty engine, public
 mint, price mechanic, or official trading market. Its value is the experience:
@@ -21,8 +21,10 @@ interpretation.
 
 ## Key facts
 
-- The ChainBloom experience is fully built across creation, wallet, exploration,
-  social, and service surfaces.
+- The protocol is written, tested, and published with interoperability vectors.
+  A world can be created and added to today; a public index, wallet support for
+  path outputs, and a browsing surface are not built yet. See
+  [what is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/).
 - A world has a bounded arc and distinct participant paths.
 - Confirmed Bitcoin transactions provide the shared ordering.
 - Two paths can meet without being merged or traded.
@@ -32,9 +34,9 @@ interpretation.
 
 ## Suggested announcement
 
-> ChainBloom is here: a new way to grow shared creative histories with Bitcoin.
-> Begin a world, add your bloom, let paths meet, and return to the story you
-> helped shape. No project token or trading market—just collaborative creation,
+> ChainBloom is a way to grow shared creative histories with Bitcoin. Open a
+> world, add your bloom, let paths meet, and come back to the story you helped
+> shape. No project token and no trading market — collaborative creation,
 > confirmed moments, and an open canvas for artists and communities.
 
 ## Interview themes
