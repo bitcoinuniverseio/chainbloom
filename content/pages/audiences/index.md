@@ -1,7 +1,7 @@
 ---
 title: For you
 nav: For you
-description: Eleven short pages, one for each kind of person who arrives here — find the one that sounds like you, read it in four minutes, and skip the rest.
+description: Eleven short pages, one for each kind of person who arrives here. Find the one that sounds like you, read it in four minutes, and skip the rest.
 socialTitle: ChainBloom, for you
 socialDescription: Eleven short pages, one per reader. Find the one that sounds like you and skip the rest.
 updated: 2026-07-31
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-ChainBloom looks like a different thing depending on what you came to do. These eleven pages each answer one reader's questions in that reader's own words — what it gives you, what it costs, what to do first, and what you can safely ignore.
+ChainBloom looks like a different thing depending on what you came to do. These eleven pages each answer one reader's questions in that reader's own words: what it gives you, what it costs, what to do first, and what you can safely ignore.
 :::
 
 ## Find the one that sounds like you
@@ -58,7 +58,7 @@ Replay, reorganizations, and the rules an index must obey to agree with everyone
 
 ## More than one will fit
 
-Most people here are two of these at once — a teacher who also writes code, an artist who also runs the community around the work. Read the page for what you will actually do this week; the others will still be here.
+Most people here are two of these at once: a teacher who also writes code, an artist who also runs the community around the work. Read the page for what you will actually do this week; the others will still be here.
 
 Every one of them assumes only two things. A [[world]] is a bounded shared story with between {{MIN_LANES}} and {{MAX_LANES}} [[path|paths]] inside it, and each path moves one confirmed Bitcoin step at a time.
 

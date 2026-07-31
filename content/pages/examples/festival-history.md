@@ -1,9 +1,9 @@
 ---
 title: A festival history
 nav: Festival history
-description: Five stages keep five separate records across six days, and on the closing night they meet — so the festival ends as one thing instead of five.
+description: Five stages keep five separate records across six days, and on the closing night they meet, so the festival ends as one thing instead of five.
 socialTitle: A festival history
-socialDescription: A complete ChainBloom plan — five paths, 900 blocks, 32 steps, and four meetings on the last night.
+socialDescription: A complete ChainBloom plan: five paths, 900 blocks, 32 steps, and four meetings on the last night.
 updated: 2026-07-31
 order: 2
 keywords: [festival, event, stages, live, example world]
@@ -27,11 +27,11 @@ Harbour Lights 2026 is an illustration. It does not exist on any network, and no
 
 Two audiences need two messages. This is the one for the five stage managers, who are the people actually holding the [[path|paths]].
 
-> **Harbour Lights 2026 — the stage record**
+> **Harbour Lights 2026: the stage record**
 >
 > Each of the five stages gets one path. You hold yours for the whole festival.
 >
-> After every set, add one moment: which act, how it went, one colour. Thirty seconds on your phone between changeovers. Your path holds 32 moments, which is five or six a day — enough for every set and not enough for a running commentary.
+> After every set, add one moment: which act, how it went, one colour. Thirty seconds on your phone between changeovers. Your path holds 32 moments, which is five or six a day. That is enough for every set and not enough for a running commentary.
 >
 > You cannot add two moments to your stage inside the same block, so do not try to catch up on six sets at once. Post them as they happen.
 >
@@ -45,7 +45,7 @@ Two audiences need two messages. This is the one for the five stage managers, wh
 
 ## The settings
 
-:::figure caption="Harbour Lights 2026 — everything fixed at creation"
+:::figure caption="Everything fixed at creation for Harbour Lights 2026"
 | Setting | Value | Why this number |
 | --- | --- | --- |
 | Title | `Harbour Lights 2026` | 19 bytes, inside the {{MAX_TITLE_BYTES}}-byte limit |
@@ -62,16 +62,16 @@ Create the world on the Wednesday morning, not the week before. The clock starts
 
 Each moment is a [[bloom]] carrying four numbers. The festival publishes what they mean, once, in the crew handbook:
 
-- **Glyph** — the kind of moment. Out of {{GLYPH_COUNT}} values (0 to {{MAX_GLYPH}}): 0 doors, 1 set started, 2 set ended, 3 guest appearance, 4 technical fault, 5 weather, 6 crowd moment, 7 last song.
-- **Palette** — one of {{PALETTE_COUNT}} colours, 0 to {{MAX_PALETTE}}. Give each stage a fixed colour so the finished picture reads as five bands.
-- **Motion** — {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}}, for the shape of it: building, steady, sudden, falling away.
-- **Magnitude** — one byte the stage manager judges. Use it for how hard the room went, and write down what your scale means before day one so it stays consistent.
+- **Glyph** is the kind of moment. Out of {{GLYPH_COUNT}} values (0 to {{MAX_GLYPH}}): 0 doors, 1 set started, 2 set ended, 3 guest appearance, 4 technical fault, 5 weather, 6 crowd moment, 7 last song.
+- **Palette**: one of {{PALETTE_COUNT}} colours, 0 to {{MAX_PALETTE}}. Give each stage a fixed colour so the finished picture reads as five bands.
+- **Motion** gives the shape of it, in {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}}: building, steady, sudden, falling away.
+- **Magnitude**: one byte the stage manager judges. Use it for how hard the room went, and write down what your scale means before day one so it stays consistent.
 
 The other move worth teaching the crew is the [[echo]]: a moment that points back at a specific earlier moment somewhere in the world. The main stage answers the fault on the small stage that pushed an act across. The moment it points at has to be confirmed in a strictly earlier block, so an echo can only answer something already fixed in the record.
 
 ## The closing night
 
-A [[meeting|meet]] joins exactly two paths. Five stages therefore do not meet in one move — they meet in four, and the shape you choose is a decision about the festival.
+A [[meeting|meet]] joins exactly two paths. Five stages therefore do not meet in one move. They meet in four, and the shape you choose is a decision about the festival.
 
 The order that works on the night:
 
@@ -98,7 +98,7 @@ Each stage manager finishes their own path when their stage is done, giving a re
 
 When the fifth path is finished, the world has no live paths left and the record is closed. That is the outcome you want, because it means five people each decided their stage was done.
 
-The other outcome is expiry. If the 900th block passes with paths still open, the world expires and each open path is marked expired, with a reason recording that the duration elapsed. It is not a failure of the record — everything confirmed is still there — but it reads as a festival that ran out rather than one that finished. Put "close the paths" on the get-out sheet, next to "return the radios".
+The other outcome is expiry. If the 900th block passes with paths still open, the world expires and each open path is marked expired, with a reason recording that the duration elapsed. It is not a failure of the record, because everything confirmed is still there, but it reads as a festival that ran out rather than one that finished. Put "close the paths" on the get-out sheet, next to "return the radios".
 
 ## What the six days feel like
 

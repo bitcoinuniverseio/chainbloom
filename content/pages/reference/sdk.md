@@ -15,7 +15,7 @@ cta:
 ---
 
 :::lead
-{{PACKAGE_NAME}} is the rules, not a client for someone else's rules. With it you can build a valid ChainBloom transaction, reject an invalid one, and rebuild an entire history from raw blocks — offline, with no service in the middle and nobody to ask.
+{{PACKAGE_NAME}} is the rules, not a client for someone else's rules. With it you can build a valid ChainBloom transaction, reject an invalid one, and rebuild an entire history from raw blocks, offline, with no service in the middle and nobody to ask.
 :::
 
 ## Install it from the repository
@@ -164,7 +164,7 @@ fffffffd
 cHNidP8BANYCAAAAARERERERERERERER
 ```
 
-Four outputs: the marker, two root carriers of {{CARRIER_VALUE_SATS_RAW}} satoshis each, and change. The 50,000 satoshi input less 48,000 satoshis of outputs leaves 2,000 satoshis for the miner. The builder checks that outputs do not exceed inputs (`INSUFFICIENT_INPUT_VALUE`) but it does not choose your fee — that is yours to set and yours to get right.
+Four outputs: the marker, two root carriers of {{CARRIER_VALUE_SATS_RAW}} satoshis each, and change. The 50,000 satoshi input less 48,000 satoshis of outputs leaves 2,000 satoshis for the miner. The builder checks that outputs do not exceed inputs (`INSUFFICIENT_INPUT_VALUE`) but it does not choose your fee. That is yours to set and yours to get right.
 
 ### BLOOM and GRAFT
 
@@ -217,7 +217,7 @@ Passing the same lane twice throws `DUPLICATE_LANE`. Because both participants m
 
 ## Validate a transaction
 
-`validateProtocolTransaction` is the same function the state engine runs. It needs to know which outputs are live carriers, which is what the `view` argument is for — pass a `ChainBloomState` that has already applied the confirmed blocks.
+`validateProtocolTransaction` is the same function the state engine runs. It needs to know which outputs are live carriers, which is what the `view` argument is for. Pass a `ChainBloomState` that has already applied the confirmed blocks.
 
 ```ts title="validate.ts"
 import {

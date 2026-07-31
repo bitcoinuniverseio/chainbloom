@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-A visitor spends four minutes at a table in Hall Four and leaves one deliberate mark on a work that six months of other visitors are also making. The gallery gets something rare from it: a participatory piece whose history is still legible years later, in an order nobody — including the gallery — can rearrange afterwards.
+A visitor spends four minutes at a table in Hall Four and leaves one deliberate mark on a work that six months of other visitors are also making. The gallery gets something rare from it: a participatory piece whose history is still legible years later, in an order that nobody, including the gallery, can rearrange afterwards.
 :::
 
 :::simulation
@@ -35,7 +35,7 @@ This is the text on the station, at the height a seated visitor reads it.
 >
 > Sometimes two lines meet. A meeting is arranged between two visitors who both agree to it, and afterwards both lines carry on separately. Nothing is merged and nothing is overwritten.
 >
-> Your moment is recorded on the Bitcoin network. It is public, it has a time, and it cannot be edited or removed afterwards — not by you, and not by this museum.
+> Your moment is recorded on the Bitcoin network. It is public, it has a time, and it cannot be edited or removed afterwards. Not by you, and not by this museum.
 
 Everything a participatory work usually promises and then quietly fails to deliver is in the last line, and here it is enforced by something outside the building.
 
@@ -43,11 +43,11 @@ Everything a participatory work usually promises and then quietly fails to deliv
 
 A [[world]] fixes its shape when it is created. Nothing in this table can be changed later, so this is the meeting to get right.
 
-:::figure caption="Hall Four: Tides — the settings, and the range the protocol allows"
+:::figure caption="The settings for Hall Four: Tides, and the range the protocol allows"
 | Setting | This world | What the protocol allows |
 | --- | --- | --- |
 | Title | `Hall Four: Tides` | up to {{MAX_TITLE_BYTES}} ASCII bytes, pattern `{{TITLE_PATTERN}}` |
-| Paths | 6 — one per room theme | {{MIN_LANES}} to {{MAX_LANES}} |
+| Paths | 6, one per room theme | {{MIN_LANES}} to {{MAX_LANES}} |
 | Duration | 26,000 blocks, about six months | {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks |
 | Steps per path | 64 | {{MIN_MAX_STEPS}} to {{MAX_MAX_STEPS}} |
 | Held per live path | {{CARRIER_VALUE_SATS}} satoshis | fixed by the protocol |
@@ -61,19 +61,19 @@ Six [[path|paths]] at 64 steps is at most 384 moments for the entire run. Spread
 A station open to every visitor would exhaust the work in a busy weekend and then stand there for five and a half months with nothing left to give. The scarce resource in this design is **steps, not time**, and the curatorial decision is how you ration them. Three approaches that work:
 
 - **A booked slot.** Two turns a day, free, bookable like a tour. Turns the constraint into an invitation.
-- **A nominated contributor.** Each week a different group — a school, a resident artist, a local society — holds the turns.
+- **A nominated contributor.** Each week the turns belong to a different group: a school, a resident artist, a local society.
 - **A slow burn with a finale.** One turn a day for five months, then the remaining steps released across the closing weekend.
 
-If you want a station any visitor can walk up to, do not stretch this world. Create a shorter one — {{MIN_DURATION_BLOCKS}} blocks is about a day — and run a series.
+If you want a station any visitor can walk up to, do not stretch this world. Create a shorter one and run a series. {{MIN_DURATION_BLOCKS}} blocks is about a day.
 
 ## What one contribution means
 
 A visitor's moment is a [[bloom]], and on the chain it is four small numbers:
 
-- **Glyph** — the shape. {{GLYPH_COUNT}} values, 0 to {{MAX_GLYPH}}.
-- **Palette** — the colour set. {{PALETTE_COUNT}} values, 0 to {{MAX_PALETTE}}.
-- **Motion** — how it moves. {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}}.
-- **Magnitude** — one byte for how strongly it lands.
+- **Glyph**: the shape. {{GLYPH_COUNT}} values, 0 to {{MAX_GLYPH}}.
+- **Palette**: the colour set. {{PALETTE_COUNT}} values, 0 to {{MAX_PALETTE}}.
+- **Motion**: how it moves. {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}}.
+- **Magnitude**: one byte for how strongly it lands.
 
 No text, no image, no name is written. That is a privacy protection and a curatorial burden at once: the meaning of glyph 9 lives entirely in the legend the museum publishes beside the work. Print the legend, put it in the catalogue, and archive it with the show. If the legend is lost, the record survives and its meaning does not.
 
@@ -83,7 +83,7 @@ Tell visitors plainly that the animation on the wall is one rendering, not the w
 
 A [[meeting]] spends both paths' outputs in a single transaction, so both holders must sign the same thing. In a gallery that makes it an event rather than a click: two visitors, two attendants, one screen, one signature each.
 
-Programme them. Two announced meetings a month, at a set time, drawing whatever queue they draw. Choose a bridge style — one of {{BRIDGE_STYLE_COUNT}} — with a shared glyph and palette, so a meeting reads differently from an ordinary moment.
+Programme them. Two announced meetings a month, at a set time, drawing whatever queue they draw. Choose one of the {{BRIDGE_STYLE_COUNT}} bridge styles, with a shared glyph and palette, so a meeting reads differently from an ordinary moment.
 
 Note the budget effect: a meeting spends one step on **each** of the two paths. Twelve meetings across the run costs 24 of your 384 steps.
 
@@ -91,7 +91,7 @@ Note the budget effect: a meeting spends one step on **each** of the two paths. 
 
 The end height is the creation height plus the duration, and it is exclusive. At that block the world becomes `EXPIRED` and every path still live becomes `EXPIRED` with the reason `WORLD_DURATION_ELAPSED`. That is a valid ending, but it is an ending by clock, and it will not feel like a closing night.
 
-Do it the other way. In the last week, [[close|complete]] each of the six paths deliberately, with a reason number the catalogue explains — say `1` for a line the room finished and `2` for a line the room left open. When the last live path is completed the world's status becomes `ENDED`. Every one of the six endings was a decision somebody made, which is what a closing should be.
+Do it the other way. In the last week, [[close|complete]] each of the six paths deliberately, with a reason number the catalogue explains: say `1` for a line the room finished and `2` for a line the room left open. When the last live path is completed the world's status becomes `ENDED`. Every one of the six endings was a decision somebody made, which is what a closing should be.
 
 Give yourself margin. 26,000 blocks is *about* six months; blocks do not arrive on a schedule, and a slow week can move the end height by a day or two. Plan the closing ceremony a fortnight early, not the night before.
 
@@ -130,7 +130,7 @@ That last card matters more than it looks. It is how a visitor verifies their ow
 
 Budget one trained attendant whenever the station is open. Their job is explaining the legend, reading the preview aloud, and refusing to choose for the visitor. Keep a paper log beside the screen: date, path, four numbers, transaction id. It takes ten seconds and it is your archive when the software changes.
 
-Pace matters too. Each path is held by one [[carrier]] output, and it can take at most one step per block — roughly ten minutes — because the protocol rejects a step whose own parent is not yet confirmed in an earlier block, with the code `UNCONFIRMED_LINEAGE_PARENT`. Six paths can advance in parallel; one path cannot serve a queue quickly. Run turns across different paths if you want throughput.
+Pace matters too. Each path is held by one [[carrier]] output, and it can take at most one step per block, or roughly one step every ten minutes, because the protocol rejects a step whose own parent is not yet confirmed in an earlier block, with the code `UNCONFIRMED_LINEAGE_PARENT`. Six paths can advance in parallel; one path cannot serve a queue quickly. Run turns across different paths if you want throughput.
 
 ### Accessible labels
 
@@ -161,5 +161,5 @@ Wall text carries the claims, so it has to be exact. This is short enough to fit
 > The image on this wall is one way of drawing the record. Other viewers may draw the same six lines differently and be equally correct.
 
 :::warning
-Two sentences never to put on a wall: that a moment can be removed on request, and that a screenshot of the work proves an event happened. The first is not true and cannot be made true. The second confuses a picture with a record — the transaction id is the proof, and it is the thing to print on the visitor's card.
+Two sentences never to put on a wall: that a moment can be removed on request, and that a screenshot of the work proves an event happened. The first is not true and cannot be made true. The second confuses a picture with a record. The transaction id is the proof, and it is the thing to print on the visitor's card.
 :::

@@ -29,7 +29,7 @@ The check is a round trip, not just a parse. For each valid vector, `scripts/che
 
 Each vector names a network byte, a full marker in hex, and the payload it must decode to. The first {{HEADER_BYTES}} bytes are always the same shape: magic `{{PROTOCOL_MAGIC_HEX}}`, version `{{PROTOCOL_VERSION}}`, network, [[opcode]], payload length.
 
-:::figure caption="vectors/valid-markers.json — every byte an encoder must produce"
+:::figure caption="vectors/valid-markers.json: every byte an encoder must produce"
 | Vector | Network | Marker hex |
 | --- | --- | --- |
 | `create-two-lanes` | `3` regtest | `43424c4d0103011b010200900005000102030405060708090a0b0c0d0e0f044461776e` |
@@ -86,7 +86,7 @@ Nine bytes, and the smallest legal marker there is: header plus a single reason 
 
 Each of these must be refused, and refused with the exact code. A reader that repairs any of them has stopped agreeing with everyone else.
 
-:::figure caption="vectors/invalid-markers.json — what a reader must refuse, and how"
+:::figure caption="vectors/invalid-markers.json: what a reader must refuse, and how"
 | Vector | Marker hex | Error code | What it proves |
 | --- | --- | --- | --- |
 | `truncated-header` | `4342` | `TRUNCATED_HEADER` | Length is checked before any byte is interpreted. Two bytes is shorter than the {{HEADER_BYTES}}-byte header. |

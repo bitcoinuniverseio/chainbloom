@@ -1,7 +1,7 @@
 ---
 title: Museums and cultural organizations
 nav: Museums
-description: Programme a ChainBloom world as a commission — what to budget for real network fees, how to keep it accessible, what survives the run, and what to put on the wall.
+description: Programme a ChainBloom world as a commission: what to budget for real network fees, how to keep it accessible, what survives the run, and what to put on the wall.
 updated: 2026-07-31
 order: 6
 keywords: [museum, gallery, exhibition, curator, wall text, archive, accessibility, budget]
@@ -21,13 +21,13 @@ A ChainBloom [[world]] gives a programme something a wall of screens cannot: a p
 
 A world is a bounded brief. Three numbers are fixed the moment it opens and can never be edited:
 
-- how many [[path|paths]] it has — {{MIN_LANES}} to {{MAX_LANES}}
-- how long it stays open — {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days
-- how many steps each path may take — {{MIN_MAX_STEPS}} to {{MAX_MAX_STEPS}}
+- how many [[path|paths]] it has: {{MIN_LANES}} to {{MAX_LANES}}
+- how long it stays open: {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days
+- how many steps each path may take: {{MIN_MAX_STEPS}} to {{MAX_MAX_STEPS}}
 
 These are curatorial decisions, not settings. {{MAX_LANES}} paths across a six-week run is a different show from two paths across a year. Settle them with the artist before anything is signed, because there is no later.
 
-The only free text anywhere in a world is its title: at most {{MAX_TITLE_BYTES}} ASCII characters matching {{TITLE_PATTERN}}. Everything a visitor contributes afterwards is numbers — a glyph, a palette, a motion, a magnitude. Nobody can type a message into the chain, which shrinks the moderation problem to almost nothing. [Moderation and privacy](/docs/programs/moderation-and-privacy) covers what is left.
+The only free text anywhere in a world is its title: at most {{MAX_TITLE_BYTES}} ASCII characters matching {{TITLE_PATTERN}}. Everything a visitor contributes afterwards is numbers: a glyph, a palette, a motion, a magnitude. Nobody can type a message into the chain, which shrinks the moderation problem to almost nothing. [Moderation and privacy](/docs/programs/moderation-and-privacy) covers what is left.
 
 ## What it costs, and what the budget line is for
 
@@ -46,15 +46,15 @@ Fees are real money, and a confirmed step cannot be undone by anyone, including 
 
 ## Access and the room
 
-The picture is not the record. Positions and colours come from the world's [[seed]] and each event's [[txid]], and the renderer sits deliberately outside the rules — two galleries can render the same world completely differently and both be correct.
+The picture is not the record. Positions and colours come from the world's [[seed]] and each event's [[txid]], and the renderer sits deliberately outside the rules. Two galleries can render the same world completely differently and both be correct.
 
-Plan for two readings side by side: the visual one, and a written one. A short text account of every event — which path, which action, which block — serves a visitor using a screen reader, a visitor who would rather not stand in front of a projection, and your own archive. [Accessibility](/docs/programs/accessibility) has the detail.
+Plan for two readings side by side: the visual one, and a written one. A short text account of every event (which path, which action, which block) serves a visitor using a screen reader, a visitor who would rather not stand in front of a projection, and your own archive. [Accessibility](/docs/programs/accessibility) has the detail.
 
 ## What survives the run
 
 Keep four things in the accession file: the world id, which is the txid of the transaction that created it; its {{SEED_BYTES}}-byte seed; the ordered list of event txids; and the exact version of the renderer you exhibited. With those, anyone can rebuild the same history from Bitcoin later, without you and without this site.
 
-The world becomes [[expired]] at a fixed block height — the height it was created at plus its duration — and every path still open expires with it. That point is knowable from day one, so print it in the programme.
+The world becomes [[expired]] at a fixed block height: the height it was created at plus its duration. Every path still open expires with it. That point is knowable from day one, so print it in the programme.
 
 :::note
 There is no public browser for confirmed worlds yet. [What is running](/docs/help/status) states exactly what works today, which is the page to show a funder.

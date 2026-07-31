@@ -41,11 +41,11 @@ Four jobs. Most integrations need one or two, not all four.
 
 ### Read
 
-`parseTransactionHex(hex)` gives you a parsed transaction. `decodeMarker(bytes)` and `decodeMarkerHex(hex)` turn the [[op-return]] payload — at most {{MAX_MARKER_BYTES}} bytes, with a {{HEADER_BYTES}}-byte header — into a typed operation. Anything wrong throws a `ChainBloomError` carrying a code such as `INVALID_MAGIC`, `RESERVED_OPCODE`, or `NON_MINIMAL_OP_RETURN`. Branch on the code, never on the message.
+`parseTransactionHex(hex)` gives you a parsed transaction. `decodeMarker(bytes)` and `decodeMarkerHex(hex)` turn the [[op-return]] payload (at most {{MAX_MARKER_BYTES}} bytes, with a {{HEADER_BYTES}}-byte header) into a typed operation. Anything wrong throws a `ChainBloomError` carrying a code such as `INVALID_MAGIC`, `RESERVED_OPCODE`, or `NON_MINIMAL_OP_RETURN`. Branch on the code, never on the message.
 
 ### Write
 
-`buildCreatePsbt`, `buildBloomPsbt`, `buildGraftPsbt`, `buildRendezvousPsbt`, and `buildClosePsbt` return an unsigned `bitcoinjs-lib` PSBT: version {{TX_VERSION}}, every input sequence {{RBF_SEQUENCE_HEX}}, and [[carrier]] inputs that must be exactly {{CARRIER_VALUE_SATS}} satoshis and Taproot. `buildRendezvousPsbt` sorts the two participants by lane id itself, because getting that order wrong is a rejected transaction. You sign elsewhere — the package never touches keys.
+`buildCreatePsbt`, `buildBloomPsbt`, `buildGraftPsbt`, `buildRendezvousPsbt`, and `buildClosePsbt` return an unsigned `bitcoinjs-lib` PSBT: version {{TX_VERSION}}, every input sequence {{RBF_SEQUENCE_HEX}}, and [[carrier]] inputs that must be exactly {{CARRIER_VALUE_SATS}} satoshis and Taproot. `buildRendezvousPsbt` sorts the two participants by lane id itself, because getting that order wrong is a rejected transaction. You sign elsewhere. The package never touches keys.
 
 ### Check
 
@@ -53,16 +53,16 @@ Four jobs. Most integrations need one or two, not all four.
 
 ### Replay
 
-`ChainBloomState` holds confirmed state only. `applyBlock` refuses a block that does not extend the tip and throws `NON_CONTIGUOUS_BLOCK`. `rollbackTip` undoes exactly one block. `snapshot()` returns worlds and lanes sorted by id, with events sorted by height then transaction index — that sort order is what makes two independent replays identical.
+`ChainBloomState` holds confirmed state only. `applyBlock` refuses a block that does not extend the tip and throws `NON_CONTIGUOUS_BLOCK`. `rollbackTip` undoes exactly one block. `snapshot()` returns worlds and lanes sorted by id, with events sorted by height then transaction index. That sort order is what makes two independent replays identical.
 
 ## Where to start reading
 
 In this order, and together they are shorter than most integration guides:
 
-- [src/constants.ts](repo:src/constants.ts) — every number the protocol enforces, in one short file.
-- [src/codec.ts](repo:src/codec.ts) — the header layout and each operation's payload.
-- [src/validator.ts](repo:src/validator.ts) — every rule, next to the issue code it emits.
-- [src/state.ts](repo:src/state.ts) — replay, rollback, and the mempool overlay.
+- [src/constants.ts](repo:src/constants.ts): every number the protocol enforces, in one short file.
+- [src/codec.ts](repo:src/codec.ts): the header layout and each operation's payload.
+- [src/validator.ts](repo:src/validator.ts): every rule, next to the issue code it emits.
+- [src/state.ts](repo:src/state.ts): replay, rollback, and the mempool overlay.
 
 The `chainbloom` command is the fastest way to watch behaviour without writing code. `chainbloom marker decode --hex <hex>` prints a decoded operation as JSON on stdout; failures print `{"error":"CODE","message":"..."}` on stderr and exit 1. The [CLI reference](/docs/reference/cli) lists every command it has.
 

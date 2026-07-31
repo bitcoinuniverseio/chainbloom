@@ -1,7 +1,7 @@
 ---
 title: Public programs
 nav: Public programs
-description: The operational half of ChainBloom — how a museum, festival, school or community group runs a world as a real public programme, and what it owes the people who take part.
+description: The operational half of ChainBloom: how a museum, festival, school or community group runs a world as a real public programme, and what it owes the people who take part.
 socialTitle: Running ChainBloom as a public program
 socialDescription: Budgets, wall text, consent, moderation and access for organisations running a ChainBloom world in public.
 updated: 2026-07-31
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-A ChainBloom [[world]] makes a good public programme because it has an ending. This section is written for whoever has to run it — the budget, the wall text, the staffing, the consent, the moderation policy, and the access you owe anyone who walks in the door.
+A ChainBloom [[world]] makes a good public programme because it has an ending. This section is written for whoever has to run it: the budget, the wall text, the staffing, the consent, the moderation policy, and the access you owe anyone who walks in the door.
 :::
 
 ## Who this section is for
@@ -46,7 +46,7 @@ Text alternatives, a still for every motion, colour that is never the only signa
 
 ## Four things to say out loud in every programme
 
-1. A confirmed [[step]] cannot be removed from Bitcoin by anyone — not the contributor, not the artist, not the venue, not us.
+1. A confirmed [[step]] cannot be removed from Bitcoin by anyone: not the contributor, not the artist, not the venue, not us.
 2. Taking part costs a real network fee paid to miners, plus {{CARRIER_VALUE_SATS}} satoshis held in each live path and released when that path is completed.
 3. There is nothing to own, sell or earn here. No token, no edition, no certificate, no resale.
 4. The public index is not switched on yet, so nobody can browse confirmed worlds today. Link people to [what is running](/docs/help/status) instead of describing a service that is not there.

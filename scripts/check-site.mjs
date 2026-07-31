@@ -25,7 +25,7 @@ const socialImage = await readFile(
 for (const requiredText of [
   'ChainBloom',
   'Shared creation',
-  'Discover the experience',
+  'See how a world grows',
   'https://inscribe.bitcoinuniverse.io/chainbloom',
   'Possibilities',
   'Your choices',
@@ -47,6 +47,7 @@ for (const requiredMetadata of ['og:image', 'twitter:card', 'summary_large_image
 }
 
 const forbiddenPublicCopy = [
+  /[\u2013\u2014]/,
   /\bv1\b/i,
   /\bversion\b/i,
   /\bexperimental\b/i,
@@ -81,7 +82,7 @@ if (imageWidth < 1200 || imageHeight < 630 || imageRatio < 1.8 || imageRatio > 2
 for (const asset of [
   './assets/chainbloom-logo.svg',
   './assets/chainbloom-mark.svg',
-  'site/assets/chainbloom-og.png',
+  '/chainbloom/assets/chainbloom-og.png',
 ]) {
   if (!html.includes(asset)) {
     throw new Error(`site/index.html does not use required asset: ${asset}`);

@@ -36,7 +36,7 @@ interpretation.
 
 > ChainBloom is a way to grow shared creative histories with Bitcoin. Open a
 > world, add your bloom, let paths meet, and come back to the story you helped
-> shape. No project token and no trading market — collaborative creation,
+> shape. No project token and no trading market. Just collaborative creation,
 > confirmed moments, and an open canvas for artists and communities.
 
 ## Interview themes

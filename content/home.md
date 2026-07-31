@@ -1,13 +1,13 @@
 ---
 title: ChainBloom documentation
 description: ChainBloom lets a group of people grow one shared story, one confirmed Bitcoin moment at a time. Start where you are.
-socialTitle: ChainBloom documentation — grow a shared history with Bitcoin
+socialTitle: ChainBloom documentation: grow a shared history with Bitcoin
 socialDescription: Learn what ChainBloom is, join a world, create one, or build on the protocol. Interactive, plain-language, and honest about what exists today.
 updated: 2026-07-31
 keywords: [chainbloom, documentation, bitcoin, shared history, worlds, paths, blooms]
 cta:
   title: Watch a world grow first
-  body: Three paths, a meeting, and an ending — no wallet and no cost.
+  body: Three paths, a meeting, and an ending. No wallet and no cost.
   label: Open the walkthrough
   href: /docs/start/watch-a-world-grow
 ---

@@ -16,12 +16,12 @@ cta:
 ---
 
 :::lead
-Most people come back to a path weeks after they last touched it, from a different device, with no memory of what they did. This page is about making that easy — and it is mostly about three strings you write down before you walk away.
+Most people come back to a path weeks after they last touched it, from a different device, with no memory of what they did. This page is about making that easy, and it is mostly about three strings you write down before you walk away.
 :::
 
 ## Write down three things
 
-There is no account, no login, and no server holding your place. Your way back is whatever you kept. Keep these three, in something durable — a notes file, a paper card, a pinned message:
+There is no account, no login, and no server holding your place. Your way back is whatever you kept. Keep these three, in something durable such as a notes file, a paper card, or a pinned message:
 
 **Your path id.** The world id followed by a colon and a number counting from zero, like `a1b2c3…:2`. The world id is the [[txid]] of the transaction that created the world. This is the only name your path has.
 
@@ -44,7 +44,7 @@ Look up the outpoint of your path output on any Bitcoin [[explorer]]. There is e
 - **Unspent.** Your path is where you left it. You can take the next step from here.
 - **Spent.** Something moved it. Follow the spending transaction and read the next section.
 
-If it is spent by a valid step, the next path output is at output 1 of that transaction — that is your new outpoint. If it is spent by anything else, the path stopped being a path at that moment.
+If it is spent by a valid step, the next path output is at output 1 of that transaction, and that is your new outpoint. If it is spent by anything else, the path stopped being a path at that moment.
 
 :::note
 No Bitcoin explorer shows ChainBloom worlds today. An explorer will show you an ordinary transaction with a small output and an `OP_RETURN`. That is enough to answer the unspent-or-spent question, which is the one that matters most.
@@ -58,7 +58,7 @@ The ChainBloom workspace in [InScribe](app) has a Lanes surface that lists the l
 
 A world does not pause because you did. Four things move without you.
 
-**Blocks passed.** Every block brings the world closer to its end [[block height|height]], which is the height it was created at plus its duration — between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks. The window is not a countdown anyone shows you. Work it out and write down the number.
+**Blocks passed.** Every block brings the world closer to its end [[block height|height]], which is the height it was created at plus its duration. That duration is between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks. The window is not a countdown anyone shows you. Work it out and write down the number.
 
 **Other paths moved.** Other people added moments, and some of those may point back at yours. An echo aimed at your step does not change your step; it sits alongside it in the history.
 
@@ -72,7 +72,7 @@ The one thing that does not change is what is already confirmed. Earlier steps c
 
 Sometimes the answer is that the path is finished, and the useful thing is to know which kind of finished.
 
-Each path holds one of four statuses. Two of them — [[expired]] and [[abandoned]] — mean the path stopped without anyone choosing to end it.
+Each path holds one of four statuses. Two of them, [[expired]] and [[abandoned]], mean the path stopped without anyone choosing to end it.
 
 | Status | What happened |
 | --- | --- |
@@ -85,13 +85,13 @@ Worlds have their own three: `ACTIVE`, `ENDED` once no live paths remain, and `E
 
 ### The world ended or expired
 
-If the world reached its end height, every path still live became `EXPIRED` with the reason `WORLD_DURATION_ELAPSED`. Any attempt to add a step now is refused with `WORLD_ENDED`. There is no extension, no grace period, and no setting anyone can change — the duration was fixed in the creation transaction.
+If the world reached its end height, every path still live became `EXPIRED` with the reason `WORLD_DURATION_ELAPSED`. Any attempt to add a step now is refused with `WORLD_ENDED`. There is no extension, no grace period, and no setting anyone can change. The duration was fixed in the creation transaction.
 
 Your {{CARRIER_VALUE_SATS}} satoshis are still yours. The output is an ordinary Bitcoin output that you control and can spend whenever you like. It has simply stopped meaning anything to the world.
 
 ### Your path reached its step limit
 
-Further steps are refused with `MAX_STEPS_REACHED`. Ending the path deliberately is still allowed, and while the world is still open that is worth doing — see [Completing a path](/docs/participate/complete-a-path).
+Further steps are refused with `MAX_STEPS_REACHED`. Ending the path deliberately is still allowed, and while the world is still open that is worth doing. See [Completing a path](/docs/participate/complete-a-path).
 
 ### The path output was spent by something else
 
@@ -112,5 +112,5 @@ Then write down the new txid and the new outpoint, and close the tab knowing you
 If you have read the pages on the "join a world" path, you have covered everything a person needs before taking part: what a world is, what a contribution costs, what your wallet shows you, how to keep a live path safe, and how to come back to it.
 
 :::demo name=completion-card guide=participant
-This is where a card appears once you have marked every page on the "join a world" path as read. It records that you read a guide. It is not a badge, a balance, a certificate, a token, or anything the protocol knows about — nothing on Bitcoin changes because you finished reading.
+This is where a card appears once you have marked every page on the "join a world" path as read. It records that you read a guide. It is not a badge, a balance, a certificate, a token, or anything the protocol knows about. Nothing on Bitcoin changes because you finished reading.
 :::

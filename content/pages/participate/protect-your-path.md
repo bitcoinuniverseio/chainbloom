@@ -1,7 +1,7 @@
 ---
 title: Protecting a live path
 nav: Protect your path
-description: A live path is one specific small Bitcoin output, and an ordinary payment that spends it ends the path for good — here is how to make sure that never happens.
+description: A live path is one specific small Bitcoin output, and an ordinary payment that spends it ends the path for good. Here is how to make sure that never happens.
 socialTitle: Protecting a live ChainBloom path
 socialDescription: Why a path can be lost by accident, four habits that prevent it, and exactly what the protocol does if it happens.
 updated: 2026-07-31
@@ -23,7 +23,7 @@ Your place in a world is not stored in an account. It sits in one specific small
 
 When you take a [[path]] forward, the step you sign creates a new output worth {{CARRIER_VALUE_SATS}} satoshis. That output *is* your position in the world. Spending it with a valid ChainBloom action moves the path one step on. Spending it any other way ends the path.
 
-There is nothing else holding your place. No password, no record on a server, no way to restore it. If that output is spent by an ordinary payment, the path stops there and nothing can bring it back — not the world's creator, not an indexer, not us.
+There is nothing else holding your place. No password, no record on a server, no way to restore it. If that output is spent by an ordinary payment, the path stops there and nothing can bring it back: not the world's creator, not an indexer, not us.
 
 :::warning
 Nobody can reverse a confirmed spend. Not because of policy, but because a spent output cannot be unspent. This is the one irreversible risk in taking part, and it is entirely avoidable.
@@ -49,7 +49,7 @@ Use a separate account, wallet, or at minimum a dedicated address for paths you 
 
 ### Write down the outpoint
 
-The moment a step confirms, record the [[outpoint]] — the `txid:vout` pair of the new output. Not just the transaction id; the output index matters. Keep it with the world id and the path id, which reads `<worldId>:<laneNumber>` and is numbered from 0.
+The moment a step confirms, record the [[outpoint]], the `txid:vout` pair of the new output. Not just the transaction id; the output index matters. Keep it with the world id and the path id, which reads `<worldId>:<laneNumber>` and is numbered from 0.
 
 You need this to return to the path later, to verify a signing screen is spending the right thing, and to look the path up in any tool that reads confirmed state.
 
@@ -59,7 +59,7 @@ Before any transaction that empties or tidies a wallet, ask one question: does t
 
 ### Label it where you will actually look
 
-Most wallets let you freeze or label a coin. Label it with the world title and the path number, not "do not spend" — six months later you will want to know *which* path it was.
+Most wallets let you freeze or label a coin. Label it with the world title and the path number, not "do not spend". Six months later you will want to know *which* path it was.
 
 :::tip
 Do all four when you are calm, not when you are mid-transaction. The habit is what protects you; a rule you have to remember under pressure is not a habit.
@@ -87,18 +87,18 @@ Not every ending is a mistake. Knowing the full list makes the accidental one ea
 | `EXPIRED` | The world reaches the end of its lifetime | `WORLD_DURATION_ELAPSED` |
 | `ABANDONED` | A confirmed spend was not a valid ChainBloom action | `INVALID_CONFIRMED_SPEND` |
 
-A world's end height is fixed when it is created — the creation height plus its duration in blocks, between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks, roughly {{MIN_DURATION_DAYS}} day to {{MAX_DURATION_DAYS}} days. At that height the world becomes [[expired|EXPIRED]] and every path still live expires with it. Separately, once a path has taken its maximum number of steps — up to {{MAX_MAX_STEPS}} — further steps are refused with `MAX_STEPS_REACHED`, though you may still complete it deliberately.
+A world's end height is fixed when it is created: the creation height plus its duration in blocks, between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks, roughly {{MIN_DURATION_DAYS}} day to {{MAX_DURATION_DAYS}} days. At that height the world becomes [[expired|EXPIRED]] and every path still live expires with it. Separately, once a path has taken its maximum number of steps, up to {{MAX_MAX_STEPS}}, further steps are refused with `MAX_STEPS_REACHED`, though you may still complete it deliberately.
 
-So write down the end height along with your outpoint. A path you meant to complete, left until after the world expired, ends as expired instead — and the {{CARRIER_VALUE_SATS}} satoshis stay in an output you can still spend, but the ending is no longer yours to write.
+So write down the end height along with your outpoint. A path you meant to complete, left until after the world expired, ends as expired instead. The {{CARRIER_VALUE_SATS}} satoshis stay in an output you can still spend, but the ending is no longer yours to write.
 
 ## Nobody ever needs your recovery phrase
 
 :::safety
-Your recovery phrase — the twelve or twenty-four words your wallet gave you — restores every coin you own. Nothing in ChainBloom needs it, ever.
+Your recovery phrase, the twelve or twenty-four words your wallet gave you, restores every coin you own. Nothing in ChainBloom needs it, ever.
 
 Not to join a world. Not to return to a path. Not to recover an abandoned one. Not for support, verification, a migration, a snapshot, or an airdrop. There is no situation in which typing those words into a website or sending them to a person is the right move.
 
-Anyone who asks for them is stealing from you, whatever else they say. Anyone who offers to "recover" a lost path in exchange for them is stealing from you twice — a spent output cannot be recovered by anybody, including whoever is asking.
+Anyone who asks for them is stealing from you, whatever else they say. Anyone who offers to "recover" a lost path in exchange for them is stealing from you twice. A spent output cannot be recovered by anybody, including whoever is asking.
 
 Keep the words offline, on paper or metal, where a fire or a flood cannot take both copies.
 :::

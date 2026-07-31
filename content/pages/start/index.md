@@ -1,7 +1,7 @@
 ---
 title: Start here
 nav: Choose your path
-description: Answer one question — what do you want to do — and get an ordered reading path you can keep, with your place saved in this browser.
+description: Answer one question about what you want to do, and get an ordered reading path you can keep, with your place saved in this browser.
 updated: 2026-07-31
 order: 0
 keywords: [start, onboarding, guide, path, getting started]
@@ -20,17 +20,17 @@ There is no single right order to read this. What you need depends on whether yo
 Pick one below. You get a short list of pages in a sensible order, with a tick beside the ones you have read. Your place is kept in this browser, on this device. There is no account and nothing is sent anywhere.
 
 :::demo name=start-picker
-**Explore a world** — see what a shared history looks like before spending anything. Start with [ChainBloom in 60 seconds](/docs/start/chainbloom-in-60-seconds) and [How a world grows](/docs/learn/how-a-world-grows).
+**Explore a world**: see what a shared history looks like before spending anything. Start with [ChainBloom in 60 seconds](/docs/start/chainbloom-in-60-seconds) and [How a world grows](/docs/learn/how-a-world-grows).
 
-**Join a world** — add your own moment to a story someone else began. Start with [Join a world](/docs/participate/join-a-world) and [Wallet connection and review](/docs/participate/wallet-and-review).
+**Join a world**: add your own moment to a story someone else began. Start with [Join a world](/docs/participate/join-a-world) and [Wallet connection and review](/docs/participate/wallet-and-review).
 
-**Create a world** — write the invitation other people answer. Start with [The five actions](/docs/learn/the-five-actions) and [Create a world](/docs/participate/create-a-world).
+**Create a world**: write the invitation other people answer. Start with [The five actions](/docs/learn/the-five-actions) and [Create a world](/docs/participate/create-a-world).
 
-**Build an integration** — read or build ChainBloom transactions. Start with [Protocol architecture](/docs/reference/protocol-architecture) and the [SDK](/docs/reference/sdk).
+**Build an integration**: read or build ChainBloom transactions. Start with [Protocol architecture](/docs/reference/protocol-architecture) and the [SDK](/docs/reference/sdk).
 
-**Run infrastructure** — index the chain yourself. Start with [Validation rules](/docs/reference/validation-rules) and [Indexer requirements](/docs/reference/indexer-requirements).
+**Run infrastructure**: index the chain yourself. Start with [Validation rules](/docs/reference/validation-rules) and [Indexer requirements](/docs/reference/indexer-requirements).
 
-**Host a cultural experience** — run a world as an exhibition, festival, or class. Start with [Organizations](/docs/programs/organizations) and [Education](/docs/programs/education).
+**Host a cultural experience**: run a world as an exhibition, festival, or class. Start with [Organizations](/docs/programs/organizations) and [Education](/docs/programs/education).
 :::
 
 ## The five minute version
@@ -56,7 +56,7 @@ That is the entire vocabulary. Everything a world becomes is made from those fiv
 Two things, and no more:
 
 1. A Bitcoin network fee, paid to miners, the same as any other Bitcoin transaction. ChainBloom takes nothing.
-2. {{CARRIER_VALUE_SATS}} satoshis held in each path output — carried forward from step to step, and released back to you when the path is completed.
+2. {{CARRIER_VALUE_SATS}} satoshis held in each path output. They are carried forward from step to step, and released back to you when the path is completed.
 
 There is no price to join, no subscription, and nothing to buy.
 

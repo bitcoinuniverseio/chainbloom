@@ -1,7 +1,7 @@
 ---
 title: Wallet connection and transaction review
 nav: Wallet and review
-description: Connecting a wallet shares one address and never your keys — this page shows exactly what to read on a signing screen before you approve a ChainBloom step, and what should make you stop.
+description: Connecting a wallet shares one address and never your keys. This page shows what to read on a signing screen before you approve a ChainBloom step, and what should make you stop.
 socialTitle: What to read before you sign a ChainBloom step
 socialDescription: Six things to check on every signing screen, a stop list, and what wallet authors still need to build.
 updated: 2026-07-31
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-Signing is the one moment in ChainBloom you cannot take back. Read this once and you will recognise a correct step on sight — and spot a wrong one while it still costs you nothing.
+Signing is the one moment in ChainBloom you cannot take back. Read this once and you will recognise a correct step on sight, and spot a wrong one while it still costs you nothing.
 :::
 
 ## What connecting a wallet does
@@ -45,7 +45,7 @@ Six things, in this order. Each one takes seconds.
 
 ### The action
 
-Every ChainBloom transaction carries a [[marker]] naming one operation: `CREATE`, `BLOOM`, `GRAFT`, `RENDEZVOUS`, or `CLOSE` — opening a world, adding a moment, answering an earlier moment, meeting another path, or ending a path on purpose. If the screen says `CLOSE` and you meant to add a moment, stop. Completing a path is deliberate and final.
+Every ChainBloom transaction carries a [[marker]] naming one operation: `CREATE`, `BLOOM`, `GRAFT`, `RENDEZVOUS`, or `CLOSE`. Those five are opening a world, adding a moment, answering an earlier moment, meeting another path, and ending a path on purpose. If the screen says `CLOSE` and you meant to add a moment, stop. Completing a path is deliberate and final.
 
 ### The world
 
@@ -55,7 +55,7 @@ The marker also carries a network byte. A marker built for one network is invali
 
 ### The path
 
-A path id reads `<worldId>:<laneNumber>`, numbered from 0. Check that the input at `vin 0` is the [[outpoint]] you recorded when you last took this path forward — the `txid:vout` pair, not just the txid.
+A path id reads `<worldId>:<laneNumber>`, numbered from 0. Check that the input at `vin 0` is the [[outpoint]] you recorded when you last took this path forward. That means the `txid:vout` pair, not just the txid.
 
 For a meeting there are two path inputs, at `vin 0` and `vin 1`, and the protocol orders them by path id. Two inputs are correct for a meeting and wrong for anything else.
 
@@ -64,12 +64,12 @@ For a meeting there are two path inputs, at `vin 0` and `vin 1`, and the protoco
 Read the whole list, not the first line:
 
 - `vout 0` is the marker: an OP_RETURN output carrying zero value and at most {{MAX_MARKER_BYTES}} bytes. It must be first, and it must be the only ChainBloom marker in the transaction.
-- The successor [[carrier|carriers]] come next — one at `vout 1` for a bloom or an echo, two at `vout 1` and `vout 2` for a meeting, one per path for a create. Each is exactly {{CARRIER_VALUE_SATS}} satoshis and each is a Taproot output.
+- The successor [[carrier|carriers]] come next: one at `vout 1` for a bloom or an echo, two at `vout 1` and `vout 2` for a meeting, one per path for a create. Each is exactly {{CARRIER_VALUE_SATS}} satoshis and each is a Taproot output.
 - Change comes back to you. A completed path has no successor at all; its {{CARRIER_VALUE_SATS}} satoshis return to you with the change.
 
 ### The amount
 
-Add it up. Total input, minus every output, is the fee. The {{CARRIER_VALUE_SATS}} satoshis in a path output are not spent — they are carried to the next step and released when the path is completed. If the numbers do not resolve to something close to the fee you chose, do not sign.
+Add it up. Total input, minus every output, is the fee. The {{CARRIER_VALUE_SATS}} satoshis in a path output are not spent. They are carried to the next step and released when the path is completed. If the numbers do not resolve to something close to the fee you chose, do not sign.
 
 ### The fee
 
@@ -82,16 +82,16 @@ A ChainBloom contribution passes through seven stages. Nothing before stage six 
 
 1. **Plan.** You choose an action and a path. Nothing is signed and nothing is spent.
 2. **Build.** An unsigned PSBT is assembled: the marker at `vout 0`, the successor carrier or carriers, the path input at `vin 0`, fee inputs after it, and change.
-3. **Review.** You read the decoded plan — action, world, path, outputs, amount, fee — and compare it with what you meant to do.
+3. **Review.** You read the decoded plan (action, world, path, outputs, amount, fee) and compare it with what you meant to do.
 4. **Sign.** Your wallet signs the inputs it owns. Keys never leave it. Every input carries sequence {{RBF_SEQUENCE_HEX}} and the transaction is version {{TX_VERSION}}.
 5. **Broadcast.** The signed transaction reaches nodes and waits in the [[mempool]]. It is visible, it is replaceable, and it is not yet part of the world.
 6. **Confirm.** A miner includes it in a block. This is the moment the step becomes real for everyone.
-7. **Settle.** Indexers apply that block and the path advances by one step. Until the next block arrives, that step cannot be built on — a parent must already be confirmed in an earlier block, or validation returns `UNCONFIRMED_LINEAGE_PARENT`.
+7. **Settle.** Indexers apply that block and the path advances by one step. Until the next block arrives, that step cannot be built on: a parent must already be confirmed in an earlier block, or validation returns `UNCONFIRMED_LINEAGE_PARENT`.
 :::
 
 ## Stop if any of these is not true
 
-Tick a line only when you have actually checked it. If one of them fails, do not sign — nothing is lost by walking away at this point.
+Tick a line only when you have actually checked it. If one of them fails, do not sign. Nothing is lost by walking away at this point.
 
 :::checklist id=review-before-signing
 - The action shown is the action I intended.
@@ -99,13 +99,13 @@ Tick a line only when you have actually checked it. If one of them fails, do not
 - The input at `vin 0` is my path's outpoint, and I recorded that outpoint myself.
 - There is exactly one OP_RETURN output, it is `vout 0`, and it carries zero value.
 - Every path output is exactly {{CARRIER_VALUE_SATS}} satoshis and every one of them is a Taproot output.
-- The number of path inputs matches the action — one for a bloom, echo or completion, two for a meeting.
+- The number of path inputs matches the action: one for a bloom, echo or completion, two for a meeting.
 - The change address belongs to me.
 - The fee is an amount I would pay knowingly.
 :::
 
 :::warning
-Two more stop signals, both outside the transaction. If somebody sends you a ready-made transaction to sign and you cannot decode it yourself, do not sign it. If anybody asks for your recovery phrase for any reason — support, recovery, verification, a prize — that is theft, without exception.
+Two more stop signals, both outside the transaction. If somebody sends you a ready-made transaction to sign and you cannot decode it yourself, do not sign it. If anybody asks for your recovery phrase for any reason (support, recovery, verification, a prize), that is theft, without exception.
 :::
 
 ## What no wallet does for you yet

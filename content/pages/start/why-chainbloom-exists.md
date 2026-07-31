@@ -1,7 +1,7 @@
 ---
 title: Why ChainBloom exists
 nav: Why it exists
-description: Three ordinary problems ruin shared creative work — a feed with no shape, a group voice that flattens into one, and a record only its host can vouch for. One structure answers all three.
+description: Three ordinary problems ruin shared creative work: a feed with no shape, a group voice that flattens into one, and a record only its host can vouch for. One structure answers all three.
 socialTitle: Why ChainBloom exists
 socialDescription: A feed has no ending, group work flattens, and shared records depend on whoever hosts them. Here is what a bounded world settled by Bitcoin does about that.
 updated: 2026-07-31
@@ -21,9 +21,9 @@ If you have ever finished something with other people and then could not point a
 
 ## A feed has no shape, so nothing in it becomes a whole
 
-A feed has no first page anyone remembers and no last page at all. It cannot finish. Because it cannot finish, nothing inside it finishes either. You do not re-read a feed; you scroll further away from it. Work posted into one is not part of a work — it is a sediment layer.
+A feed has no first page anyone remembers and no last page at all. It cannot finish. Because it cannot finish, nothing inside it finishes either. You do not re-read a feed; you scroll further away from it. Work posted into one is not part of a work. It is a sediment layer.
 
-Shape needs edges. A [[world]] has them from its first second. Whoever opens one fixes how many [[path|paths]] it contains, how long it stays open — anywhere from {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days — and how far any single path may travel, up to {{MAX_MAX_STEPS}} steps. Those numbers are written into the transaction that opens the world. Nobody can edit them afterwards, including the person who chose them.
+Shape needs edges. A [[world]] has them from its first second. Whoever opens one fixes how many [[path|paths]] it contains, how long it stays open (anywhere from {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days), and how far any single path may travel, up to {{MAX_MAX_STEPS}} steps. Those numbers are written into the transaction that opens the world. Nobody can edit them afterwards, including the person who chose them.
 
 That changes what people make. If you know a path has a handful of steps left and a fixed date after which it takes none, you spend them differently. You save the good idea for the end. You answer somebody instead of talking over them. Deadlines and endings are not administrative details in creative work; they are half the form. A sonnet is interesting partly because it stops.
 
@@ -38,7 +38,7 @@ Two paths can still speak to each other, in two ways:
 - An **echo** adds a new moment on your path that names an earlier moment on another path. It points at that moment. It does not touch it, move it, or claim it.
 - A **[[meeting]]** is a single moment shared by two paths at once. Both paths keep going afterwards. Neither is absorbed into the other, and the world still has the same number of paths the next morning.
 
-That is the difference worth caring about. Most collaboration tools give you agreement by erasure. This one gives you contact without erasure — you can answer somebody and leave their answer intact.
+That is the difference worth caring about. Most collaboration tools give you agreement by erasure. This one gives you contact without erasure. You can answer somebody and leave their answer intact.
 
 ## Shared records usually depend on whoever hosts them
 
@@ -46,10 +46,10 @@ The third problem is the quiet one. Ask who decides the order of a shared archiv
 
 This is why Bitcoin is here, and the reason is narrower than people expect. Not money. Not price. **Agreement about order.**
 
-Bitcoin already solves one specific thing for everyone, continuously: it settles what came first without a referee. ChainBloom borrows exactly that and nothing else. Each path is held in place by a single small output worth {{CARRIER_VALUE_SATS}} satoshis — the [[carrier]]. Adding a step to a path spends that output and creates the next one. Bitcoin refuses to let one output be spent twice, so a path cannot fork into two rival versions and no two people can both claim to have gone next. The block that confirms your step puts it at a point everybody reads the same way.
+Bitcoin already solves one specific thing for everyone, continuously: it settles what came first without a referee. ChainBloom borrows exactly that and nothing else. Each path is held in place by a single small output worth {{CARRIER_VALUE_SATS}} satoshis, the [[carrier]]. Adding a step to a path spends that output and creates the next one. Bitcoin refuses to let one output be spent twice, so a path cannot fork into two rival versions and no two people can both claim to have gone next. The block that confirms your step puts it at a point everybody reads the same way.
 
 :::note
-The practical result is replay. Anyone applying the same rules to the same blocks rebuilds the same worlds, the same paths, and the same order — no shared server, no agreed index, no trust in this site. If this documentation disappeared, the histories would not.
+The practical result is replay. Anyone applying the same rules to the same blocks rebuilds the same worlds, the same paths, and the same order. It takes no shared server, no agreed index, and no trust in this site. If this documentation disappeared, the histories would not.
 :::
 
 ## One structure, three answers
@@ -60,7 +60,7 @@ Put those together and the three problems have one shape between them:
 - **The paths stay separate**, so a group can make something plural instead of something averaged.
 - **The order is settled by Bitcoin**, so the record does not need a host to vouch for it.
 
-None of those is a feature added to the others. Remove any one and the other two stop working — an unbounded world has nothing to complete, merged paths lose the plurality, and a hosted order makes the whole record a claim rather than a fact.
+None of those is a feature added to the others. Remove any one and the other two stop working: an unbounded world has nothing to complete, merged paths lose the plurality, and a hosted order makes the whole record a claim rather than a fact.
 
 ## What is honestly not settled yet
 

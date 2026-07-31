@@ -23,7 +23,7 @@ Taking part means adding one moment to a story other people are also writing, an
 
 Three things, and no account anywhere.
 
-**An invitation.** A world id and the [[path]] you are being handed. Because the public index is not switched on yet, this comes from whoever is running the [[world]] — a message, a post, a card at an event. There is no directory to browse today.
+**An invitation.** A world id and the [[path]] you are being handed. Because the public index is not switched on yet, this comes from whoever is running the [[world]]: a message, a post, a card at an event. There is no directory to browse today.
 
 **A Bitcoin wallet you control** that can sign a [[psbt]] and hold Taproot outputs. [InScribe](app) builds the transaction unsigned and hands it to you; your keys never leave your wallet.
 
@@ -33,7 +33,7 @@ Three things, and no account anywhere.
 
 Two amounts, and nothing else. ChainBloom charges nothing and there is no subscription.
 
-The first is an ordinary Bitcoin network fee, paid to miners, set by how busy the network is when you go. The second is {{CARRIER_VALUE_SATS}} satoshis, which sits in the [[carrier]] output that holds your path. It is not spent — each step moves it into the next carrier — and it comes back to an address you choose when you finish the path.
+The first is an ordinary Bitcoin network fee, paid to miners, set by how busy the network is when you go. The second is {{CARRIER_VALUE_SATS}} satoshis, which sits in the [[carrier]] output that holds your path. It is not spent. Each step moves it into the next carrier, and it comes back to an address you choose when you finish the path.
 
 [Fees and confirmation](/docs/participate/fees-and-confirmation) has the real arithmetic.
 
@@ -42,15 +42,15 @@ The first is an ordinary Bitcoin network fee, paid to miners, set by how busy th
 :::steps
 ### Get the world id and your path
 
-From the person running the world. Check the network matches — a world on signet and a world on mainnet are different things, and a step built for the wrong one is rejected with `NETWORK_MISMATCH`.
+From the person running the world. Check the network matches. A world on signet and a world on mainnet are different things, and a step built for the wrong one is rejected with `NETWORK_MISMATCH`.
 
 ### Build the step in InScribe
 
-Choose the action and its few small numbers. A moment carries a glyph, a palette, a motion and a magnitude — that is all the chain holds.
+Choose the action and its few small numbers. A moment carries a glyph, a palette, a motion and a magnitude. That is all the chain holds.
 
 ### Read the review before you sign
 
-The build gives you an unsigned transaction and a preview — which path is being moved, every output, the total going in, the miner fee, the change, the fee rate, and any warnings. Read the fee and the change. That is the screen where mistakes are still free.
+The build gives you an unsigned transaction and a preview: which path is being moved, every output, the total going in, the miner fee, the change, the fee rate, and any warnings. Read the fee and the change. That is the screen where mistakes are still free.
 
 ### Sign, broadcast, wait for a block
 
@@ -75,7 +75,7 @@ Holding a carrier is not proof of identity, authorship, or copyright. It means y
 
 **Completing a path.** Ending it is deliberate and final; there is no reopening. The world itself ends on its own at a fixed height, and every path still live at that moment expires with it.
 
-**Spending the carrier by accident.** This is the real risk. If your wallet spends that output in an ordinary transaction — consolidating, sweeping, paying a fee with it — the path becomes [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`, and nothing is invented to replace it. The story simply stops there.
+**Spending the carrier by accident.** This is the real risk. If your wallet spends that output in an ordinary transaction (consolidating, sweeping, paying a fee with it), the path becomes [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`, and nothing is invented to replace it. The story simply stops there.
 
 :::warning
 No wallet has ChainBloom support today, so no wallet will stop you from spending a carrier by mistake. Until one does, freeze or label that output yourself. [Protect your path](/docs/participate/protect-your-path) shows how.

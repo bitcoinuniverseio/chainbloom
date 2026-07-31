@@ -664,7 +664,7 @@
     },
     {
       title: 'It is broadcast',
-      body: 'The transaction reaches the Bitcoin network and waits in the mempool. A receipt means it was sent — not that it was accepted into history.',
+      body: 'The transaction reaches the Bitcoin network and waits in the mempool. A receipt means it was sent. It does not mean it was accepted into history.',
       truth: 'Provisional',
       tone: 1,
     },
@@ -746,7 +746,7 @@
       truth.innerHTML = '';
       truth.appendChild(
         h('span', {
-          text: '● ' + stage.truth + ' — ' + TRUTH_TEXT[stage.tone],
+          text: '● ' + stage.truth + '. ' + TRUTH_TEXT[stage.tone],
           style: 'color:' + TONES[stage.tone],
         }),
       );
@@ -1626,7 +1626,7 @@
             [
               'Carried forward',
               carried === 0
-                ? 'none — this action ends a path'
+                ? 'none, this action ends a path'
                 : number(carried) +
                   ' sats in ' +
                   chosen.successors +
@@ -1636,7 +1636,7 @@
             [
               'Released back',
               reclaimed === 0
-                ? 'none — this action opens new paths'
+                ? 'none, this action opens new paths'
                 : number(reclaimed) +
                   ' sats from the ' +
                   (chosen.carriers === 1

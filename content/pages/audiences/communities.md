@@ -23,7 +23,7 @@ A community does not need another feed. It can use a thing that starts, holds se
 
 A [[world]] ends. That is the feature to build on.
 
-Pick a lifetime that matches something your group already does — a growing season, a term, six weeks of Thursdays. Anything from {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks is allowed, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days, but the good number is the one that already has a rhythm around it.
+Pick a lifetime that matches something your group already does: a growing season, a term, six weeks of Thursdays. Anything from {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks is allowed, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days, but the good number is the one that already has a rhythm around it.
 
 Then run it again. The second world is better than the first every time, because everyone now knows what a step feels like and what the ending is for. Call the first one a rehearsal out loud; it lowers the stakes and raises the turnout.
 
@@ -31,9 +31,9 @@ Announce the end date in ordinary dates, not in blocks. People plan around Satur
 
 ## Keep many voices, not one voice
 
-Most group projects flatten — one document, one loudest editor, one final version that quietly overwrote three others.
+Most group projects flatten: one document, one loudest editor, one final version that quietly overwrote three others.
 
-Here each [[path]] stays its own line for the whole life of the world. Two paths can meet and share a moment, and both carry on afterwards — nothing is merged, absorbed, or replaced. If you have watched a shared doc lose somebody's contribution, that is the difference.
+Here each [[path]] stays its own line for the whole life of the world. Two paths can meet and share a moment, and both carry on afterwards. Nothing is merged, absorbed, or replaced. If you have watched a shared doc lose somebody's contribution, that is the difference.
 
 A world holds at most {{MAX_LANES}} paths. If more people want in, run two or three worlds side by side rather than crowding one. Small worlds finish; crowded worlds stall.
 
@@ -43,11 +43,11 @@ Pair people on a path. Two named humans behind one path survives one of them get
 
 ## Moderation happens before the invitation goes out
 
-Nothing can be removed after a block confirms it. There is no delete, no hide, no edit — not by you, not by the world's creator, not by us.
+Nothing can be removed after a block confirms it. There is no delete, no hide, no edit: not by you, not by the world's creator, not by us.
 
 So your moderation decisions are the guest list and the brief, made before the creating transaction is broadcast. After that you are a host, not an administrator.
 
-Two things make this easier than it sounds. A moment carries a [[glyph]] number and a few other small numbers — there is no free text after the world's title, so the format itself limits what can be put there. And every path is handed to a named person, not claimed from a queue.
+Two things make this easier than it sounds. A moment carries a [[glyph]] number and a few other small numbers. There is no free text after the world's title, so the format itself limits what can be put there. And every path is handed to a named person, not claimed from a queue.
 
 What is left is public, permanent and outside your control:
 
@@ -61,7 +61,7 @@ Say all three in the invitation. [Moderation and privacy](/docs/programs/moderat
 
 The step limit is a limit, not a score. Whoever spends fastest runs out of path first and pays the most in fees.
 
-Leaderboards, streaks and prizes for most-steps wreck a world quickly. They reward volume in a medium whose shape depends on restraint and on an ending, they turn contributors into competitors, and they cost real money to lose at — every step carries a miner fee and {{CARRIER_VALUE_SATS}} satoshis held in its [[carrier]].
+Leaderboards, streaks and prizes for most-steps wreck a world quickly. They reward volume in a medium whose shape depends on restraint and on an ending, they turn contributors into competitors, and they cost real money to lose at. Every step carries a miner fee and {{CARRIER_VALUE_SATS}} satoshis held in its [[carrier]].
 
 Reward the ending instead. A finished path, a good meeting, a world that closed on time and got shown to people.
 

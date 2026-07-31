@@ -1,7 +1,7 @@
 ---
 title: Take part
 nav: Take part
-description: The nine pages you need before, during, and after you sign — from opening a world to completing a path, written for the moment money is involved.
+description: The nine pages you need before, during, and after you sign, from opening a world to completing a path, written for the moment money is involved.
 socialTitle: Take part in ChainBloom
 socialDescription: Create a world, join one, keep your place in it, and finish it well. Nine practical pages, no salesmanship.
 updated: 2026-07-31
@@ -23,7 +23,7 @@ This is the section where you stop reading and start doing. Every page here assu
 
 Joining a [[world]] means signing one Bitcoin transaction. There is nothing to buy, no account to open, and no subscription.
 
-You pay two things and no more. A network fee to miners, the same as any other Bitcoin transaction. And {{CARRIER_VALUE_SATS}} satoshis held inside each [[path]] output for as long as that path is alive — carried from step to step, released back to you when the path is completed.
+You pay two things and no more. A network fee to miners, the same as any other Bitcoin transaction. And {{CARRIER_VALUE_SATS}} satoshis held inside each [[path]] output for as long as that path is alive, carried from step to step and released back to you when the path is completed.
 
 Everything else is craft. Choosing the shape of a world. Writing an invitation people want to answer. Deciding what your one moment adds. Knowing when to stop.
 

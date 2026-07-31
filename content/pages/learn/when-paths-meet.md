@@ -1,7 +1,7 @@
 ---
 title: How two paths meet without losing themselves
 nav: When paths meet
-description: A meeting lets two people share one moment in one transaction while both paths carry on unchanged — nothing is merged, swapped or handed over.
+description: A meeting lets two people share one moment in one transaction while both paths carry on unchanged: nothing is merged, swapped or handed over.
 socialTitle: How two paths meet in ChainBloom
 socialDescription: The emotional answer and the mechanical one. One transaction, two signatures, two paths that both continue.
 updated: 2026-07-31
@@ -37,7 +37,7 @@ One transaction. Here is the shape of it, exactly as [`src/validator.ts`](repo:s
 
 **Ordered by lane id.** The two carriers must be sorted lexicographically by lane id, which is written `<worldId>:<laneNumber>`. Get the order wrong and validation returns `RENDEZVOUS_LANE_ORDER`. You are unlikely to hit this by hand: `buildRendezvousPsbt` sorts the two participants for you before it builds anything.
 
-**Three outputs that matter.** Output 0 is the marker, value zero, holding the operation and its numbers: bridge style 0-{{MAX_BRIDGE_STYLE}}, intensity 0-255, glyph 0-{{MAX_GLYPH}}, palette 0-{{MAX_PALETTE}}. Output 1 is the successor carrier for the path that came in at input 0. Output 2 is the successor carrier for the path that came in at input 1. Each successor is exactly {{CARRIER_VALUE_SATS}} satoshis and a Taproot output — the same {{P2TR_SCRIPT_BYTES}}-byte script shape the paths already used.
+**Three outputs that matter.** Output 0 is the marker, value zero, holding the operation and its numbers: bridge style 0-{{MAX_BRIDGE_STYLE}}, intensity 0-255, glyph 0-{{MAX_GLYPH}}, palette 0-{{MAX_PALETTE}}. Output 1 is the successor carrier for the path that came in at input 0. Output 2 is the successor carrier for the path that came in at input 1. Each successor is exactly {{CARRIER_VALUE_SATS}} satoshis and a Taproot output, the same {{P2TR_SCRIPT_BYTES}}-byte script shape the paths already used.
 
 **Two signatures.** Each person signs for their own carrier. Nobody can sign for the other. Until both signatures are present the transaction is not valid and cannot confirm; a missing one shows up as `MISSING_WITNESS` or `MISSING_TAPROOT_SIGNATURE`.
 
@@ -53,7 +53,7 @@ Three conditions, and they are all checkable before anyone signs.
 
 **Both paths must be live.** A path that has been closed, expired, or abandoned has no carrier left to spend. There is nothing to bring to the meeting.
 
-**Each path must still be allowed to move.** Every carrier is checked against its own [[world]]. If that world is no longer active, or the current block height has reached its end height, the step fails with `WORLD_ENDED`. If the path has already used all of the steps its world allows — up to {{MAX_MAX_STEPS}} — it fails with `MAX_STEPS_REACHED`. And each path's previous event must already be confirmed in an earlier block, or the step fails with `UNCONFIRMED_LINEAGE_PARENT`. Two people cannot meet on a path that moved a moment ago; the parent step has to settle first.
+**Each path must still be allowed to move.** Every carrier is checked against its own [[world]]. If that world is no longer active, or the current block height has reached its end height, the step fails with `WORLD_ENDED`. If the path has already used all of the steps its world allows (up to {{MAX_MAX_STEPS}}), it fails with `MAX_STEPS_REACHED`. And each path's previous event must already be confirmed in an earlier block, or the step fails with `UNCONFIRMED_LINEAGE_PARENT`. Two people cannot meet on a path that moved a moment ago; the parent step has to settle first.
 
 **Two people have to coordinate.** This is the real cost of a meeting, and no protocol can remove it. One side builds the unsigned [[psbt]], both sides read it, both sides sign, and one of them broadcasts. You are agreeing on a shared moment, so you have to actually agree.
 
@@ -81,6 +81,6 @@ It makes meetings **rare and deliberate**. Because both people must sign, a meet
 
 It makes them **legible years later**. The shared numbers are in both histories at the same block height. Anyone replaying the chain reconstructs the same meeting, in the same place, without asking this site or any other for permission.
 
-It makes them **a good structure to design around**. A festival world where the stages meet on the closing night, a class where two students meet when their projects converge, a composition where two voices meet at a chord — these are the same move each time, and it means the same thing each time.
+It makes them **a good structure to design around**. A festival world where the stages meet on the closing night, a class where two students meet when their projects converge, a composition where two voices meet at a chord: these are the same move each time, and it means the same thing each time.
 
 For a longer worked version, read [a musical composition](/docs/examples/musical-composition), where every meeting is a chord and the paths are voices that keep singing afterwards.

@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-Creating a world is mostly writing, not spending. You design a shape — how wide, how long, how far — then ask people to fill it. This page covers the decisions that lock the moment you broadcast, and the ones you can keep improving.
+Creating a world is mostly writing, not spending. You design a shape (how wide, how long, how far), then ask people to fill it. This page covers the decisions that lock the moment you broadcast, and the ones you can keep improving.
 :::
 
 ## The choices you can never change
@@ -30,7 +30,7 @@ A [[world]] is created by one transaction, and what it says is what the world is
 | Steps allowed per path | {{MIN_MAX_STEPS}} to {{MAX_MAX_STEPS}} |
 | Title | up to {{MAX_TITLE_BYTES}} plain ASCII characters |
 
-The title accepts letters, digits, spaces and the characters `. _ : -`. Nothing else, and no second chance — this is a name, not a description.
+The title accepts letters, digits, spaces and the characters `. _ : -`. Nothing else, and no second chance. This is a name, not a description.
 
 A {{SEED_BYTES}}-byte [[seed]] goes in too. It changes nothing about what is allowed; it only feeds how galleries place things when they draw the world.
 
@@ -38,7 +38,7 @@ The lifetime counts from the [[block height]] your creation confirms in. When th
 
 ## Writing an invitation people answer
 
-The chain holds {{MAX_TITLE_BYTES}} characters of title and a few very small numbers. Everything that makes people want to join — the prompt, the rhythm, the reason — lives outside it. Write that first, before you spend anything.
+The chain holds {{MAX_TITLE_BYTES}} characters of title and a few very small numbers. Everything that makes people want to join (the prompt, the rhythm, the reason) lives outside it. Write that first, before you spend anything.
 
 A good invitation says four things plainly:
 
@@ -53,14 +53,14 @@ Fewer paths, more steps usually makes a better first world. {{MAX_LANES}} paths 
 
 ## Looking after the people who answer
 
-You are not an administrator here. You cannot remove a step, edit a moment, or take a path back — once a block confirms it, it is part of the world for good. Your influence is all front-loaded, so the guest list and the brief are the moderation. [Moderation and privacy](/docs/programs/moderation-and-privacy) covers that in full.
+You are not an administrator here. You cannot remove a step, edit a moment, or take a path back. Once a block confirms it, it is part of the world for good. Your influence is all front-loaded, so the guest list and the brief are the moderation. [Moderation and privacy](/docs/programs/moderation-and-privacy) covers that in full.
 
 What is left is the ordinary hosting work:
 
-- **Publish the world id and the path list** somewhere permanent. Paths are numbered from 0, and a path id reads `<worldId>:<laneNumber>`. Without that list, nobody can find their own thread — there is no public index to look them up in yet.
+- **Publish the world id and the path list** somewhere permanent. Paths are numbered from 0, and a path id reads `<worldId>:<laneNumber>`. Without that list, nobody can find their own thread. There is no public index to look them up in yet.
 - **Warn people about the carrier.** No wallet protects it today. If someone sweeps it by accident their path is abandoned and stays that way.
 - **Plan for silence.** Someone will go quiet. Decide in advance whether that path is left open as part of the record or completed by its holder, and say so at the start.
-- **Help people [[meeting|meet]].** When two paths meet, one transaction spends both carriers, so both holders sign the same transaction. That takes coordination — a time, a channel, a person who nudges.
+- **Help people [[meeting|meet]].** When two paths meet, one transaction spends both carriers, so both holders sign the same transaction. That takes coordination: a time, a channel, a person who nudges.
 
 ## Four steps to opening a world
 

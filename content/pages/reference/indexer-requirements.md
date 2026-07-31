@@ -15,7 +15,7 @@ cta:
 ---
 
 :::lead
-An [[indexer]] built to these rules is interchangeable with every other one. Two operators who have never spoken publish the same worlds, the same paths, the same endings — and any reader can settle a disagreement by replaying the chain instead of trusting either of you.
+An [[indexer]] built to these rules is interchangeable with every other one. Two operators who have never spoken publish the same worlds, the same paths, the same endings. Any reader can settle a disagreement by replaying the chain instead of trusting either of you.
 :::
 
 ## What "the same history" has to mean
@@ -36,7 +36,7 @@ This is also why the validator rejects a step whose parent is not yet buried. A 
 
 ### Treat the mempool as provisional
 
-Unconfirmed data is still worth showing — it is how a person knows their action was accepted by the network — but it must live in a separate layer that can be thrown away.
+Unconfirmed data is still worth showing (it is how a person knows their action was accepted by the network), but it must live in a separate layer that can be thrown away.
 
 `ChainBloomState.preview()` runs the full validator against a transaction at the next height without changing anything. `MempoolOverlay.project()` adds conflict tracking: `conflictsWith` lists the other transactions spending the same [[outpoint]], which is what a fee bump looks like from outside. The overlay never creates lineage parents, so a chain of two unconfirmed steps cannot fabricate a path that does not exist yet.
 
@@ -64,13 +64,13 @@ Rolling back state is not the same as telling people. Anyone who saw an event be
 
 This is the rule most likely to be got wrong, and the one that matters most.
 
-A live path output is an ordinary Bitcoin output worth {{CARRIER_VALUE_SATS_RAW}} satoshis. Anyone holding the key can spend it into anything at all — a wallet sweep, a consolidation, a coin-control mistake. When a confirmed transaction spends a live carrier and is not a valid ChainBloom event, the engine does one thing and only one thing:
+A live path output is an ordinary Bitcoin output worth {{CARRIER_VALUE_SATS_RAW}} satoshis. Anyone holding the key can spend it into anything at all: a wallet sweep, a consolidation, a coin-control mistake. When a confirmed transaction spends a live carrier and is not a valid ChainBloom event, the engine does one thing and only one thing:
 
 - every path that transaction spent becomes `ABANDONED`
 - its `terminalReason` becomes `INVALID_CONFIRMED_SPEND`
 - the spend is recorded in `invalidCarrierSpends` with its `txid`, `height`, `blockHash`, `laneIds`, and the `issueCodes` the validator produced
 
-Nothing is invented to replace it. No substitute output is adopted, no successor is guessed, no "they probably meant this" heuristic runs. The path stops, the reason is on the record, and the world's status is recalculated — a world with no live paths left becomes `ENDED`.
+Nothing is invented to replace it. No substitute output is adopted, no successor is guessed, no "they probably meant this" heuristic runs. The path stops, the reason is on the record, and the world's status is recalculated. A world with no live paths left becomes `ENDED`.
 
 An index that repairs these spends is not being helpful. It is publishing a history the chain does not contain.
 
@@ -105,7 +105,7 @@ Write the tip height and hash in the same transaction as the state it produced. 
 
 ### Leadership
 
-Two processes ingesting the same chain into the same store will interleave and corrupt it. Exactly one writer at a time — a lease, a lock, an elected leader, whatever your stack gives you — and readers that serve from the store without writing.
+Two processes ingesting the same chain into the same store will interleave and corrupt it. Exactly one writer at a time (a lease, a lock, an elected leader, whatever your stack gives you), and readers that serve from the store without writing.
 
 ### An API
 

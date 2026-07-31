@@ -20,7 +20,7 @@ A wallet that gets three things right makes ChainBloom safe to use: it never spe
 
 ## What is actually at stake
 
-A live path is held by one Bitcoin output worth {{CARRIER_VALUE_SATS_RAW}} satoshis. There is no lock on it, no covenant, no special script — it is a plain [[taproot]] output that the owner's key can spend into anything.
+A live path is held by one Bitcoin output worth {{CARRIER_VALUE_SATS_RAW}} satoshis. There is no lock on it, no covenant, no special script. It is a plain [[taproot]] output that the owner's key can spend into anything.
 
 So when a wallet sweeps dust, consolidates, or picks the smallest input to fund a coffee payment, it can end a piece of a shared history without anyone intending it. The chain will confirm that spend, and every index following the rules will do the only correct thing: mark the path `ABANDONED` with the terminal reason `INVALID_CONFIRMED_SPEND`, record the offending txid, and invent nothing to replace it. There is no repair, no support ticket, no rollback.
 
@@ -32,7 +32,7 @@ That single failure mode is why the priority order below is what it is.
 
 An output is a live [[carrier]] when **both** of these hold:
 
-1. It pays exactly {{CARRIER_VALUE_SATS_RAW}} satoshis to a P2TR script — {{P2TR_SCRIPT_BYTES}} bytes beginning `0x51 0x20`.
+1. It pays exactly {{CARRIER_VALUE_SATS_RAW}} satoshis to a P2TR script: {{P2TR_SCRIPT_BYTES}} bytes beginning `0x51 0x20`.
 2. A ChainBloom index, asked about that outpoint, reports it as the current output of a live path.
 
 The first condition alone is not a rule, it is a coincidence. Plenty of ordinary {{CARRIER_VALUE_SATS_RAW}}-satoshi Taproot outputs exist and belong to nobody's world. Treating them all as protected would freeze funds users are entitled to spend.
@@ -53,7 +53,7 @@ There is no public ChainBloom index switched on today, so a wallet building this
 
 ### What "keep it out of coin selection" means
 
-- Exclude recognised carriers from automatic input selection, always — including dust consolidation, fee bumping of unrelated transactions, and "send max".
+- Exclude recognised carriers from automatic input selection, always. That includes dust consolidation, fee bumping of unrelated transactions, and "send max".
 - Show them in a separate place in the interface, with the world and path they belong to, not as an unexplained locked balance.
 - Let the user spend one deliberately, after an explicit warning that names the consequence: the path ends as `ABANDONED` and cannot be continued by anyone.
 - Never auto-select one to pay a fee. That is the most likely way this goes wrong in practice.
@@ -84,15 +84,15 @@ The InScribe build endpoint already returns this material: an unsigned PSBT toge
 
 The moment a transaction is accepted by a node, nothing has happened yet.
 
-It sits in the [[mempool]] with no height and no fixed position. It can be replaced — every ChainBloom input carries sequence {{RBF_SEQUENCE_HEX}}, which marks it replaceable on purpose. It can be dropped. It can be reorganized out after it appears in a block.
+It sits in the [[mempool]] with no height and no fixed position. It can be replaced: every ChainBloom input carries sequence {{RBF_SEQUENCE_HEX}}, which marks it replaceable on purpose. It can be dropped. It can be reorganized out after it appears in a block.
 
 The protocol itself takes this seriously enough to enforce it: the next step on a path is rejected with `UNCONFIRMED_LINEAGE_PARENT` unless the parent event is already confirmed in an **earlier** block. A wallet that reports "done" the instant it broadcasts has told the user they can take the next step, which they cannot.
 
 Show three visibly different states, and never let the first two borrow the language of the third:
 
-- **Signed** — bytes exist, nobody has seen them.
-- **Broadcast** — accepted by a node, provisional, replaceable.
-- **Confirmed at height N** — in a block, and now part of the history.
+- **Signed.** The bytes exist and nobody has seen them.
+- **Broadcast.** Accepted by a node, provisional, replaceable.
+- **Confirmed at height N.** In a block, and now part of the history.
 
 ## Signing rules
 
@@ -103,7 +103,7 @@ Sign what you are given. The shape is load-bearing, and a helpful wallet that "t
 - **Sighash on Taproot inputs.** `SIGHASH_DEFAULT` or `SIGHASH_ALL`, nothing else. Anything else is `UNSAFE_SIGHASH`, because any other flag would let somebody else change the outputs you just approved.
 - **Sighash elsewhere.** P2WPKH and P2WSH signatures must use `SIGHASH_ALL`.
 - **Fee inputs.** They must spend native SegWit outputs. A legacy or wrapped input gives `NON_NATIVE_SEGWIT_FEE_INPUT`.
-- **Do not reorder inputs.** Carriers sit at fixed positions — vin 0, or vin 0 and vin 1 for a `RENDEZVOUS` in lexicographic lane order. Reordering gives `CARRIER_INPUT_MAPPING` or `RENDEZVOUS_LANE_ORDER`.
+- **Do not reorder inputs.** Carriers sit at fixed positions: vin 0, or vin 0 and vin 1 for a `RENDEZVOUS` in lexicographic lane order. Reordering gives `CARRIER_INPUT_MAPPING` or `RENDEZVOUS_LANE_ORDER`.
 - **Do not add, remove, or reorder outputs.** The marker is vout 0 and successors follow it. Inserting your own output shifts them and gives `MARKER_POSITION` or `MISSING_CARRIER_OUTPUT`.
 - **Do not finalize a half-signed `RENDEZVOUS`.** Two people sign one PSBT. Pass it on with your input signed and the other input untouched.
 
@@ -111,7 +111,7 @@ You can check all of this before you show the prompt: run `validateProtocolTrans
 
 ## Nothing released does this yet
 
-No wallet on the market recognises ChainBloom path outputs today, and that includes Universe Wallet, which has no ChainBloom code in it at all. Everything above is written for wallet authors, as the behaviour to build — not as behaviour a user can rely on now.
+No wallet on the market recognises ChainBloom path outputs today, and that includes Universe Wallet, which has no ChainBloom code in it at all. Everything above is written for wallet authors, as the behaviour to build. It is not behaviour a user can rely on now.
 
 Until a wallet ships it, the safest habit for a person taking part is to keep path outputs in a wallet or account they do not use for ordinary spending.
 

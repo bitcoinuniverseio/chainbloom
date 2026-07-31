@@ -23,7 +23,7 @@ You need no wallet, no account, and no bitcoin to finish this page. In about nin
 
 A group of people agree to grow one story together, in a space that has an ending.
 
-Someone opens a [[world]]. Opening it fixes three things forever — how many [[path|paths]] it holds (between {{MIN_LANES}} and {{MAX_LANES}}), how long it stays open (between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} Bitcoin blocks, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days), and how many steps any one path may take (up to {{MAX_MAX_STEPS}}).
+Someone opens a [[world]]. Opening it fixes three things forever: how many [[path|paths]] it holds (between {{MIN_LANES}} and {{MAX_LANES}}), how long it stays open (between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} Bitcoin blocks, roughly {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days), and how many steps any one path may take (up to {{MAX_MAX_STEPS}}).
 
 Then people take those paths forward. Each [[step]] is one small Bitcoin transaction. A path can add a moment, answer an earlier moment, meet another path so that both carry on, or end on purpose.
 
@@ -35,7 +35,7 @@ One thing, then stop.
 
 [Watch a world grow](/docs/start/watch-a-world-grow) takes about two minutes. Three paths open, moments appear on them, one path answers another, two paths meet, one path ends. You will understand more from watching that once than from three pages of description, because the shape is the idea.
 
-If you still want more after it, read one worked example — [a collaborative garden](/docs/examples/collaborative-garden) is the gentlest. It shows an invitation, the paths people took, the moment they met, and how it finished.
+If you still want more after it, read one worked example. The gentlest is [a collaborative garden](/docs/examples/collaborative-garden). It shows an invitation, the paths people took, the moment they met, and how it finished.
 
 Ignore the reference section entirely. It is written for people building software and it will make this sound harder than it is.
 
@@ -49,7 +49,7 @@ Two honest things before you decide.
 
 **There is nothing live to browse today.** The public [[indexer]] that would let anyone look at confirmed worlds is not switched on. So you cannot go and find a world that strangers are filling in right now. [What is running](/docs/help/status) says precisely what does and does not work.
 
-**Taking part costs real money.** Not much, but real — a Bitcoin network fee paid to miners, plus {{CARRIER_VALUE_SATS}} satoshis held in the output that carries your path while it is alive. That amount is released back to you when you finish the path. Reading costs nothing and always will.
+**Taking part costs real money.** Not much, but real: a Bitcoin network fee paid to miners, plus {{CARRIER_VALUE_SATS}} satoshis held in the output that carries your path while it is alive. That amount is released back to you when you finish the path. Reading costs nothing and always will.
 
 :::note
 A confirmed step cannot be edited or removed by anyone, including the person who created the world and including us. That is the point of the design, and it is also the main reason to think before your first one.

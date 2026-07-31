@@ -1,7 +1,7 @@
 ---
 title: Running a world as an exhibition
 nav: Exhibitions
-description: The floor-level detail of putting a ChainBloom world in a gallery — the staffed station, the wall text, visitors with no wallet, fees on an institutional budget, and what survives after closing night.
+description: The floor-level detail of putting a ChainBloom world in a gallery: the staffed station, the wall text, visitors with no wallet, fees on an institutional budget, and what survives closing night.
 socialTitle: Running a ChainBloom world as an exhibition
 socialDescription: Station, wall text, throughput, fees, dates versus block heights, and the archive you keep afterwards.
 updated: 2026-07-31
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-An exhibition is the easiest home for a ChainBloom world, because a show already has an opening, a closing and a shape. This page is the practical half — the desk, the sign, the queue, the money, and the box of information you keep when the walls come down.
+An exhibition is the easiest home for a ChainBloom world, because a show already has an opening, a closing and a shape. This page is the practical half: the desk, the sign, the queue, the money, and the box of information you keep when the walls come down.
 :::
 
 ## The station
@@ -27,7 +27,7 @@ A visitor at the station is going to sign a real Bitcoin transaction, and the mo
 
 What the station holds:
 
-- A screen running the ChainBloom workspace inside [InScribe](app). It has four surfaces — Explore for confirmed [[world|worlds]], Lanes for the live [[path|paths]] held by the connected address, Act to build a plan and review, sign and broadcast it, and Learn.
+- A screen running the ChainBloom workspace inside [InScribe](app). It has four surfaces: Explore for confirmed [[world|worlds]], Lanes for the live [[path|paths]] held by the connected address, Act to build a plan and review, sign and broadcast it, and Learn.
 - A dedicated wallet holding only the coins for this programme. Never the institution's general wallet. A wallet that does not know about ChainBloom can spend a [[carrier]] output as ordinary change, and if that spend confirms, the path becomes abandoned with the reason `INVALID_CONFIRMED_SPEND`. Nothing replaces it. Keeping programme coins apart is the cheapest insurance you will buy.
 - A printed one-page briefing for staff, including the sentence about irreversibility and what to say when a transaction is slow.
 - A second screen or a print showing the world so far, so people waiting can see what they are joining.
@@ -47,7 +47,7 @@ The person at the front of the queue does not have to wait for confirmation befo
 Wall text is where institutions get careless, because the honest sentences are less exciting than the dishonest ones. Five things belong on the wall, in plain words.
 
 1. **What the world is.** The invitation, in one paragraph. How many paths, how long it stays open, what a step is asked to mean.
-2. **What taking part costs.** A network fee paid to Bitcoin miners, plus {{CARRIER_VALUE_SATS}} satoshis held in the path while it is alive and released when the path is completed. Say who pays it — the visitor or the venue.
+2. **What taking part costs.** A network fee paid to Bitcoin miners, plus {{CARRIER_VALUE_SATS}} satoshis held in the path while it is alive and released when the path is completed. Say who pays it: the visitor or the venue.
 3. **That it cannot be undone.** Once a step is confirmed in a block, no one can remove it, edit it or reorder it. Not the visitor, not the artist, not the museum.
 4. **That there is nothing to own.** No token, no edition, no certificate, nothing to sell later. If your marketing department writes otherwise, this is the sentence that has to win.
 5. **Where to read more.** A short URL to your own programme page, and from there to [what is running](/docs/help/status), so nobody is misled about what can be browsed today.
@@ -62,9 +62,9 @@ The public index is not switched on, so a wall panel cannot promise "browse ever
 
 Most of your audience will not have one, and it is a mistake to build the programme around the few who do. Offer three tiers and let people choose without embarrassment.
 
-**Watch.** The world on a screen, with the ordered history beside it. No wallet, no cost, no account. This is the default experience and it should be good on its own — see [accessibility](/docs/programs/accessibility) for the plain ordered list that makes it work for everyone.
+**Watch.** The world on a screen, with the ordered history beside it. No wallet, no cost, no account. This is the default experience and it should be good on its own. See [accessibility](/docs/programs/accessibility) for the plain ordered list that makes it work for everyone.
 
-**Contribute through the host.** The visitor chooses what the step should be, and the station signs from the programme wallet. This is the tier most people will use. It is honest as long as the wall text says the venue holds the keys — the record shows the venue's address, and the visitor's authorship lives in your own documentation, not on the chain.
+**Contribute through the host.** The visitor chooses what the step should be, and the station signs from the programme wallet. This is the tier most people will use. It is honest as long as the wall text says the venue holds the keys: the record shows the venue's address, and the visitor's authorship lives in your own documentation, not on the chain.
 
 **Contribute themselves.** The visitor connects their own wallet and signs. Reserve this for people who arrive wanting it. Do not spend twenty minutes of a queue installing a wallet for someone who came to see a show.
 
@@ -93,7 +93,7 @@ When the world is created, the creator picks a duration in blocks, between {{MIN
 
 Blocks are not a calendar. A run of slow blocks pushes the real end date later; a run of fast ones pulls it earlier. So:
 
-- Convert your closing date to blocks using about {{MIN_DURATION_BLOCKS}} blocks a day, then add real margin — days, not hours.
+- Convert your closing date to blocks using about {{MIN_DURATION_BLOCKS}} blocks a day, then add real margin measured in days, not hours.
 - Create the world well before the private view, not on the morning of it. The world does not exist until the creating transaction confirms, and every path's first step must come in a strictly later block.
 - End the show deliberately. On the last night, complete each path on purpose. A completed path records a terminal reason of `CLOSE_<reason>`, and the world becomes ended once no live paths remain. A path left running until the duration elapses expires with the reason `WORLD_DURATION_ELAPSED`, which reads on the record as an exhibition that stopped rather than finished.
 
@@ -108,10 +108,10 @@ The work does not need your website to survive, but it does need you to write do
 - The **world id**, which is the transaction id of the creating transaction.
 - The **network** it was made on.
 - The **[[seed]]**, {{SEED_BYTES}} bytes, which any renderer needs to reproduce the same visual arrangement.
-- The **event list** — each contribution's transaction id and the block height it confirmed in.
+- The **event list**, which is each contribution's transaction id and the block height it confirmed in.
 
 With those, anyone can rebuild the world from the chain, in the same order, without you. An independent replay sorts worlds and paths by id and events by height and then by position within the block, which is exactly why two people replaying separately get the same result.
 
-What you cannot archive is the look. Rendering is deliberately outside the rules — see [`src/render.ts`](repo:src/render.ts) — so a gallery in ten years may draw your world in a way you would not recognise, and it will not be wrong. If the specific appearance matters to the work, archive your renderer's source and a high-resolution capture alongside the four items above, and label the capture as one interpretation rather than as the record.
+What you cannot archive is the look. Rendering is deliberately outside the rules (see [`src/render.ts`](repo:src/render.ts)), so a gallery in ten years may draw your world in a way you would not recognise, and it will not be wrong. If the specific appearance matters to the work, archive your renderer's source and a high-resolution capture alongside the four items above, and label the capture as one interpretation rather than as the record.
 
 The carriers are the loose end. Any path you did not complete still holds {{CARRIER_VALUE_SATS}} satoshis on an address somebody has to keep the keys to. Decide before deinstall who that somebody is, and put it in the same document as the world id.

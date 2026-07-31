@@ -1,7 +1,7 @@
 ---
 title: Wallet and explorer integrators
 nav: Wallets and explorers
-description: Two behaviours decide whether ChainBloom is safe inside your product — never spend a live path output in an ordinary payment, and never show a preview as if it were confirmed.
+description: Two behaviours decide whether ChainBloom is safe inside your product: never spend a live path output in an ordinary payment, and never show a preview as if it were confirmed.
 updated: 2026-07-31
 order: 10
 keywords: [wallet, explorer, coin selection, freeze utxo, unconfirmed, preview, sighash]
@@ -19,7 +19,7 @@ No wallet and no explorer supports ChainBloom today. That is an opening rather t
 
 ## Job one: never spend a live path output by accident
 
-A live path is held by one [[carrier]] output — exactly {{CARRIER_VALUE_SATS}} satoshis, Taproot, a {{P2TR_SCRIPT_BYTES}}-byte script. To ordinary coin selection it looks like a small [[utxo]] worth sweeping up. It is not.
+A live path is held by one [[carrier]] output: exactly {{CARRIER_VALUE_SATS}} satoshis, Taproot, a {{P2TR_SCRIPT_BYTES}}-byte script. To ordinary coin selection it looks like a small [[utxo]] worth sweeping up. It is not.
 
 If a normal payment spends it, the transaction is valid Bitcoin and confirms as usual, but the path is marked [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`. Nothing is invented to replace it. Somebody's thread through a shared history stops there permanently, and they will not find out until they look.
 
@@ -37,7 +37,7 @@ This is the one failure that cannot be repaired later. Everything else in an int
 
 ## Job two: never show a preview as if it were confirmed
 
-An unconfirmed ChainBloom transaction is a proposal, not an event. The package models this honestly: `MempoolOverlay` projects unconfirmed transactions on top of confirmed state, it never creates lineage parents, and it exposes `conflictsWith` — the transactions spending the same outpoint.
+An unconfirmed ChainBloom transaction is a proposal, not an event. The package models this honestly: `MempoolOverlay` projects unconfirmed transactions on top of confirmed state, it never creates lineage parents, and it exposes `conflictsWith`, the transactions spending the same outpoint.
 
 What that means for an interface:
 
@@ -46,7 +46,7 @@ What that means for an interface:
 - Never present a rendering or a screenshot as evidence that something happened. The record is the confirmed transaction.
 - Do not offer to chain two steps on one path inside a single block. A step whose parent is not already confirmed in an earlier block is rejected with `UNCONFIRMED_LINEAGE_PARENT`. Queue it and explain why.
 
-For an explorer the same rule takes a different shape: a world page must make obvious which part of what it shows is settled and which part is a guess about the next block. Rendering sits outside the rules by design, so two explorers can draw the same world differently and both be correct — say which renderer produced the picture.
+For an explorer the same rule takes a different shape: a world page must make obvious which part of what it shows is settled and which part is a guess about the next block. Rendering sits outside the rules by design, so two explorers can draw the same world differently and both be correct. Say which renderer produced the picture.
 
 ## What the first integration decides
 
@@ -66,4 +66,4 @@ If you build one, write the choices down. These reference pages will link real i
 - `validateProtocolTransaction` runs against the finished transaction before broadcast
 :::
 
-Next: [Explorer integration](/docs/reference/integration-explorers) covers the read side — timelines, world pages, and what to do when history moves underneath you.
+Next: [Explorer integration](/docs/reference/integration-explorers) covers the read side. That means timelines, world pages, and what to do when history moves underneath you.

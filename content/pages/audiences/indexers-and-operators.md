@@ -1,7 +1,7 @@
 ---
 title: Indexers and operators
 nav: Indexers and operators
-description: What it takes to serve the same ChainBloom history as everyone else — a Bitcoin node, deterministic replay, rollback on reorganization, and failing closed on an invalid spend.
+description: What it takes to serve the same ChainBloom history as everyone else: a Bitcoin node, deterministic replay, rollback on reorganization, and failing closed on an invalid spend.
 updated: 2026-07-31
 order: 11
 keywords: [indexer, bitcoin node, replay, reorg, rollback, operations, monitoring]
@@ -27,7 +27,7 @@ Two implementations reading the same chain therefore produce identical output. A
 
 - **A Bitcoin node you trust.** You need block order and you need previous outputs, because validation depends on the value and script of the output every input spends. A node without that history is not enough.
 - **Confirmed ingest, and optionally mempool.** Confirmed state is the product. A mempool view is a convenience and must be labelled as one everywhere it appears.
-- **Contiguous application.** `applyBlock` requires the block to extend the current tip — height plus one, with a matching previous hash — and throws `NON_CONTIGUOUS_BLOCK` otherwise. If anything fails part way through a block, the state restores the snapshot taken before that block. Never half-apply.
+- **Contiguous application.** `applyBlock` requires the block to extend the current tip (height plus one, with a matching previous hash) and throws `NON_CONTIGUOUS_BLOCK` otherwise. If anything fails part way through a block, the state restores the snapshot taken before that block. Never half-apply.
 - **Somewhere to put it.** The reference implementation uses Bitcoin Core JSON-RPC with ZMQ for notifications, MySQL 8.4 for storage, REST with an OpenAPI description, Socket.IO for live updates, and repair, reindex, and verify commands. None of those choices are required by the protocol.
 - **One writer.** The reference implementation elects a single ingest leader using leases. Two processes writing one index is how histories diverge.
 
@@ -43,7 +43,7 @@ The hard rule. When a confirmed transaction spends a live carrier and is not a v
 
 Do not be helpful here. Do not guess which action was meant, do not reconstruct a plausible successor, and do not skip the spend because it looks like an accident. It probably was an accident. Recording it exactly is the whole job.
 
-The same applies upstream. A marker carrying a reserved network or a reserved [[opcode]] is not a ChainBloom event and must not be stored as an unknown one — the codec throws `RESERVED_NETWORK` and `RESERVED_OPCODE` for exactly this reason.
+The same applies upstream. A marker carrying a reserved network or a reserved [[opcode]] is not a ChainBloom event and must not be stored as an unknown one. The codec throws `RESERVED_NETWORK` and `RESERVED_OPCODE` for exactly this reason.
 
 :::note
 The hosted index is not switched on today. `GET https://inscribe.bitcoinuniverse.io/api/chainbloom/status` returns HTTP 503 because no indexer URL is configured. If you run one, you are not duplicating a working service. [What is running](/docs/help/status) is kept current.

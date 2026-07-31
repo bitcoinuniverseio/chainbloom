@@ -24,7 +24,7 @@ ChainBloom is a way for a group of people to grow **one story together** and lea
 
 Someone opens a [[world]]: a bounded space with a small number of [[path|paths]], a fixed lifetime, and a limit on how many steps each path may take. Other people take those paths forward, one moment at a time. Paths can answer each other. Two paths can meet and both carry on. A path can be ended on purpose, and the ending is part of the work.
 
-When the world closes, what remains is a history — with an order, a shape, and a list of the people whose choices made it.
+When the world closes, what remains is a history with an order, a shape, and a list of the people whose choices made it.
 
 ## Why it is different
 
@@ -32,7 +32,7 @@ Three things, and they are all about *shape*.
 
 **It has an ending.** A feed never finishes, so nothing in it ever becomes a whole. A ChainBloom world is finite from the first second: everyone can see how long it stays open and how far it can go. Knowing the ending changes how people contribute.
 
-**It keeps the threads apart.** Most group projects flatten into one pile where a single voice wins. Here, each path stays its own line. When two paths meet, they *share a moment* — they are not merged, swapped, or absorbed. Collaboration without erasure is the whole point.
+**It keeps the threads apart.** Most group projects flatten into one pile where a single voice wins. Here, each path stays its own line. When two paths meet, they *share a moment*. They are not merged, swapped, or absorbed. Collaboration without erasure is the whole point.
 
 **Nobody hosts the truth.** The order of events is settled by Bitcoin, not by a website. Anyone following the same rules rebuilds the same world. If this site vanished tomorrow, the histories would not.
 
@@ -40,7 +40,7 @@ Three things, and they are all about *shape*.
 
 Not for money. For **agreement about order**.
 
-The hard part of any shared creative record is not storing it — it is getting everyone to agree on what came first, without a referee. Bitcoin already does exactly that, for everyone, continuously.
+The hard part of any shared creative record is not storing it. It is getting everyone to agree on what came first, without a referee. Bitcoin already does exactly that, for everyone, continuously.
 
 So ChainBloom borrows it. Each path is held in place by one small Bitcoin output. Adding to a path spends that output and creates the next one. Bitcoin will not let the same output be spent twice, so a path can only be one chain. Once a block confirms your step, everybody's reading of the story places it at the same point.
 
@@ -74,7 +74,7 @@ A Bitcoin network fee for each contribution, paid to miners, plus {{CARRIER_VALU
 
 ## Why now is an interesting time
 
-ChainBloom is early, and this page will not pretend otherwise. The protocol is written, tested against published [test vectors](/docs/reference/test-vectors), and the creation flow runs inside [InScribe](app). The public index that lets anyone browse confirmed worlds is not switched on yet — [what is running](/docs/help/status) says exactly where things stand.
+ChainBloom is early, and this page will not pretend otherwise. The protocol is written, tested against published [test vectors](/docs/reference/test-vectors), and the creation flow runs inside [InScribe](app). The public index that lets anyone browse confirmed worlds is not switched on yet. See [what is running](/docs/help/status) for exactly where things stand.
 
 What that means in practice: the conventions of this medium are not settled. Nobody has decided yet what a good world looks like, how long it should stay open, how a meeting should feel, or what an ending should mean. Those answers will come from the first worlds people actually make.
 
@@ -84,7 +84,7 @@ The most useful thing you can do right now is not to wait. It is to design a wor
 
 ## Your next step
 
-If you want to *see* it, [watch a world grow](/docs/start/watch-a-world-grow) — it takes two minutes and needs nothing.
+If you want to *see* it, [watch a world grow](/docs/start/watch-a-world-grow). It takes two minutes and needs nothing.
 
 If you want to *understand* it, read [how a world grows](/docs/learn/how-a-world-grows).
 

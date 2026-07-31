@@ -1,14 +1,14 @@
 ---
 title: Brands and sponsors
 nav: Brands and sponsors
-description: Sponsorship can fund an artist, a programme, access, and production — it cannot buy the history, a reward scheme, or any claim about value.
+description: Sponsorship can fund an artist, a programme, access, and production. It cannot buy the history, a reward scheme, or any claim about value.
 updated: 2026-07-31
 order: 8
 keywords: [sponsor, brand, partnership, funding, campaign, credit line, marketing]
 related: [programs/organizations, audiences/artists-and-curators, reference/governance]
 cta:
   title: See how an organisation runs a world
-  body: Roles, agreements, budgets, and who signs — written for the people who have to sign off.
+  body: Roles, agreements, budgets, and who signs. Written for the people who have to sign off.
   label: Read Organizations
   href: /docs/programs/organizations
 ---
@@ -19,11 +19,11 @@ Sponsorship works here the way it works for a commissioned mural or a festival s
 
 ## What your money can buy
 
-- **An artist's time.** Someone has to design the [[world]] — what its [[path|paths]] mean, how long it stays open, what a moment is worth saying.
+- **An artist's time.** Someone has to design the [[world]]: what its [[path|paths]] mean, how long it stays open, what a moment is worth saying.
 - **Production.** Screens, projection, invigilation, a room, a renderer, and a written account for people who cannot see the projection.
 - **Access.** Every contribution costs a real Bitcoin network fee, and each live path holds {{CARRIER_VALUE_SATS}} satoshis in its output while it is alive. A sponsor can cover both so that taking part is free at the point of use. That is the single most useful thing a sponsor can do.
 - **Reach.** Getting people to turn up, and telling them honestly what they are joining.
-- **Documentation.** The archive, the write-up, the text-only account — the accessibility work that budgets usually cut first.
+- **Documentation.** The archive, the write-up, the text-only account. This is the accessibility work that budgets usually cut first.
 
 ## What it cannot buy
 
@@ -42,7 +42,7 @@ If a draft campaign contains "own", "mint", "collect", "airdrop", "floor", or "e
 
 Almost nowhere inside the record, and that is worth knowing before the brief is written.
 
-The only free text a world contains is its title: at most {{MAX_TITLE_BYTES}} characters matching {{TITLE_PATTERN}}, chosen once when the world is created and never editable afterwards. Everything after that is numbers — a glyph, a palette, a motion, a magnitude. There is no logo field, no metadata slot, and nowhere to put a URL.
+The only free text a world contains is its title: at most {{MAX_TITLE_BYTES}} characters matching {{TITLE_PATTERN}}, chosen once when the world is created and never editable afterwards. Everything after that is numbers: a glyph, a palette, a motion, a magnitude. There is no logo field, no metadata slot, and nowhere to put a URL.
 
 So the name lives where sponsors' names normally live: on the wall, in the programme, in the credit line, on the site, in the press release. If the artist chooses to put a partnership name in the world's title, that is an artistic decision made once and never revised.
 
@@ -59,6 +59,6 @@ So the name lives where sponsors' names normally live: on the wall, in the progr
 
 ## What good looks like
 
-The sponsorship nobody argues about is the one where the money is visible in the work and invisible in the record: free participation, a well-made room, a proper archive, and a credit line that says plainly what was funded. The history stays readable long after the campaign ends, and it carries no logo — which is precisely why people trusted it enough to take part.
+The sponsorship nobody argues about is the one where the money is visible in the work and invisible in the record: free participation, a well-made room, a proper archive, and a credit line that says plainly what was funded. The history stays readable long after the campaign ends, and it carries no logo. That is precisely why people trusted it enough to take part.
 
 Next: read [Artists and curators](/docs/audiences/artists-and-curators) to see what the person you are funding actually has to decide.

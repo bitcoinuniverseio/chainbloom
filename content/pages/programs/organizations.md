@@ -16,12 +16,12 @@ cta:
 ---
 
 :::lead
-You can commission a ChainBloom world the way you commission anything else — a brief, a budget, a schedule, a duty of care. What is different is that the finished work is a public record that nobody can edit afterwards, including you. This page covers what fits, what the money buys, the promises that would get you into trouble, and how to tell whether it worked.
+You can commission a ChainBloom world the way you commission anything else: a brief, a budget, a schedule, a duty of care. What is different is that the finished work is a public record that nobody can edit afterwards, including you. This page covers what fits, what the money buys, the promises that would get you into trouble, and how to tell whether it worked.
 :::
 
 ## What kinds of programme fit
 
-ChainBloom offers one shape and it is narrow. A [[world]] has {{MIN_LANES}} to {{MAX_LANES}} [[path|paths]]. It stays open for a fixed span of {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks — about {{MIN_DURATION_DAYS}} day to about {{MAX_DURATION_DAYS}} days. Each path may take at most {{MAX_MAX_STEPS}} steps. All three numbers are fixed in the block that confirms the world and can never be edited afterwards.
+ChainBloom offers one shape and it is narrow. A [[world]] has {{MIN_LANES}} to {{MAX_LANES}} [[path|paths]]. It stays open for a fixed span of {{MIN_DURATION_BLOCKS}} to {{MAX_DURATION_BLOCKS}} blocks, which is about {{MIN_DURATION_DAYS}} day to about {{MAX_DURATION_DAYS}} days. Each path may take at most {{MAX_MAX_STEPS}} steps. All three numbers are fixed in the block that confirms the world and can never be edited afterwards.
 
 Pick a programme that wants that shape rather than one you have to bend into it.
 
@@ -43,7 +43,7 @@ A term has a start date and an end date, which maps onto a world duration with n
 
 ### Artist collaborations
 
-Two or three artists who have not worked together each hold a path, answer each other with echoes, and meet once. Nobody's line is absorbed into anyone else's — which is normally the sticking point in a collaboration, and the reason many of them quietly fail.
+Two or three artists who have not worked together each hold a path, answer each other with echoes, and meet once. Nobody's line is absorbed into anyone else's. That is normally the sticking point in a collaboration, and the reason many of them quietly fail.
 
 :::note
 A programme that needs to be edited after the fact does not fit. If your legal or curatorial process requires the ability to withdraw a contribution from the record, read [community moderation and participant privacy](/docs/programs/moderation-and-privacy) before you commit to anything.
@@ -56,7 +56,7 @@ Nobody pays ChainBloom. There is no licence, no platform fee and no cut. Your bu
 | Line | What it buys |
 | --- | --- |
 | Curation | The invitation. How many paths, how long the world stays open, what a step is asked to mean, who is invited to take one. This is the work; everything else is delivery. |
-| Production | The physical or on-screen presence — the station, the display, the printed text, the interpretation that turns confirmed events into something worth looking at. |
+| Production | The physical or on-screen presence: the station, the display, the printed text, the interpretation that turns confirmed events into something worth looking at. |
 | Access | Text alternatives, a still version of anything that moves, keyboard operation, plain-language explanations of cost. Budget it as a line, not as a favour. See [accessibility](/docs/programs/accessibility). |
 | Hosting | Reading confirmed worlds needs an [[indexer]] following the chain. Either you run one or you pay someone who does. [Indexer requirements](/docs/reference/indexer-requirements) says what that involves. |
 | Support | Staff time. Someone explains what a confirmed step is, answers "can I take it back", and handles the visitor whose transaction is still waiting. This is the largest hidden line in most programmes. |
@@ -91,7 +91,7 @@ Trading volume is the wrong measure and it is also unavailable, since there is n
 - **Retelling.** Can a visitor describe the world to somebody else a week later? No indexer measures this. Ask them.
 
 :::note
-Today you cannot pull these figures from a public service, because the index is not switched on. You can compute them yourself by replaying the blocks you care about with `chainbloom state replay` — see [the CLI](/docs/reference/cli) — or by running an indexer. [What is running](/docs/help/status) is the current status.
+Today you cannot pull these figures from a public service, because the index is not switched on. You can compute them yourself by replaying the blocks you care about with `chainbloom state replay` (see [the CLI](/docs/reference/cli)), or by running an indexer. [What is running](/docs/help/status) is the current status.
 :::
 
 ## Plan the programme
@@ -107,7 +107,7 @@ Work through this before the budget goes to committee. Each item is a decision s
 - Decide who holds the keys for each path, and who signs when that person is away.
 - Decide who is invited to take a step, and how you tell somebody they are not.
 - Write the visitor-facing sentence about irreversibility and get it approved by whoever approves your other copy.
-- Set the chain budget — fee per contribution times expected contributions, plus {{CARRIER_VALUE_SATS}} satoshis locked per live path.
+- Set the chain budget: fee per contribution times expected contributions, plus {{CARRIER_VALUE_SATS}} satoshis locked per live path.
 - Decide who runs or pays for the indexer that lets people read the world.
 - Book the access work as a production line item, not as a review at the end.
 - Agree the moderation policy before the invitation goes out, not after the first problem.

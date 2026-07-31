@@ -25,10 +25,10 @@ replaced it.
 
 Four files have no replacement and stay here as the source:
 
-- [legal-context.md](./legal-context.md) — plain-language legal context.
-- [brand-guidelines.md](./brand-guidelines.md) — brand and community expression.
-- [launch-media-kit.md](./launch-media-kit.md) — public story and media kit.
-- [vulnerability-disclosure.md](./vulnerability-disclosure.md) — how to report a
+- [legal-context.md](./legal-context.md) for plain-language legal context.
+- [brand-guidelines.md](./brand-guidelines.md) for brand and community expression.
+- [launch-media-kit.md](./launch-media-kit.md) for the public story and media kit.
+- [vulnerability-disclosure.md](./vulnerability-disclosure.md) for how to report a
   security problem privately.
 
 ## Where to start

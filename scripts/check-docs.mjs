@@ -147,6 +147,8 @@ for (const file of pageFiles) {
   if (/:::/u.test(html)) fail(where, 'an unparsed ":::" block reached the page');
   if (/\{\{[A-Z_]+\}\}/u.test(html))
     fail(where, 'an unreplaced {{TOKEN}} reached the page');
+  if (/[\u2013\u2014]/u.test(html))
+    fail(where, 'this project does not use dashes in prose');
 }
 
 /* --------------------------------------------------- sitemap and search */
@@ -254,6 +256,11 @@ for (const file of contentFiles) {
       if (isDenial(prose, match.index, match[0])) continue;
       fail(where, `claim this project does not make: "${match[0]}"`);
     }
+  }
+  const dash = /[\u2013\u2014]/u.exec(source);
+  if (dash !== null) {
+    const line = source.slice(0, dash.index).split('\n').length;
+    fail(where, `line ${line} uses a dash; rewrite the sentence instead`);
   }
   if (/^#\s/mu.test(body)) fail(where, 'a page must not use a level one heading');
   if (!/:::lead/u.test(body)) fail(where, 'a page must open with a :::lead block');

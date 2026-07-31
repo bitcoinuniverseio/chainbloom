@@ -3,7 +3,7 @@ title: A musical composition
 nav: Musical composition
 description: Four players hold four voices for a month, a meeting is a chord two people sign together, and the piece is finished only when every voice has ended itself.
 socialTitle: A musical composition
-socialDescription: A complete ChainBloom plan — four paths, 4,320 blocks, 64 steps, and a score nobody hosts.
+socialDescription: A complete ChainBloom plan: four paths, 4,320 blocks, 64 steps, and a score nobody hosts.
 updated: 2026-07-31
 order: 3
 keywords: [music, composition, score, voices, example world]
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-Four people write one piece over a month without a conductor, a shared file, or an argument about whose version is current. Each voice keeps its own line. A chord happens only when two players sign the same moment together. The piece is not finished when a deadline passes — it is finished when every voice has decided to stop.
+Four people write one piece over a month without a conductor, a shared file, or an argument about whose version is current. Each voice keeps its own line. A chord happens only when two players sign the same moment together. The piece is not finished when a deadline passes. It is finished when every voice has decided to stop.
 :::
 
 :::simulation
@@ -31,19 +31,19 @@ Four Voices: Winter is an illustration. It does not exist on any network, no rec
 >
 > You hold one voice: bass, tenor, alto, or soprano. It is yours for the whole month and nobody else can write into it.
 >
-> A moment is one utterance in your voice — a pitch, a colour, an articulation, a dynamic. Your voice holds 64 of them. That is about two a day, and it is deliberately not enough to write a symphony. Choose.
+> A moment is one utterance in your voice: a pitch, a colour, an articulation, a dynamic. Your voice holds 64 of them. That is about two a day, and it is deliberately not enough to write a symphony. Choose.
 >
 > You may answer any moment already in the piece, including one of your own from three weeks ago, and say how you are answering it: as a reply, upside down, backwards, or moved to another pitch.
 >
 > Twice in the month we make a chord. Two of us sign one transaction together, at the same minute, and both voices carry on afterwards. A chord is the only place two voices touch, and it does not merge them.
 >
-> The piece runs for 4,320 blocks, about thirty days. It ends when all four of us have ended our own voice with a final cadence. If one of us disappears and never ends, the piece does not finish — it expires, and that will be visible in the record forever.
+> The piece runs for 4,320 blocks, about thirty days. It ends when all four of us have ended our own voice with a final cadence. If one of us disappears and never ends, the piece does not finish. It expires, and that will be visible in the record forever.
 >
 > Each moment is a real Bitcoin transaction with a real fee. {{CARRIER_VALUE_SATS}} satoshis sit in your voice until you end it. There is nothing to buy.
 
 ## The settings
 
-:::figure caption="Four Voices: Winter — everything fixed at creation"
+:::figure caption="Everything fixed at creation for Four Voices: Winter"
 | Setting | Value | Why this number |
 | --- | --- | --- |
 | Title | `Four Voices: Winter` | 19 bytes, inside the {{MAX_TITLE_BYTES}}-byte limit; the colon is allowed |
@@ -63,16 +63,16 @@ A [[bloom]] carries four numbers, and the protocol has no idea they are music. T
 | Field | Range | In this piece |
 | --- | --- | --- |
 | Glyph | {{GLYPH_COUNT}} values, 0 to {{MAX_GLYPH}} | Pitch, chromatic, across two and a half octaves |
-| Palette | {{PALETTE_COUNT}} values, 0 to {{MAX_PALETTE}} | Timbre — bowed, plucked, breathed, struck, and so on |
-| Motion | {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}} | Articulation — held, short, swelling, falling |
+| Palette | {{PALETTE_COUNT}} values, 0 to {{MAX_PALETTE}} | Timbre: bowed, plucked, breathed, struck, and so on |
+| Motion | {{MOTION_COUNT}} values, 0 to {{MAX_MOTION}} | Articulation: held, short, swelling, falling |
 | Magnitude | One byte | Dynamic, from silence to as loud as you can |
 
-An [[echo]] is how a voice quotes. It points at one earlier moment anywhere in the piece and carries a relation — one of {{RELATION_COUNT}} values, 0 to {{MAX_RELATION}} — that says what it is doing to it. Agree four of them and leave the rest empty: 0 answer, 1 inversion, 2 retrograde, 3 transposition.
+An [[echo]] is how a voice quotes. It points at one earlier moment anywhere in the piece and carries a relation (one of {{RELATION_COUNT}} values, 0 to {{MAX_RELATION}}) that says what it is doing to it. Agree four of them and leave the rest empty: 0 answer, 1 inversion, 2 retrograde, 3 transposition.
 
 The moment you point at must be confirmed in a strictly earlier block, and on the same network. You can only quote something already in the piece. That single rule is what stops the score being rearranged after the fact.
 
 :::note
-The protocol stores the numbers, not the sound. Two ensembles reading this record will produce two different performances, and neither is wrong — the same way two galleries can draw the same [[world]] completely differently and both be correct. What is fixed is the order and the content of the moments, not their realisation.
+The protocol stores the numbers, not the sound. Two ensembles reading this record will produce two different performances, and neither is wrong, in the same way that two galleries can draw the same [[world]] completely differently and both be correct. What is fixed is the order and the content of the moments, not their realisation.
 :::
 
 ## A chord is two people signing at once
@@ -84,19 +84,19 @@ Two are scheduled:
 - **Day 10, bass and soprano.** The outer voices agree once, early, so the piece has a frame.
 - **Day 24, tenor and alto.** The inner voices answer it, late, when there is something to answer.
 
-The chord carries a bridge style — one of {{BRIDGE_STYLE_COUNT}} values, 0 to {{MAX_BRIDGE_STYLE}} — for the interval, and an intensity byte for how hard it lands. Decide those two numbers together in the room, not over three days of messages. The arranging is the piece.
+The chord carries a bridge style (one of {{BRIDGE_STYLE_COUNT}} values, 0 to {{MAX_BRIDGE_STYLE}}) for the interval, and an intensity byte for how hard it lands. Decide those two numbers together in the room, not over three days of messages. The arranging is the piece.
 
 After a chord, both voices carry on with their own histories. Neither is absorbed into the other, and the record shows both of them continuing.
 
 :::tip
-Give each chord its own evening. The two players cannot both sign at leisure — the transaction is one object and it needs both signatures before it goes anywhere. Treat it as a rehearsal, because that is what it is.
+Give each chord its own evening. The two players cannot both sign at leisure. The transaction is one object and it needs both signatures before it goes anywhere. Treat it as a rehearsal, because that is what it is.
 :::
 
 ## How the piece ends
 
 Ending a voice is a move, not a deadline. Each player finishes their own voice with a final cadence, using a reason byte the four of you agreed: 0 full close, 1 half close, 2 broken off. Ending releases the {{CARRIER_VALUE_SATS}} satoshis held in that voice.
 
-The piece is finished when the fourth voice ends. Not before — a world is over only when it has no live paths left.
+The piece is finished when the fourth voice ends, not before. A world is over only when it has no live paths left.
 
 There are two ways it goes wrong, and both are worth saying out loud at the start:
 
@@ -111,7 +111,7 @@ The second is a real risk with four people and thirty days. It is also, if you a
 
 **Week one.** The voices are still four monologues. Nobody has quoted anybody. This is normal and it is uncomfortable.
 
-**Day 10.** The first chord. Two players in a room signing one transaction and watching it confirm. Afterwards the piece stops being four diaries — the outer voices are joined at a fixed point and everyone can hear the frame.
+**Day 10.** The first chord. Two players in a room signing one transaction and watching it confirm. Afterwards the piece stops being four diaries. The outer voices are joined at a fixed point and everyone can hear the frame.
 
 **Week two and three.** The echoes start. Somebody inverts a phrase from day 4. Somebody answers it backwards. This is the part that only works because nothing can be edited: quoting is exact, because the thing being quoted cannot change afterwards.
 

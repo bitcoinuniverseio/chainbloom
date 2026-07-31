@@ -176,7 +176,7 @@ export async function buildGeneratedBlocks(facts) {
   const markerLayout = table(
     ['Offset', 'Bytes', 'Field', 'Value'],
     [
-      ['0', '4', 'magic', `${code(facts.values.PROTOCOL_MAGIC_HEX)} — the letters CBLM`],
+      ['0', '4', 'magic', `${code(facts.values.PROTOCOL_MAGIC_HEX)}, the letters CBLM`],
       ['4', '1', 'version', `${code(facts.values.PROTOCOL_VERSION)}`],
       ['5', '1', 'network', 'mainnet 0, testnet4 1, signet 2, regtest 3'],
       ['6', '1', 'opcode', '0x01 to 0x05'],

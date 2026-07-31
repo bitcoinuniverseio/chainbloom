@@ -10,13 +10,13 @@ keywords: [world, path, lane, history, settings, expired, abandoned, closed, liv
 related: [learn/the-five-actions, participate/create-a-world, reference/data-structures]
 cta:
   title: Design your own invitation
-  body: Pick the paths, the lifetime, and the step limit — then see what your choices ask of the people who join.
+  body: Pick the paths, the lifetime, and the step limit, then see what your choices ask of the people who join.
   label: Create a world
   href: /docs/participate/create-a-world
 ---
 
 :::lead
-Everything a world will ever be is decided in its first transaction. This page tells you which choices are permanent, what you are actually holding when you hold a path, and how to read a world someone else made — including one that has already ended.
+Everything a world will ever be is decided in its first transaction. This page tells you which choices are permanent, what you are actually holding when you hold a path, and how to read a world someone else made, including one that has already ended.
 :::
 
 ## What a world fixes at creation
@@ -38,7 +38,7 @@ Two things follow from that table that surprise people.
 
 **The paths cannot grow in number.** If you open a world with four paths and six friends want in, two of them are not in this world. Decide the count while you are still writing the invitation, not after.
 
-**The title is short and plain on purpose.** It holds ASCII letters, digits, spaces and `. _ : -` and nothing else — no emoji, no accents, no punctuation beyond that set. It is a label, not a description. The description lives wherever you invite people.
+**The title is short and plain on purpose.** It holds ASCII letters, digits, spaces and `. _ : -` and nothing else: no emoji, no accents, no punctuation beyond that set. It is a label, not a description. The description lives wherever you invite people.
 
 The world's own name is its creating transaction's [[txid]]. That is the identifier anyone anywhere can use to refer to it without a directory, an account, or a link to this site.
 
@@ -50,19 +50,19 @@ The seed does not affect any rule. It feeds the drawing: where blooms sit, how a
 
 A [[path]] is one thread inside a world, and there is nothing to it except a chain of confirmed steps and one live output.
 
-Paths are numbered from zero. A path's identifier is the world's id, a colon, then its number — so path three of a world is `<worldId>:3`. That is the name that appears when software talks about it.
+Paths are numbered from zero. A path's identifier is the world's id, a colon, then its number. So path three of a world is `<worldId>:3`. That is the name that appears when software talks about it.
 
 What you hold when you hold a path is a single Bitcoin output worth exactly {{CARRIER_VALUE_SATS}} satoshis: the [[carrier]]. Holding it is the whole of your ability to act on that path. To take a step you spend it and create the next one. To pass the path to someone else, that carrier ends up in their hands.
 
 :::safety
-Holding a carrier means you can take the next step. It does not prove who you are, who made the earlier steps, or who owns anything. It is a turn in a game, not a title deed — and if you lose the key that controls it, the path stops where it is. Nobody can restore it for you.
+Holding a carrier means you can take the next step. It does not prove who you are, who made the earlier steps, or who owns anything. It is a turn in a game, not a title deed. If you lose the key that controls it, the path stops where it is. Nobody can restore it for you.
 :::
 
 ## What counts as history
 
 History is the confirmed events, and nothing else.
 
-Each event records the operation, the world and paths it touched, the transaction it lives in, the block height and the position of the transaction within that block. Order comes from that pair: block height first, then position inside the block. Sort by it and everybody gets the same sequence, in the same order, every time — which is what makes independent replay possible.
+Each event records the operation, the world and paths it touched, the transaction it lives in, the block height and the position of the transaction within that block. Order comes from that pair: block height first, then position inside the block. Sort by it and everybody gets the same sequence, in the same order, every time. That is what makes independent replay possible.
 
 Three things are deliberately *not* history:
 
@@ -74,25 +74,25 @@ Three things are deliberately *not* history:
 
 When you find a path, it is in exactly one of four states. Three are endings; the fourth is the interesting one.
 
-### Closed — somebody finished it
+### Closed: somebody finished it
 
 The holder took a closing step on purpose. It spends the carrier and creates no successor, so the {{CARRIER_VALUE_SATS}} satoshis go back to an address they chose, and no step can ever be added again. The record keeps the reason given with the close.
 
-This is the ending worth aiming for. It is also available even after a path has used all its steps — you can always finish deliberately, even when you can no longer add.
+This is the ending worth aiming for. It is also available even after a path has used all its steps: you can always finish deliberately, even when you can no longer add.
 
-### Expired — the world's time ran out
+### Expired: the world's time ran out
 
 Every world has a height at which it stops, worked out at creation as the creating height plus the duration. It is exclusive: at that height the world is over. Every path still alive at that moment becomes [[expired]], with the reason `WORLD_DURATION_ELAPSED`.
 
 Nobody triggers this and nobody can postpone it. A path can expire mid-sentence, and plenty will. That is a real ending too, and often an honest one.
 
-### Abandoned — a spend broke the path
+### Abandoned: a spend broke the path
 
 If a confirmed transaction spends a live carrier but is not a valid ChainBloom step, the path becomes [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`. The most likely cause today is ordinary wallet software treating the {{CARRIER_VALUE_SATS}}-satoshi output as spare change and sweeping it up with everything else.
 
 Nothing is invented to repair it. There is no rewind and no replacement carrier. The record states what happened and stops, which is why [protect your path](/docs/participate/protect-your-path) is worth five minutes before you take a step.
 
-### Live — it is still somebody's turn
+### Live: it is still somebody's turn
 
 The path has a carrier, has not used all its steps, and its world is still open. Somebody can act on it right now.
 
@@ -104,4 +104,4 @@ A live world is not a draft. Every confirmed step in it is already final and alr
 
 So when you find one, the useful questions are concrete: how many of its paths are still live, how many steps each has left, and how many blocks remain before the whole thing stops. Those four numbers tell you whether there is room for you and how much of it.
 
-You cannot browse worlds from this site yet — the public index is not switched on, and [what is running](/docs/help/status) says exactly why. What you can do today is read the rules that govern all of them, in [the five actions](/docs/learn/the-five-actions), or the exact shapes software sees, in [data structures](/docs/reference/data-structures).
+You cannot browse worlds from this site yet. The public index is not switched on, and [what is running](/docs/help/status) says exactly why. What you can do today is read the rules that govern all of them, in [the five actions](/docs/learn/the-five-actions), or the exact shapes software sees, in [data structures](/docs/reference/data-structures).

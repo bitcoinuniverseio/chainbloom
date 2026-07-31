@@ -1,7 +1,7 @@
 ---
 title: Joining and contributing to a world
 nav: Join a world
-description: How to get a path, decide what your one moment adds, and sign your first step — with the two things you must check before the transaction goes out.
+description: How to get a path, decide what your one moment adds, and sign your first step, plus the two things you must check before the transaction goes out.
 socialTitle: Joining a ChainBloom world
 socialDescription: Find a world, get a path, build a contribution, sign it, and wait for the block. What each stage really requires.
 updated: 2026-07-31
@@ -16,12 +16,12 @@ cta:
 ---
 
 :::lead
-Joining a [[world]] takes one signed transaction and about ten minutes. Most of that time goes on the part that matters — deciding what your one moment adds to a story other people are also writing.
+Joining a [[world]] takes one signed transaction and about ten minutes. Most of that time goes on the part that matters: deciding what your one moment adds to a story other people are also writing.
 :::
 
 ## Find a world and read its invitation
 
-A world is not a room you browse into. It is something a person opened and then told people about — in a message, on a poster, at an event, in a class. The world's id and your path id will come to you from that person, not from a search box.
+A world is not a room you browse into. It is something a person opened and then told people about: in a message, on a poster, at an event, in a class. The world's id and your path id will come to you from that person, not from a search box.
 
 :::note
 The public index that would let anyone list confirmed worlds is not switched on yet. There is no directory to scroll today. [What is running](/docs/help/status) states plainly what works now and what changes when the index turns on.
@@ -31,7 +31,7 @@ Before anything else, read the invitation the creator wrote. It should tell you 
 
 Two numbers from the invitation are worth writing down now, because they set your pace:
 
-- **How long the world stays open.** Somewhere between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks from its creation — about {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days. When that height arrives the world becomes `EXPIRED` and nothing more can be added to it.
+- **How long the world stays open.** Somewhere between {{MIN_DURATION_BLOCKS}} and {{MAX_DURATION_BLOCKS}} blocks from its creation, which is about {{MIN_DURATION_DAYS}} to {{MAX_DURATION_DAYS}} days. When that height arrives the world becomes `EXPIRED` and nothing more can be added to it.
 - **How many steps your path may take.** Between {{MIN_MAX_STEPS}} and {{MAX_MAX_STEPS}}. Once you reach the limit, further steps are refused with `MAX_STEPS_REACHED`, though you can still end the path properly.
 
 ## Get a path
@@ -44,25 +44,25 @@ So a creator hands you a path by **sending it to you**. The path is a {{CARRIER_
 Today you need the path output sitting in a wallet you control the keys to. Not an exchange account. Not a custodial balance. Not "somewhere I can see it". You will have to sign a transaction that spends that specific output, and only key control lets you do that.
 :::
 
-Small outputs are exactly the kind of thing ordinary software throws away. No wallet has ChainBloom support yet, so nothing on your screen knows that this {{CARRIER_VALUE_SATS}}-satoshi output is different from any other. Read [Protect your path](/docs/participate/protect-your-path) before you accept one — it is short, and it is the page people wish they had read first.
+Small outputs are exactly the kind of thing ordinary software throws away. No wallet has ChainBloom support yet, so nothing on your screen knows that this {{CARRIER_VALUE_SATS}}-satoshi output is different from any other. Read [Protect your path](/docs/participate/protect-your-path) before you accept one. It is short, and it is the page people wish they had read first.
 
 ## Decide what to add
 
 Now the interesting part. A contribution is one of two moves.
 
-### A bloom — a moment of your own
+### A bloom: a moment of your own
 
 A bloom adds a moment to your path and nothing else. It carries four small numbers: a glyph from 0 to {{MAX_GLYPH}}, a palette from 0 to {{MAX_PALETTE}}, a motion from 0 to {{MAX_MOTION}}, and a magnitude from 0 to 255. Four bytes, that is all.
 
-Those numbers do not mean anything by themselves. Meaning comes from the agreement in the invitation — "palette 3 is the days it rained", "magnitude is how many of us showed up". A world where the group agreed what the numbers mean reads as a story. A world where everyone picked at random reads as noise, and it reads that way forever.
+Those numbers do not mean anything by themselves. Meaning comes from the agreement in the invitation: "palette 3 is the days it rained", "magnitude is how many of us showed up". A world where the group agreed what the numbers mean reads as a story. A world where everyone picked at random reads as noise, and it reads that way forever.
 
-### An echo — a moment that answers an earlier one
+### An echo: a moment that answers an earlier one
 
 An echo points back at a specific earlier event anywhere in the world, by its [[txid]], and adds a relation from 0 to {{MAX_RELATION}} alongside a glyph and a palette. It is how you say *this is because of that*.
 
 An echo has one extra rule: the event you point at must already be confirmed in a strictly earlier block. Point at something from the same block and the step is rejected with `UNCONFIRMED_GRAFT_TARGET`. Point at something that is not in this network's history at all and you get `UNKNOWN_GRAFT_TARGET`.
 
-Two paths can also share a moment and both carry on, which needs both holders to sign the same transaction. That is a different shape of contribution and it has its own page — [The five actions](/docs/learn/the-five-actions) covers all five in order.
+Two paths can also share a moment and both carry on, which needs both holders to sign the same transaction. That is a different shape of contribution and it has its own page. [The five actions](/docs/learn/the-five-actions) covers all five in order.
 
 :::tip
 Write the sentence before you pick the numbers. If you cannot say in plain words what this moment records, the numbers will not rescue it, and you cannot edit it afterwards.
@@ -82,7 +82,7 @@ The transaction has a shape you can verify by eye:
 | Output 1 | Your new path output, exactly {{CARRIER_VALUE_SATS}} satoshis |
 | Output 2 and after | Your change |
 
-Two checks catch nearly every real mistake. First, output 1 must be exactly {{CARRIER_VALUE_SATS}} satoshis going to an address you control — that is your path continuing. If it is missing, the path stops existing. Second, the miner fee must be a number you meant to pay.
+Two checks catch nearly every real mistake. First, output 1 must be exactly {{CARRIER_VALUE_SATS}} satoshis going to an address you control. That is your path continuing. If it is missing, the path stops existing. Second, the miner fee must be a number you meant to pay.
 
 One rule surprises people: **you cannot take two steps in the same block**. Your previous step has to be confirmed in an earlier block than the next one. Try to stack them and the second is rejected with `UNCONFIRMED_LINEAGE_PARENT`. Plan for roughly one step per block at the very fastest.
 
@@ -103,7 +103,7 @@ One rule surprises people: **you cannot take two steps in the same block**. Your
 
 ## Waiting
 
-Broadcasting puts your transaction in the [[mempool]], where it waits for a miner. Until a block includes it, nothing about it is settled — it can be replaced, and it can simply sit there if the fee was low.
+Broadcasting puts your transaction in the [[mempool]], where it waits for a miner. Until a block includes it, nothing about it is settled: it can be replaced, and it can simply sit there if the fee was low.
 
 Every input carries the sequence value `{{RBF_SEQUENCE_HEX}}`, which is the value that signals replace-by-fee. A step stuck behind a fee spike can be replaced by the same step at a higher fee rather than abandoned. [Fees and confirmation](/docs/participate/fees-and-confirmation) covers how to judge the rate and what to do when it goes wrong.
 

@@ -1,16 +1,16 @@
 ---
 title: Example worlds
 nav: Example worlds
-description: Eight worlds worked out in full — the invitation to send, the settings to type in, the moment the paths meet, and how each one ends.
+description: Eight worlds worked out in full: the invitation to send, the settings to type in, the moment the paths meet, and how each one ends.
 socialTitle: Eight example ChainBloom worlds
-socialDescription: Complete plans you can copy — paths, duration, step limit, meeting, ending, and what it feels like to take part.
+socialDescription: Complete plans you can copy: paths, duration, step limit, meeting, ending, and what it feels like to take part.
 updated: 2026-07-31
 order: 0
 keywords: [examples, ideas, world design, invitation, settings, templates]
 related: [participate/create-a-world, learn/when-paths-meet, start/chainbloom-in-60-seconds]
 cta:
   title: Start with the garden
-  body: Six beds, three months, one bed per neighbour — the easiest of the eight to run for real.
+  body: Six beds, three months, one bed per neighbour. The easiest of the eight to run for real.
   label: A collaborative digital garden
   href: /docs/examples/collaborative-garden
 ---
@@ -20,7 +20,7 @@ The hard part of a [[world]] is not the software. It is deciding what a moment m
 :::
 
 :::simulation
-None of these eight worlds exists. Nothing here has been created on any network, and no numbers are reported from live activity — the public index is not switched on. See [what is running](/docs/help/status). Every setting in every example sits inside the limits the protocol enforces, so each one could be created exactly as written.
+None of these eight worlds exists. Nothing here has been created on any network, and no numbers are reported from live activity, because the public index is not switched on. See [what is running](/docs/help/status). Every setting in every example sits inside the limits the protocol enforces, so each one could be created exactly as written.
 :::
 
 ## How to read an example
@@ -29,7 +29,7 @@ Each page is a plan, not an essay. They all carry the same six parts, in the sam
 
 - **The invitation.** The actual message you could send. If you cannot write a good invitation, the world is not ready.
 - **The settings.** A table of the numbers to type into the creation form: paths, duration in blocks, steps per path, title.
-- **What a contribution means.** The protocol stores small numbers. The invitation decides what they stand for — a sowing, a set, a chord, a memory.
+- **What a contribution means.** The protocol stores small numbers. The invitation decides what they stand for: a sowing, a set, a chord, a memory.
 - **The meeting.** Which paths meet, when, and what the two people are agreeing to.
 - **The ending.** Who closes what, in what order, and what happens if nobody does.
 - **The journey.** What a week in that world feels like from the inside.
@@ -81,4 +81,4 @@ One path belongs to the artist, the rest to the people answering back.](/docs/ex
 
 Take an example and change one thing at a time. Fewer paths make a quieter world. A shorter duration makes people act. A lower step limit makes each moment count, because once a path reaches its limit the only move left is to complete it.
 
-Two changes are worth thinking about hardest. The first is the ending: a world that nobody closes does not finish, it expires when the duration runs out. The second is the meeting, which is the only place two paths touch — read [when paths meet](/docs/learn/when-paths-meet) before you promise one in an invitation.
+Two changes are worth thinking about hardest. The first is the ending: a world that nobody closes does not finish, it expires when the duration runs out. The second is the meeting, which is the only place two paths touch. Read [when paths meet](/docs/learn/when-paths-meet) before you promise one in an invitation.

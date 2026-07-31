@@ -15,7 +15,7 @@ cta:
 ---
 
 :::lead
-Six commands, all offline. You can encode a [[marker]] and decode one, take a raw transaction apart, build an unsigned [[psbt]], check the published vectors, and rebuild a whole history from blocks — with no node, no API key, no account, and JSON on stdout that pipes straight into a test.
+Six commands, all offline. You can encode a [[marker]] and decode one, take a raw transaction apart, build an unsigned [[psbt]], check the published vectors, and rebuild a whole history from blocks, with no node, no API key, no account, and JSON on stdout that pipes straight into a test.
 :::
 
 ## Getting the command
@@ -51,7 +51,7 @@ Commands:
   help [command]  display help for command
 ```
 
-Those five groups are all there is. There is no `send`, no `wallet`, no key handling, and nothing that touches a network — the CLI never signs and never broadcasts.
+Those five groups are all there is. There is no `send`, no `wallet`, no key handling, and nothing that touches a network. The CLI never signs and never broadcasts.
 
 ## Markers
 
@@ -61,7 +61,7 @@ Those five groups are all there is. There is no `send`, no `wallet`, no key hand
 chainbloom marker encode -n <network> -o <operation> -j <json>
 ```
 
-`-n` takes a network name: `mainnet`, `testnet4`, `signet`, or `regtest`. An unknown name fails with `UNKNOWN_NETWORK_NAME`. `-o` takes an operation name in any case and is upper-cased for you. `-j` takes the payload fields as JSON, without the `operation` key — the flag supplies that.
+`-n` takes a network name: `mainnet`, `testnet4`, `signet`, or `regtest`. An unknown name fails with `UNKNOWN_NETWORK_NAME`. `-o` takes an operation name in any case and is upper-cased for you. `-j` takes the payload fields as JSON, without the `operation` key. The flag supplies that.
 
 ```console
 $ chainbloom marker encode -n signet -o bloom \
@@ -147,7 +147,7 @@ $ chainbloom tx parse --hex 02000000000102b191a5ca…
 }
 ```
 
-Two things to read there. `sequence` is `4294967293`, the decimal form of {{RBF_SEQUENCE_HEX}}, which every ChainBloom input must use. And the {{CARRIER_VALUE_SATS_RAW}} satoshis that were riding the [[path]] are gone from the outputs — a `CLOSE` produces no successor, so the value comes back through change.
+Two things to read there. `sequence` is `4294967293`, the decimal form of {{RBF_SEQUENCE_HEX}}, which every ChainBloom input must use. And the {{CARRIER_VALUE_SATS_RAW}} satoshis that were riding the [[path]] are gone from the outputs. A `CLOSE` produces no successor, so the value comes back through change.
 
 ### psbt build
 
@@ -225,7 +225,7 @@ A mismatch throws before printing anything, naming the vector that failed. Run t
 chainbloom state replay -n <network> -f <path>
 ```
 
-Reads an array of indexed blocks — each with `hash`, `previousHash`, `height`, and `transactions` of `{ hex, prevouts }` — applies them in order, and prints the deterministic snapshot. This is the command an [[indexer]] author checks their own output against.
+Reads an array of indexed blocks, applies them in order, and prints the deterministic snapshot. Each block carries `hash`, `previousHash`, `height`, and `transactions` of `{ hex, prevouts }`. This is the command an [[indexer]] author checks their own output against.
 
 ```console
 $ chainbloom state replay -n regtest -f blocks.json

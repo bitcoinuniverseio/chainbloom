@@ -106,7 +106,6 @@ class InlineRenderer {
     working = working.replace(/\*\*([^*]+)\*\*/gu, '<strong>$1</strong>');
     working = working.replace(/(^|[\s(])\*([^*\n]+)\*/gu, '$1<em>$2</em>');
     working = working.replace(/(^|[\s(])_([^_\n]+)_/gu, '$1<em>$2</em>');
-    working = working.replaceAll(' -- ', ' — ');
     working = working.replace(
       new RegExp(`${CODE_MARKER}(\\d+)%%`, 'gu'),
       (_match, index) => `<code>${escapeHtml(this.codeSpans[Number(index)])}</code>`,

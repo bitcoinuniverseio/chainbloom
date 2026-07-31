@@ -1,7 +1,7 @@
 ---
 title: Network fees and confirmation expectations
 nav: Fees and confirmation
-description: There are only two costs — a miner fee, and the small amount of bitcoin carried inside each path output that returns to you when the path completes — and this page shows how both behave.
+description: There are only two costs, a miner fee and the small amount of bitcoin carried inside each path output that returns to you when the path completes. This page shows how both behave.
 socialTitle: What a ChainBloom step actually costs
 socialDescription: The two costs, the shape of each transaction, how fee rate decides your wait, and what confirmation changes.
 updated: 2026-07-31
@@ -16,7 +16,7 @@ cta:
 ---
 
 :::lead
-Taking part in a world costs a Bitcoin network fee and nothing else. The {{CARRIER_VALUE_SATS}} satoshis that sit inside your path are not a payment — they travel with the path and return to you when you complete it. This page tells you what to expect for both.
+Taking part in a world costs a Bitcoin network fee and nothing else. The {{CARRIER_VALUE_SATS}} satoshis that sit inside your path are not a payment. They travel with the path and return to you when you complete it. This page tells you what to expect for both.
 :::
 
 ## The two costs
@@ -36,24 +36,24 @@ A world with the maximum of {{MAX_LANES}} paths locks up {{MAX_LANES}} × {{CARR
 Fees scale with how big a transaction is, not with how much value it moves. So the shape of the action decides most of the cost.
 
 :::demo name=fee-explorer
-Every ChainBloom transaction has one marker output at `vout 0` — an OP_RETURN carrying zero value and at most {{MAX_MARKER_BYTES}} bytes. What changes is the number of path inputs and path outputs around it.
+Every ChainBloom transaction has one marker output at `vout 0`: an OP_RETURN carrying zero value and at most {{MAX_MARKER_BYTES}} bytes. What changes is the number of path inputs and path outputs around it.
 
 | Action | Path inputs | Path outputs | Note |
 | --- | --- | --- | --- |
-| Create a world with three paths | none | 3, at `vout 1`–`vout 3` | one root [[carrier]] per path |
+| Create a world with three paths | none | 3, at `vout 1` to `vout 3` | one root [[carrier]] per path |
 | Bloom | 1, at `vin 0` | 1, at `vout 1` | the successor replaces the parent |
 | Echo | 1, at `vin 0` | 1, at `vout 1` | same shape as a bloom, different payload |
 | Meeting | 2, at `vin 0` and `vin 1` | 2, at `vout 1` and `vout 2` | both paths carry on |
 | Complete a path | 1, at `vin 0` | none | the {{CARRIER_VALUE_SATS}} satoshis are released |
 
-Fee inputs come after the path inputs — from `vin 1` for a bloom, echo or completion, and from `vin 2` for a meeting — and change comes back to you at the end. Every path output is exactly {{CARRIER_VALUE_SATS}} satoshis.
+Fee inputs come after the path inputs, from `vin 1` for a bloom, echo or completion, and from `vin 2` for a meeting. Change comes back to you at the end. Every path output is exactly {{CARRIER_VALUE_SATS}} satoshis.
 
 Reading the table as cost: a meeting is the largest of the ordinary steps, because it carries two inputs and two outputs plus the marker. Completing a path is the smallest, because it creates no successor. Creating a world grows with the number of paths you open.
 :::
 
 ## Choosing a fee rate
 
-A [[fee rate]] is stated in **sat/vB** — satoshis per virtual byte. Multiply it by the size of your transaction and you get the fee. Miners fill each block from the top by rate, so a rate is really a queue position.
+A [[fee rate]] is stated in **sat/vB**, meaning satoshis per virtual byte. Multiply it by the size of your transaction and you get the fee. Miners fill each block from the top by rate, so a rate is really a queue position.
 
 Two consequences worth internalising:
 
@@ -63,7 +63,7 @@ Two consequences worth internalising:
 Bitcoin aims for one block roughly every ten minutes, which is why {{MIN_DURATION_BLOCKS}} blocks is about {{MIN_DURATION_DAYS}} day of world lifetime. Fee estimates from a public mempool source will tell you what rate is currently clearing quickly. The ChainBloom workspace inside [InScribe](app) returns the miner fee, the change, and the fee rate it used in the preview it hands you before you sign, so you can check the arithmetic yourself.
 
 :::tip
-If nothing about your step is urgent — and in a world that stays open for weeks, very little is — a modest rate is the sensible default. What you cannot do is take the *next* step on the same path until this one confirms, so pick a rate you are willing to wait out.
+If nothing about your step is urgent, a modest rate is the sensible default. In a world that stays open for weeks, very little is urgent. What you cannot do is take the *next* step on the same path until this one confirms, so pick a rate you are willing to wait out.
 :::
 
 ## While it waits
@@ -82,9 +82,9 @@ Anything you see before confirmation is a preview. A preview can be replaced, dr
 
 A [[confirmation]] is the moment your contribution stops being yours alone and becomes shared history. Before it, the step exists in your wallet and in some mempools. After it, it has a block height and a position inside that block, and every independent reader replaying the chain places it at exactly the same point in the world's order.
 
-That is the whole reason Bitcoin is in this design — not payment, but agreement about order, without a referee.
+That is the whole reason Bitcoin is in this design: not payment, but agreement about order, without a referee.
 
-Confirmation also unlocks the next move. A step is rejected with `UNCONFIRMED_LINEAGE_PARENT` if the path's own previous event is in the same block or later, because a parent must already be confirmed in a strictly earlier block. In practice: contribute, wait for a block, then contribute again. An echo has the same rule about the moment it points at — the target must be confirmed earlier than the echo.
+Confirmation also unlocks the next move. A step is rejected with `UNCONFIRMED_LINEAGE_PARENT` if the path's own previous event is in the same block or later, because a parent must already be confirmed in a strictly earlier block. In practice: contribute, wait for a block, then contribute again. An echo has the same rule about the moment it points at. The target must be confirmed earlier than the echo.
 
 :::note
 Very deep reorganizations can move a recently confirmed transaction back into the mempool. Indexers handle this by rolling back one block at a time to a common ancestor and replaying. It is rare, it is expected, and it is a reason to treat a single confirmation as strong rather than absolute.
@@ -92,6 +92,6 @@ Very deep reorganizations can move a recently confirmed transaction back into th
 
 ## What none of this costs
 
-No transaction fee is charged by ChainBloom, no value accrues to a path, and holding a path is not an investment or a claim on anything. The {{CARRIER_VALUE_SATS}} satoshis are a place-holder that makes the ordering rule work — small enough to be unimportant, large enough to be a valid output.
+No transaction fee is charged by ChainBloom, no value accrues to a path, and holding a path is not an investment or a claim on anything. The {{CARRIER_VALUE_SATS}} satoshis are a place-holder that makes the ordering rule work: small enough to be unimportant, large enough to be a valid output.
 
 If a step of yours seems stuck, replaced, or rejected, [troubleshooting](/docs/help/troubleshooting) walks through what each case means and what to do next.

@@ -1,7 +1,7 @@
 ---
 title: Educators
 nav: Educators
-description: What a class actually learns by running a ChainBloom world — shared state, ordering, irreversibility, and collaboration — plus the real limits on cost, consent, age, and keys.
+description: What a class actually learns by running a ChainBloom world (shared state, ordering, irreversibility, and collaboration), plus the real limits on cost, consent, age, and keys.
 updated: 2026-07-31
 order: 7
 keywords: [teacher, classroom, lesson plan, curriculum, students, consent, keys]
@@ -14,7 +14,7 @@ cta:
 ---
 
 :::lead
-Most lessons about shared ledgers are diagrams on a board. A ChainBloom [[world]] is a diagram the class is standing inside — thirty people, one history, and rules that refuse to bend when a student wants them to. The refusals are the lesson.
+Most lessons about shared ledgers are diagrams on a board. A ChainBloom [[world]] is a diagram the class is standing inside: thirty people, one history, and rules that refuse to bend when a student wants them to. The refusals are the lesson.
 :::
 
 ## Four things it teaches by being used
@@ -31,13 +31,13 @@ One rule makes the point sharply. A step is rejected with `UNCONFIRMED_LINEAGE_P
 
 ### Irreversibility
 
-A confirmed step cannot be edited, hidden, or withdrawn — not by the teacher, not by the school, not by us. There is a harsher version too: if a path's output is spent by an ordinary payment instead of a ChainBloom action, that path is marked [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`, and nothing is invented to replace it. The thread stops there, in public, permanently.
+A confirmed step cannot be edited, hidden, or withdrawn: not by the teacher, not by the school, not by us. There is a harsher version too: if a path's output is spent by an ordinary payment instead of a ChainBloom action, that path is marked [[abandoned]] with the reason `INVALID_CONFIRMED_SPEND`, and nothing is invented to replace it. The thread stops there, in public, permanently.
 
 That is hard to teach with a worksheet. Say it before the lesson, not after.
 
 ### Collaboration
 
-Paths do not merge. When two paths meet, both carry on as themselves — they share a moment rather than being flattened into one. Students used to a shared document where the loudest editor wins notice the difference straight away.
+Paths do not merge. When two paths meet, both carry on as themselves. They share a moment rather than being flattened into one. Students used to a shared document where the loudest editor wins notice the difference straight away.
 
 ## The practical limits
 
@@ -45,11 +45,11 @@ Paths do not merge. When two paths meet, both carry on as themselves — they sh
 
 **Cost.** Every contribution pays a real Bitcoin network fee to miners, and each live path holds {{CARRIER_VALUE_SATS}} satoshis in its [[carrier]] output until the path is completed. There is no free tier on mainnet. Read [Fees and confirmation](/docs/participate/fees-and-confirmation) before you promise anything to a head of department.
 
-The protocol also defines testnet4, signet, and regtest alongside mainnet, and both the library and the `chainbloom` command take a network flag. Rehearse there. Run the graded exercise there too if the budget is nil — the mechanics are identical; what differs is that the coins are not real.
+The protocol also defines testnet4, signet, and regtest alongside mainnet, and both the library and the `chainbloom` command take a network flag. Rehearse there. Run the graded exercise there too if the budget is nil. The mechanics are identical; what differs is that the coins are not real.
 
 **Keys.** Students should not hold keys. A key lost by a fourteen-year-old is a path that ends where it stopped, and a shared school device is not a place to keep one. Have the teacher sign, or have each team dictate its move to the person who signs. Never ask a student to type a recovery phrase into anything.
 
-**Consent and age.** Everything a world records is public and permanent. The good news is that there is almost nothing personal to leak: the only free text is the world's title, at most {{MAX_TITLE_BYTES}} characters, and every contribution after that is numbers — glyph, palette, motion, magnitude. Do not put a student's name in a title. Get guardian consent for whatever you publish alongside the world, such as photographs or a class list, because that part is yours to protect, not Bitcoin's.
+**Consent and age.** Everything a world records is public and permanent. The good news is that there is almost nothing personal to leak: the only free text is the world's title, at most {{MAX_TITLE_BYTES}} characters. Every contribution after that is numbers: glyph, palette, motion, magnitude. Do not put a student's name in a title. Get guardian consent for whatever you publish alongside the world, such as photographs or a class list, because that part is yours to protect, not Bitcoin's.
 
 :::safety
 Wallet control is not proof of authorship. If a student's contribution matters to them, the record of who made what is the class register you keep. The chain records the step, not the person.
@@ -66,4 +66,4 @@ Wallet control is not proof of authorship. If a student's contribution matters t
 - Finish by completing one path on purpose, so the class sees an ending they chose
 :::
 
-Next: [A classroom constellation](/docs/examples/classroom-constellation) is a full worked world — the invitation, the group sizes, and how the last lesson ends.
+Next: [A classroom constellation](/docs/examples/classroom-constellation) is a full worked world: the invitation, the group sizes, and how the last lesson ends.

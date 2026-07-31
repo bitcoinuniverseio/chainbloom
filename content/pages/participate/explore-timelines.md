@@ -1,7 +1,7 @@
 ---
 title: Exploring timelines and relationships
 nav: Explore timelines
-description: A world's history is a fixed order of confirmed events, and that order can be drawn as a picture, played as a score, or listed as plain text — all three are faithful readings.
+description: A world's history is a fixed order of confirmed events, and that order can be drawn as a picture, played as a score, or listed as plain text. All three are faithful readings.
 socialTitle: How to read a ChainBloom world
 socialDescription: What there is to look at inside a world, why the same history can be drawn in many ways, and which part everyone must agree on.
 updated: 2026-07-31
@@ -10,13 +10,13 @@ keywords: [timeline, explore, visualise, render, svg, graph, relationships]
 related: [participate/follow-and-return, learn/worlds-paths-and-history, help/status]
 cta:
   title: Understand what you are looking at
-  body: Worlds, paths and history — the three ideas that make every view of a world make sense.
+  body: Worlds, paths and history are the three ideas that make every view of a world make sense.
   label: Read worlds, paths and history
   href: /docs/learn/worlds-paths-and-history
 ---
 
 :::lead
-A world hands you something rare: a set of creative moments whose order nobody can argue about. What you do with that order is wide open — draw it, play it, or read it as a list. This page is about what is in there to find.
+A world hands you something rare: a set of creative moments whose order nobody can argue about. What you do with that order is wide open: draw it, play it, or read it as a list. This page is about what is in there to find.
 :::
 
 ## What there is to look at
@@ -25,7 +25,7 @@ Five things, and every view of a world is built from some combination of them.
 
 ### The order of events by block
 
-Every confirmed [[event]] carries a block height and a position inside that block. Sort by height, then by transaction index within the block, and you have the world's timeline. Not roughly — exactly. That sort is what makes two people replaying the same chain produce the same history, which is why the protocol's own state snapshot returns events in precisely that order.
+Every confirmed [[event]] carries a block height and a position inside that block. Sort by height, then by transaction index within the block, and you have the world's timeline. Not roughly, but exactly. That sort is what makes two people replaying the same chain produce the same history, which is why the protocol's own state snapshot returns events in precisely that order.
 
 A world therefore has a real chronology, with real gaps. Two moments in the same block are simultaneous in a way that matters, and a week of silence between blocks is part of the shape too.
 
@@ -33,7 +33,7 @@ A world therefore has a real chronology, with real gaps. Two moments in the same
 
 A path is a chain of steps, each one spending the output the previous step created. Nothing can be inserted into the middle later, and no step can be moved. So a path reads naturally as a line: first moment, second moment, third, ending.
 
-Each step carries small numbers rather than pictures — a [[glyph]] from 0 to {{MAX_GLYPH}}, a [[palette]] from 0 to {{MAX_PALETTE}}, a motion from 0 to {{MAX_MOTION}}, and a magnitude. What those numbers *mean* is decided by whoever is showing them. The protocol only guarantees they were chosen at that moment by whoever held the path.
+Each step carries small numbers rather than pictures: a [[glyph]] from 0 to {{MAX_GLYPH}}, a [[palette]] from 0 to {{MAX_PALETTE}}, a motion from 0 to {{MAX_MOTION}}, and a magnitude. What those numbers *mean* is decided by whoever is showing them. The protocol only guarantees they were chosen at that moment by whoever held the path.
 
 ### Echoes as links between moments
 
@@ -59,15 +59,15 @@ Here is the part people find surprising: the protocol takes no position on what 
 
 The order of events is consensus. The interpretation is not. The same confirmed history can honestly be shown as:
 
-- **a drawing** — paths as strokes, blooms as marks, meetings as crossings
-- **a score** — each path a voice, each step a note, meetings as chords
-- **a plain list** — block height, action, path, and payload, one row each
-- **a graph** — events as nodes, lineage and echoes as edges
+- **a drawing**: paths as strokes, blooms as marks, meetings as crossings
+- **a score**: each path a voice, each step a note, meetings as chords
+- **a plain list**: block height, action, path, and payload, one row each
+- **a graph**: events as nodes, lineage and echoes as edges
 
 None of these is more correct than the others. A gallery, a classroom, and a screen reader can each present the same world in the form that suits them, and every one of those readings is faithful, because every one of them is derived from the same fixed order.
 
 :::note
-This is a deliberate split. Consensus covers what happened and in what order. Everything above that — colour, layout, sound, motion, language — is a rendering choice, and rendering choices are allowed to differ. Two galleries can show the same world completely differently and both be right.
+This is a deliberate split. Consensus covers what happened and in what order. Everything above that (colour, layout, sound, motion, language) is a rendering choice, and rendering choices are allowed to differ. Two galleries can show the same world completely differently and both be right.
 :::
 
 ## What the package can render
@@ -84,7 +84,7 @@ If you are building a view of a world, start from the sorted event list rather t
 
 ## What you cannot browse yet
 
-There is no public browsing surface for ChainBloom worlds today. The ChainBloom workspace inside [InScribe](app) has an Explore view built for confirmed worlds, and the backend exposes read routes for worlds, events, graphs and renders — but the index behind them is not connected, so those routes return an error rather than data. No block explorer decodes ChainBloom markers either.
+There is no public browsing surface for ChainBloom worlds today. The ChainBloom workspace inside [InScribe](app) has an Explore view built for confirmed worlds, and the backend exposes read routes for worlds, events, graphs and renders. But the index behind them is not connected, so those routes return an error rather than data. No block explorer decodes ChainBloom markers either.
 
 That is the whole honest picture, and [what is running](/docs/help/status) keeps it current. Until it changes, a world can still be read the slow way: pull the transactions, decode the markers, sort by height and index. That is all any timeline view is doing.
 

@@ -15,7 +15,7 @@ cta:
 ---
 
 :::lead
-A good ChainBloom viewer lets a reader check it. Every event it shows carries the block height and the txid that put it there, so anybody who doubts the picture can go and look at the chain instead of taking your word — which is the only reason a picture of a shared history is worth anything.
+A good ChainBloom viewer lets a reader check it. Every event it shows carries the block height and the txid that put it there, so anybody who doubts the picture can go and look at the chain instead of taking your word. That is the only reason a picture of a shared history is worth anything.
 :::
 
 ## What a viewer owes the reader
@@ -30,13 +30,13 @@ That relationship should be visible in the interface, not buried in an about pag
 
 An unconfirmed action has no height and no fixed order. It can be replaced by a fee bump, dropped, or reorganized out after appearing in a block.
 
-Show it if you like — seeing your action accepted is genuinely useful — but never in the same visual language as a confirmed event. Different colour, different label, different section, and the word "pending" or "provisional" written out. If your source of provisional data reports conflicts, show those too: two transactions spending the same outpoint means one of them will lose.
+Show it if you like, since seeing your action accepted is genuinely useful, but never in the same visual language as a confirmed event. Different colour, different label, different section, and the word "pending" or "provisional" written out. If your source of provisional data reports conflicts, show those too: two transactions spending the same outpoint means one of them will lose.
 
 And when a provisional event disappears, say that it disappeared. Silently removing a row is the failure mode readers cannot detect.
 
 ### The block height and the txid of every event
 
-Every event gets both. Not on a details panel three clicks away — on the thing itself, or one hover from it.
+Every event gets both. Not on a details panel three clicks away, but on the thing itself, or one hover from it.
 
 An event is identified by its txid. A world is identified by the txid of its `CREATE`. A path is identified by `<worldId>:<laneNumber>`. These are the names everyone else uses, including every other index, so use them rather than inventing your own display ids.
 
@@ -50,7 +50,7 @@ Useful things to show along it: the step count, the maximum steps the world allo
 
 ### Echoes as links
 
-An [[echo]] answers an earlier event. It carries the target's txid, so the relationship is exact — not a guess from timing or from similar-looking content.
+An [[echo]] answers an earlier event. It carries the target's txid, so the relationship is exact. It is not a guess from timing or from similar-looking content.
 
 Render it as a real link in both directions: from the echo to what it answers, and from the answered event to everything that has answered it. A history where you cannot see what a moment was replying to is a list, not a conversation.
 
@@ -58,7 +58,7 @@ Render it as a real link in both directions: from the echo to what it answers, a
 
 A [[meeting]] is one transaction that continues two paths at once. Both paths carry on afterwards. Neither is merged into the other, neither is consumed, and nothing is transferred.
 
-So draw it as a shared point on two lines that continue, and resist the tempting metaphors — it is not a merge, not a trade, not an acquisition. If your layout makes one participant look like the main one, the layout is wrong.
+So draw it as a shared point on two lines that continue, and resist the tempting metaphors: it is not a merge, not a trade, not an acquisition. If your layout makes one participant look like the main one, the layout is wrong.
 
 ### Terminal reasons, in plain words
 
@@ -70,7 +70,7 @@ A path stops for one of a few reasons, and they are not the same thing. Show whi
 | `EXPIRED` | The world reached the end of its duration with this path still live |
 | `ABANDONED` | The path's output was spent by something that was not a valid action |
 
-[[abandoned]] deserves particular care. It usually means an accident — a wallet sweep, a consolidation — and it carries the txid that did it. Show that txid. Do not soften the wording, and do not display an abandoned path as if it were completed. They mean opposite things about the work.
+[[abandoned]] deserves particular care. It usually means an accident (a wallet sweep, a consolidation), and it carries the txid that did it. Show that txid. Do not soften the wording, and do not display an abandoned path as if it were completed. They mean opposite things about the work.
 
 ## Rendering is a reading, not the record
 
@@ -78,7 +78,7 @@ A path stops for one of a few reasons, and they are not the same thing. Show whi
 
 Deterministic is not the same as canonical. That function is explicitly non-consensus, and the source file says so.
 
-Two galleries can render the same world completely differently — different geometry, different motion, different colours — and both be correct, because the record is the events and their order, not anyone's drawing of them. Build the visual language you want. Just do not confuse yours with the thing itself.
+Two galleries can render the same world completely differently, with different geometry, different motion, and different colours. Both can still be correct, because the record is the events and their order, not anyone's drawing of them. Build the visual language you want. Just do not confuse yours with the thing itself.
 
 :::tip
 A quiet way to keep this honest: make every rendered mark clickable through to the txid it came from. If a mark cannot be traced back to an event, it is decoration, and it should look like decoration.
@@ -88,7 +88,7 @@ A quiet way to keep this honest: make every rendered mark clickable through to t
 
 **Do not present your rendering as the history.** If your site vanished, the worlds would still exist and anyone could rebuild them. Say that. A viewer that implies the picture is the record teaches readers to trust a website when they could be trusting a chain.
 
-**Do not imply that holding a path proves authorship.** Control of the key means one thing: the ability to take the next step. It is not proof of identity, not proof that a person made anything, and not a legal claim over the content of a world. Address labels, badges, and "creator" language quietly assert all three. Write what you can actually verify — that this key signed this step at this height — and stop there.
+**Do not imply that holding a path proves authorship.** Control of the key means one thing: the ability to take the next step. It is not proof of identity, not proof that a person made anything, and not a legal claim over the content of a world. Address labels, badges, and "creator" language quietly assert all three. Write what you can actually verify: that this key signed this step at this height. Stop there.
 
 A screenshot proves nothing either. If someone shows you an event, the check is the txid, not the image.
 

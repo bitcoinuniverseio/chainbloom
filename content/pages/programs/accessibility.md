@@ -1,7 +1,7 @@
 ---
 title: Accessibility for creative worlds
 nav: Accessibility
-description: What a ChainBloom experience owes its audience — text for every visual, a still for anything that moves, colour that is never the only signal, keyboard access, and plain words about cost.
+description: What a ChainBloom experience owes its audience: text for every visual, a still for anything that moves, colour that is never the only signal, keyboard access, and plain words about cost.
 socialTitle: Accessibility for ChainBloom worlds
 socialDescription: Text alternatives, reduced motion, colour independence, keyboard operation, readable transactions, and the plain ordered list.
 updated: 2026-07-31
@@ -16,12 +16,12 @@ cta:
 ---
 
 :::lead
-A ChainBloom [[world]] is a confirmed sequence of events. The picture is an interpretation of it, not the thing itself — which means an accessible version is not a reduced version. Get this right and the same work reaches somebody using a screen reader, somebody who cannot use a mouse, and somebody who finds moving graphics unbearable, without any of them being sent to a lesser page.
+A ChainBloom [[world]] is a confirmed sequence of events. The picture is an interpretation of it, not the thing itself. That means an accessible version is not a reduced version. Get this right and the same work reaches somebody using a screen reader, somebody who cannot use a mouse, and somebody who finds moving graphics unbearable, without any of them being sent to a lesser page.
 :::
 
 ## The idea that makes this tractable
 
-Rendering is deliberately outside the rules. Two galleries can draw the same world completely differently and both are correct — that is stated in the code, in [`src/render.ts`](repo:src/render.ts), which labels its own output as a non-consensus interpretation.
+Rendering is deliberately outside the rules. Two galleries can draw the same world completely differently and both are correct. That is stated in the code, in [`src/render.ts`](repo:src/render.ts), which labels its own output as a non-consensus interpretation.
 
 So there is no canonical appearance to be faithful to. The record is the constraint; the picture is a choice. A version that is entirely words is as legitimate as a version that is entirely colour, because both are readings of the same confirmed history.
 
@@ -40,7 +40,7 @@ A usable text alternative says, in order, what the world is and what happened in
 > Six paths, opened in March, numbered 0 to 5. Path 1 has taken eleven steps and is still live. Path 3 met path 5 at block height 892,140 and both continued. Path 4 was completed on purpose after four steps. Forty-one events in total, the most recent nine blocks ago.
 
 :::simulation
-Those figures are invented for illustration. There are no public worlds to read today, because the index is not switched on — see [what is running](/docs/help/status).
+Those figures are invented for illustration. There are no public worlds to read today, because the index is not switched on. See [what is running](/docs/help/status).
 :::
 
 Rules that hold generally:
@@ -52,11 +52,11 @@ Rules that hold generally:
 
 ## Motion, and the still that replaces it
 
-A [[bloom]] carries a motion value from 0 to {{MAX_MOTION}} — {{MOTION_COUNT}} possibilities. That is an instruction to a renderer, not a requirement placed on it.
+A [[bloom]] carries a motion value from 0 to {{MAX_MOTION}}, which is {{MOTION_COUNT}} possibilities. That is an instruction to a renderer, not a requirement placed on it.
 
 Because interpretation is not part of the rules, a renderer that draws every motion value as a still image is still a correct renderer. This is not a loophole; it is the design. Build the still version first and treat animation as the enhancement.
 
-- Ship a still image of the current state that is complete on its own. Not a paused first frame — a considered composition.
+- Ship a still image of the current state that is complete on its own. Not a paused first frame, but a considered composition.
 - Honour `prefers-reduced-motion`. When it is set, show the still and do not start anything, including subtle drift, parallax and slow fades.
 - Give an explicit pause control that is visible without hovering, and let the paused state persist while the visitor reads.
 - Never use motion alone to say something. If movement marks a recent event, mark it in the text as well.
@@ -70,7 +70,7 @@ Because there are more glyphs than colours, and because the glyph is a distinct 
 
 - Pair every colour with a shape, a label, or a position, so nothing depends on distinguishing two hues.
 - Check contrast against the background you actually ship, including on a projector in a bright room, which is usually worse than any monitor.
-- Do not rely on hue to separate one path from another. Number the paths — they are numbered in the record anyway, from 0 upward — and print the number.
+- Do not rely on hue to separate one path from another. Number the paths (they are numbered in the record anyway, from 0 upward) and print the number.
 - Offer a high-contrast presentation and a monochrome presentation. Both are legitimate readings of the same world.
 
 ## Keyboard access and focus
@@ -105,7 +105,7 @@ Two sentences do most of the work, and they should appear in the same size type 
 
 **Irreversibility.** "Once this is confirmed in a block, it cannot be changed, removed or undone by anyone, including us."
 
-Say them before the sign button, not after. Avoid metaphors — "written in stone", "for eternity", "immutable" — because they are either vague or frightening. Avoid jargon that hides the point: "broadcast" and "finality" mean nothing to most people, while "sent" and "cannot be undone" mean exactly what they say. And say who is paying: at a staffed station, "the museum pays this fee" removes a real anxiety in five words.
+Say them before the sign button, not after. Avoid metaphors such as "written in stone", "for eternity" and "immutable", because they are either vague or frightening. Avoid jargon that hides the point: "broadcast" and "finality" mean nothing to most people, while "sent" and "cannot be undone" mean exactly what they say. And say who is paying: at a staffed station, "the museum pays this fee" removes a real anxiety in five words.
 
 ## The plain ordered list is the accessible version
 
@@ -126,4 +126,4 @@ So a table like this is not a fallback. It is the record, rendered honestly:
 The heights above are invented to show the shape of the table.
 :::
 
-Publish that alongside the picture, on the same page, with the same prominence. Everybody uses it — people using screen readers, people on slow connections, people checking a detail, and curators writing a catalogue. An accessibility feature that only some visitors use is a burden nobody maintains. This one is the thing you would have built anyway.
+Publish that alongside the picture, on the same page, with the same prominence. Everybody uses it: people using screen readers, people on slow connections, people checking a detail, and curators writing a catalogue. An accessibility feature that only some visitors use is a burden nobody maintains. This one is the thing you would have built anyway.
