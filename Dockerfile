@@ -1,4 +1,4 @@
-FROM node:22.22.0-bookworm-slim AS build
+FROM node:24.19.0-bookworm-slim AS build
 WORKDIR /workspace
 COPY package.json package-lock.json* ./
 RUN npm ci
@@ -6,7 +6,7 @@ COPY . .
 RUN npm run ci
 RUN npm prune --omit=dev
 
-FROM node:22.22.0-bookworm-slim AS cli
+FROM node:24.19.0-bookworm-slim AS cli
 WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=build /workspace/package.json ./

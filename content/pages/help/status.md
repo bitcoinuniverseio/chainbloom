@@ -1,8 +1,8 @@
 ---
 title: What is running today
 nav: What is running
-description: Exactly what exists, exactly what does not, and what was checked on 31 July 2026 to find out, so you never learn it the hard way.
-updated: 2026-07-31
+description: What is live today, what remains unsupported, and how the production ChainBloom read path is verified.
+updated: 2026-08-19
 order: 4
 keywords: [status, availability, indexer, npm, wallets, explorer]
 related: [help/faq, reference/changelog, audiences/developers]
@@ -43,24 +43,31 @@ The flow for making a [[world]] and adding to one exists inside InScribe, at [ht
 
 Signing there is real. A real miner fee, a real {{CARRIER_VALUE_SATS}}-satoshi output, and a result that nobody can undo afterwards.
 
-## What is not switched on
-
 ### The public read index
 
-A request to the public status endpoint answers like this:
+The production read index is live. InScribe uses it for confirmed worlds, paths,
+events, graphs, renders, statistics, fees, transaction planning, and broadcast
+validation. The public status path is:
 
 ```text
 GET https://inscribe.bitcoinuniverse.io/api/chainbloom/status
 
-HTTP/1.1 503 Service Unavailable
-ChainBloom is unavailable because CHAINBLOOM_INDEXER_URL is not configured.
+HTTP/1.1 200 OK
+network: mainnet
+nodeAvailable: true
+synced: true
+degraded: false
+confirmedLag: 0
 ```
 
-That single missing setting is the whole story. Every read surface depends on it, so there are no browsable confirmed worlds today, and this documentation shows no live count of anything: not worlds, not paths, not contributions, not participants. Where a number would belong, these pages link here instead.
+The response also publishes the Bitcoin tip, confirmed indexed height, parser
+version, deployed source revision, last successful block and mempool times, and
+state root. InScribe checks that evidence before allowing ChainBloom actions. It
+fails closed if the node is unavailable, the evidence is stale, the network or
+source revision differs from the configured values, the confirmation policy is
+not six blocks, or confirmed lag is above zero.
 
-The [[indexer]] exists as software. It is a strict parser for version one markers, driven by Bitcoin Core over JSON-RPC and ZMQ, ingesting confirmed blocks and the mempool, rolling back to a common ancestor on a reorganization, storing to MySQL, serving REST with an OpenAPI description and Socket.IO, electing a single leader for ingestion by lease, gated by admin API keys, exporting Prometheus metrics, with repair, reindex, and verify commands. None of that helps you today, because no public deployment of it is pointed at.
-
-There is a second reason this site cannot show live data even if the index came up tomorrow: the API sends no `Access-Control-Allow-Origin` header for the origin this documentation is served from. A browser reading this page cannot call it.
+## What is not switched on
 
 ### Wallet support
 
@@ -70,21 +77,30 @@ That matters more than it sounds. A [[carrier]] is an ordinary-looking [[taproot
 
 So every wallet page in this documentation is written as guidance for people building wallets, or as what you should check for yourself before you sign. None of it describes something your wallet already does. Until one does, keep carriers in a wallet you do not use for ordinary spending, and freeze the outputs if you have coin control.
 
-### Explorer support
+### Independent explorer support
 
-No public [[explorer]] presents ChainBloom worlds. Planning documents exist; nothing running does. There are no timelines, no profiles, no bookmarks, no watchlists, and no notifications, anywhere, today.
-
-You can still verify any moment yourself. Take the transaction id, look it up on any Bitcoin explorer you trust, and decode the marker with `chainbloom tx parse --hex <raw transaction>`. That path never depended on anyone's index.
+InScribe presents the production ChainBloom explore and timeline surfaces. No
+separate released wallet or independent explorer currently advertises native
+ChainBloom protection and display. You can verify a marker independently with
+raw transaction bytes from a Bitcoin node you operate and
+`chainbloom tx parse --hex <raw transaction>`.
 
 ## What this means for you today
 
 ### If you want to read
 
-Everything in this documentation is readable now, and the [example worlds](/docs/examples) are worked out end to end precisely because there is nothing live to point you at. What you cannot do is browse a real world someone else made. If any site shows you a count of ChainBloom worlds today, it is showing you an invention, and you should treat everything else on it accordingly.
+Use the Explore surface in InScribe to browse confirmed worlds and paths. Treat
+unconfirmed activity as provisional, and check the status response when you
+need to verify index freshness. The [example worlds](/docs/examples) remain
+worked examples rather than claims about live activity.
 
 ### If you want to take part
 
-You can. The flow works. Read [fees and confirmation](/docs/participate/fees-and-confirmation) and [protect your path](/docs/participate/protect-your-path) first, because two of the usual safety nets are missing: no wallet will protect your carrier for you, and no public index will help you find your world again afterwards. Keep your own transaction ids. That is not a workaround, it is what proves the moment anyway.
+You can. The flow works and the public index follows confirmed results. Read
+[fees and confirmation](/docs/participate/fees-and-confirmation) and
+[protect your path](/docs/participate/protect-your-path) first because released
+wallets still do not protect carrier outputs automatically. Keep your own
+transaction ids as an independent record.
 
 ### If you want to build
 
@@ -92,7 +108,10 @@ This is the strongest position of the three. The rules are written and tested, t
 
 ## How this page is kept honest
 
-Every claim above was checked on 31 July 2026, by reading the source in the repository and by calling the endpoint named. Where checking was not possible, this page says nothing rather than something hopeful.
+Every deployment claim above was checked on 19 August 2026 by reading the
+deployed configuration and calling both the direct indexer health paths and the
+public InScribe status path. Where checking was not possible, this page says
+nothing rather than something hopeful.
 
 There is no roadmap here on purpose. A plan is not a status, and a date is not a fact. This page describes only what answered when asked.
 
