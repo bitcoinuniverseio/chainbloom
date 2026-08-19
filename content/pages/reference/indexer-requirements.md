@@ -116,7 +116,9 @@ Decide what you expose and what it means. At minimum a reader needs: whether a g
 `index-chainbloom` implements this contract: a strict {{PROTOCOL_MAGIC}} version {{PROTOCOL_VERSION}} parser, ingestion from Bitcoin Core over JSON-RPC with ZMQ for new blocks and mempool entries, MySQL 8.4 storage, rollback to a common ancestor on a reorganization, single-leader ingestion with leases, a REST API described by OpenAPI, Socket.IO for live updates, admin API keys, Prometheus metrics, and repair, reindex, and verify commands.
 
 :::note
-That software exists and runs. It is not a public endpoint you can point at today, and this page does not claim one. [What is running](/docs/help/status) says exactly which parts are switched on.
+The Universe-operated production deployment is live behind the InScribe
+ChainBloom APIs. [What is running](/docs/help/status) lists the public status
+path, its fail-closed checks, and the support boundaries that still apply.
 :::
 
 ## How to check yours

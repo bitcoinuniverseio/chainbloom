@@ -54,7 +54,7 @@ npm run build
 node dist/cli.js vectors verify
 ```
 
-Node 22 is required. See the
+Node 24.19.0 and npm 11.17.0 are required. See the
 [SDK guide](https://bitcoinuniverse.github.io/chainbloom/docs/reference/sdk/) and
 the [CLI reference](https://bitcoinuniverse.github.io/chainbloom/docs/reference/cli/).
 
