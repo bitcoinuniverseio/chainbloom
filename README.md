@@ -10,6 +10,10 @@ This repository holds the protocol: the marker format, the transaction
 builders, the validator, the state engine, the command line tool, the published
 test vectors, and the public site.
 
+Repository, site, and package checks run through PowerShell on the shared
+`universe-ci` pool, allowing the same trusted revision to use certified Linux
+or Windows workers. Fork pull requests cannot execute on private runners.
+
 ## Why ChainBloom is shaped this way
 
 - **Shared without becoming chaotic.** Each participant follows a distinct
