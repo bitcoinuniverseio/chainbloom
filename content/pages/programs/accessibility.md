@@ -23,7 +23,7 @@ A ChainBloom [[world]] is a confirmed sequence of events. The picture is an inte
 
 Rendering is deliberately outside the rules. Two galleries can draw the same world completely differently and both are correct. That is stated in the code, in [`src/render.ts`](repo:src/render.ts), which labels its own output as a non-consensus interpretation.
 
-So there is no canonical appearance to be faithful to. The record is the constraint; the picture is a choice. A version that is entirely words is as legitimate as a version that is entirely colour, because both are readings of the same confirmed history.
+So there is no authoritative appearance to be faithful to. The record is the constraint; the picture is a choice. A version that is entirely words is as legitimate as a version that is entirely colour, because both are readings of the same confirmed history.
 
 That flips the usual argument. You are not adding accommodations to a visual work. You are producing several equally valid presentations of one non-visual object.
 

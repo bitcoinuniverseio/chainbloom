@@ -76,7 +76,7 @@ A path stops for one of a few reasons, and they are not the same thing. Show whi
 
 {{PACKAGE_NAME}} can draw a world. `projectBloom` places one point per confirmed event and `renderWorldSvg` returns an SVG document. It is deterministic: positions come from a sha256 of the world seed, the event txid, and the operation name, with {{PALETTE_COUNT}} fixed colours. The same events always produce the same picture.
 
-Deterministic is not the same as canonical. That function is explicitly non-consensus, and the source file says so.
+Deterministic is not the same as authoritative. That function is explicitly non-consensus, and the source file says so.
 
 Two galleries can render the same world completely differently, with different geometry, different motion, and different colours. Both can still be correct, because the record is the events and their order, not anyone's drawing of them. Build the visual language you want. Just do not confuse yours with the thing itself.
 
