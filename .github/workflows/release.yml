@@ -9,8 +9,15 @@ permissions:
   id-token: write
 
 jobs:
+  route:
+    uses: bitcoinuniverseio/.github-private/.github/workflows/route.yml@develop
+    secrets: inherit
+    with:
+      plan: '{"publish_2":"light"}'
+
   publish:
-    runs-on: [self-hosted, universe-ci]
+    needs: route
+    runs-on: ${{ fromJSON(needs.route.outputs.targets).publish_2 }}
     environment: npm
     timeout-minutes: 15
     defaults:
