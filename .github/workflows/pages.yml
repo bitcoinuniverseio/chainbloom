@@ -29,11 +29,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  route:
+    uses: bitcoinuniverseio/.github-private/.github/workflows/route.yml@develop
+    secrets: inherit
+    with:
+      plan: '{"deploy_2":"light"}'
+
   deploy:
+    needs: route
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: [self-hosted, universe-ci]
+    runs-on: ${{ fromJSON(needs.route.outputs.targets).deploy_2 }}
     timeout-minutes: 15
     defaults:
       run:
