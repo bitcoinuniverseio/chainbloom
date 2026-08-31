@@ -9,15 +9,12 @@ permissions:
   id-token: write
 
 jobs:
-  route:
-    uses: bitcoinuniverseio/.github-private/.github/workflows/route.yml@develop
-    secrets: inherit
-    with:
-      plan: '{"publish_2":"light"}'
-
   publish:
-    needs: route
-    runs-on: ${{ fromJSON(needs.route.outputs.targets).publish_2 }}
+    # This repository is public and the capacity router is a reusable workflow
+    # in the private .github-private, which a public caller cannot resolve.
+    # Target the ultra pool directly until the router is published somewhere a
+    # public repository can reach.
+    runs-on: [self-hosted, linux-ultra]
     environment: npm
     timeout-minutes: 15
     defaults:
