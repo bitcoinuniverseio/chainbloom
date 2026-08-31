@@ -45,12 +45,7 @@ jobs:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.sha }}
           fetch-depth: 1
           persist-credentials: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
-        with:
-          node-version: 24.19.0
-          cache: npm
-      - run: npm install --global npm@11.17.0
-      - run: npm ci
+      - uses: bitcoinuniverseio/universe-ci-actions/universe-node-env@main
       # The documentation pages are generated from content/ and from the built
       # package, so both have to exist before the site is uploaded.
       - run: npm run build
