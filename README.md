@@ -4,7 +4,7 @@ ChainBloom is a shared creative experience carried by Bitcoin. People open
 bounded worlds, add expressive moments, let paths meet, and come back later to
 see how the history has grown.
 
-**Documentation: <https://bitcoinuniverse.github.io/chainbloom/docs/>**
+**Documentation: <https://bitcoinuniverseio.github.io/chainbloom/docs/>**
 
 This repository holds the protocol: the marker format, the transaction
 builders, the validator, the state engine, the command line tool, the published
@@ -45,7 +45,7 @@ The protocol package builds and passes its tests and its published vectors. The
 creation flow exists inside [InScribe](https://inscribe.bitcoinuniverse.io/chainbloom).
 A public read index is not switched on yet, no released wallet recognises
 ChainBloom path outputs, and the package is not published to npm.
-[What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+[What is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/)
 keeps that list current.
 
 ## Use the package
@@ -59,8 +59,8 @@ node dist/cli.js vectors verify
 ```
 
 Node 24.19.0 and npm 11.17.0 are required. See the
-[SDK guide](https://bitcoinuniverse.github.io/chainbloom/docs/reference/sdk/) and
-the [CLI reference](https://bitcoinuniverse.github.io/chainbloom/docs/reference/cli/).
+[SDK guide](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/) and
+the [CLI reference](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/cli/).
 
 ## Develop
 

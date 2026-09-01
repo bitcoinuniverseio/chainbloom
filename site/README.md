@@ -1,7 +1,7 @@
 # The ChainBloom public site
 
 `site/` is what GitHub Pages serves at
-<https://bitcoinuniverse.github.io/chainbloom/>.
+<https://bitcoinuniverseio.github.io/chainbloom/>.
 
 Two parts live here:
 

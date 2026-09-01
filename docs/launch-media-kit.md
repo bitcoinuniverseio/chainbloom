@@ -24,7 +24,7 @@ interpretation.
 - The protocol is written, tested, and published with interoperability vectors.
   A world can be created and added to today; a public index, wallet support for
   path outputs, and a browsing surface are not built yet. See
-  [what is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/).
+  [what is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/).
 - A world has a bounded arc and distinct participant paths.
 - Confirmed Bitcoin transactions provide the shared ordering.
 - Two paths can meet without being merged or traded.

@@ -356,7 +356,7 @@ export class ChainBloomState implements StateView {
       ) {
         throw new ChainBloomError(
           'NON_CONTIGUOUS_BLOCK',
-          'Block does not extend the current canonical tip',
+          'Block does not extend the current best chain tip',
         );
       }
     }
@@ -417,7 +417,7 @@ export class ChainBloomState implements StateView {
     if (expectedHash !== undefined && entry.block.hash !== expectedHash) {
       throw new ChainBloomError(
         'ROLLBACK_HASH_MISMATCH',
-        'Expected hash is not the canonical tip',
+        'Expected hash is not the current best chain tip',
       );
     }
     this.history.pop();

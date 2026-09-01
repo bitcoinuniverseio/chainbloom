@@ -8,7 +8,7 @@
 
 export const SITE = {
   name: 'ChainBloom',
-  origin: 'https://bitcoinuniverse.github.io',
+  origin: 'https://bitcoinuniverseio.github.io',
   basePath: '/chainbloom',
   docsPath: '/chainbloom/docs',
   appUrl: 'https://inscribe.bitcoinuniverse.io/chainbloom',

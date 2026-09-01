@@ -2,7 +2,7 @@
  * A local preview of the published site.
  *
  * GitHub Pages serves this project under /chainbloom/, so this server does the
- * same. That way every link, asset path, and canonical URL behaves locally
+ * same. That way every link, asset path, and page address behaves locally
  * exactly as it will in production.
  *
  *   npm run build && npm run build:docs && npm run serve:docs
