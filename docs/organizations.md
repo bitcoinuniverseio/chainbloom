@@ -1,7 +1,7 @@
 # ChainBloom for organizations
 
 > This page has moved. Read
-> [Public programs](https://bitcoinuniverse.github.io/chainbloom/docs/programs/organizations/)
+> [Public programs](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/organizations/)
 > for the current version, with planning checklists, exhibition notes, and
 > guidance on moderation, privacy, and access.
 

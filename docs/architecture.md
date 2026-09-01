@@ -1,9 +1,9 @@
 # How the ChainBloom experience comes together
 
 > This page has moved. Read
-> [Protocol architecture](https://bitcoinuniverse.github.io/chainbloom/docs/reference/protocol-architecture/)
+> [Protocol architecture](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/)
 > for the current version, and
-> [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+> [What is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/)
 > for the state of each part.
 
 ChainBloom keeps four jobs apart.
@@ -20,7 +20,7 @@ A ChainBloom path lives in one specific small Bitcoin output. A wallet should
 recognise that output, keep it out of ordinary coin selection, and explain the
 action being signed. No released wallet does this yet, so the person holding a
 path has to keep it apart themselves. See
-[what a wallet should do](https://bitcoinuniverse.github.io/chainbloom/docs/reference/integration-wallets/).
+[what a wallet should do](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/integration-wallets/).
 
 ## Shared history
 

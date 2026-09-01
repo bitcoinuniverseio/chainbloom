@@ -14,6 +14,8 @@ const required = [
   '../site/assets/marker.mjs',
   '../site/robots.txt',
   '../site/sitemap.xml',
+  '../site/llms.txt',
+  '../site/docs.manifest.json',
 ];
 
 await Promise.all(required.map((path) => access(new URL(path, import.meta.url))));

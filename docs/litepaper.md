@@ -1,7 +1,7 @@
 # The ChainBloom story
 
 > This page has moved. Read
-> [Why ChainBloom exists](https://bitcoinuniverse.github.io/chainbloom/docs/start/why-chainbloom-exists/)
+> [Why ChainBloom exists](https://bitcoinuniverseio.github.io/chainbloom/docs/start/why-chainbloom-exists/)
 > for the current version.
 
 ## A shared history should feel alive
@@ -39,7 +39,7 @@ can remain faithful to the same history.
 The rules are written and tested, and a world can be created and added to today
 in [InScribe](https://inscribe.bitcoinuniverse.io/chainbloom). A public index,
 wallet support for path outputs, and a browsing surface are not built yet.
-[What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+[What is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/)
 keeps an honest, dated list.
 
 Being early is not a footnote here. Nobody has yet decided what a good world

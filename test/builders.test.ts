@@ -34,7 +34,7 @@ function operation(psbt: ReturnType<typeof buildBloomPsbt>): string {
   return decodeMarker(decodeMinimalOpReturn(psbt.txOutputs[0]!.script)).operation;
 }
 
-describe('canonical PSBT builders', () => {
+describe('deterministic PSBT builders', () => {
   it('builds CREATE with marker, roots, then extras', () => {
     const psbt = buildCreatePsbt({
       network: NETWORK.REGTEST,

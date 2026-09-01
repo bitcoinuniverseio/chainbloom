@@ -1,7 +1,7 @@
 # The ChainBloom ecosystem
 
 > This page has moved. Read
-> [What is running today](https://bitcoinuniverse.github.io/chainbloom/docs/help/status/)
+> [What is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/)
 > for a dated, checked account of every part.
 
 ChainBloom is one shared creative history with several kinds of software around
@@ -34,5 +34,5 @@ can invite an audience into a bounded work, and a school can make ordering and
 shared state something students handle rather than hear about.
 
 The people who build the first of these decide what the conventions become. See
-[Integration guides](https://bitcoinuniverse.github.io/chainbloom/docs/reference/integration-wallets/)
+[Integration guides](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/integration-wallets/)
 to start.

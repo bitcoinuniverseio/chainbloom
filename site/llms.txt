@@ -1,0 +1,128 @@
+# ChainBloom
+
+> Grow a shared history with Bitcoin.
+>
+> ChainBloom is a Bitcoin protocol for shared creative history. People join
+> a world, add to a path, and every step is a real Bitcoin transaction that
+> anyone can replay from the chain.
+
+ChainBloom has no project token, no custody, and no trading venue. The
+Bitcoin Universe capability snapshot records no marketplace for ChainBloom,
+so no Bitcoin Universe product implements a buy, sell, or settle path for
+anything created with it.
+
+Every link below is a page this site publishes.
+
+## Site
+
+- [ChainBloom](https://bitcoinuniverseio.github.io/chainbloom/): the public introduction,
+  with the five actions and the questions worth asking before you take part.
+- [ChainBloom documentation](https://bitcoinuniverseio.github.io/chainbloom/docs/): ChainBloom lets a group of people grow one shared story, one confirmed Bitcoin moment at a time. Start where you are.
+
+## Start here
+
+- [Start here](https://bitcoinuniverseio.github.io/chainbloom/docs/start/): Answer one question about what you want to do, and get an ordered reading path you can keep, with your place saved in this browser.
+- [ChainBloom in 60 seconds](https://bitcoinuniverseio.github.io/chainbloom/docs/start/chainbloom-in-60-seconds/): A world is a bounded shared story. Each path inside it moves one confirmed Bitcoin step at a time. Nobody can rearrange it afterwards, and nobody owns it.
+- [Why ChainBloom exists](https://bitcoinuniverseio.github.io/chainbloom/docs/start/why-chainbloom-exists/): Three ordinary problems ruin shared creative work: a feed with no shape, a group voice that flattens into one, and a record only its host can vouch for. One structure answers all three.
+- [Watch a world grow](https://bitcoinuniverseio.github.io/chainbloom/docs/start/watch-a-world-grow/): A three-path world from its first moment to its last, in nine steps you can follow with no wallet, no signing, and nothing spent.
+
+## How it works
+
+- [How it works](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/): Six short pages that take you from "a world is a bounded story" to knowing exactly what a confirmed step means and why nobody can reorder it afterwards.
+- [How a world grows](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/how-a-world-grows/): An invitation, a fixed number of paths, steps that each wait for the one before them, and an ending that was set on the first day.
+- [Worlds, paths, and history](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/worlds-paths-and-history/): What a world fixes forever the moment it is created, what a path actually is, what counts as history, and the four states a path can be in when you find it.
+- [Create, Bloom, Echo, Meet and Close](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/the-five-actions/): Five moves build every ChainBloom world: open it, add a moment, answer an earlier one, share a moment with someone, and end a path on purpose.
+- [How two paths meet without losing themselves](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/when-paths-meet/): A meeting lets two people share one moment in one transaction while both paths carry on unchanged: nothing is merged, swapped or handed over.
+- [How Bitcoin confirmations create shared ordering](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/bitcoin-and-shared-order/): Bitcoin is in ChainBloom for one job: letting strangers agree on what came first, with no referee and no host to trust.
+- [Confirmed and unconfirmed activity](https://bitcoinuniverseio.github.io/chainbloom/docs/learn/confirmed-and-unconfirmed/): How to tell a real moment from a hopeful one, why an unconfirmed step can vanish or change position, and what a broadcast receipt is actually worth.
+
+## Take part
+
+- [Take part](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/): The nine pages you need before, during, and after you sign, from opening a world to completing a path, written for the moment money is involved.
+- [Creating a world from start to finish](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/create-a-world/): Every decision that goes into opening a world, in the order you have to make them, including the four settings that can never be changed once the transaction confirms.
+- [Joining and contributing to a world](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/join-a-world/): How to get a path, decide what your one moment adds, and sign your first step, plus the two things you must check before the transaction goes out.
+- [Returning to an existing path](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/return-to-a-path/): Three things to write down before you close the tab, how to check where your path stands weeks later, and what to do if the world moved on without you.
+- [Completing a path](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/complete-a-path/): An ending is a contribution, not an exit: what completing does to a path, what it returns to you, and how it differs from letting a world run out.
+- [Wallet connection and transaction review](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/wallet-and-review/): Connecting a wallet shares one address and never your keys. This page shows what to read on a signing screen before you approve a ChainBloom step, and what should make you stop.
+- [Network fees and confirmation expectations](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/fees-and-confirmation/): There are only two costs, a miner fee and the small amount of bitcoin carried inside each path output that returns to you when the path completes. This page shows how both behave.
+- [Protecting a live path](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/protect-your-path/): A live path is one specific small Bitcoin output, and an ordinary payment that spends it ends the path for good. Here is how to make sure that never happens.
+- [Bookmarks, profiles, watchlists and notifications](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/follow-and-return/): None of these features exist yet, so here is the four-line note that lets you find your way back to any world or path with no software at all, plus what the tools must do when they arrive.
+- [Exploring timelines and relationships](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/explore-timelines/): A world's history is a fixed order of confirmed events, and that order can be drawn as a picture, played as a score, or listed as plain text. All three are faithful readings.
+
+## Example worlds
+
+- [Example worlds](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/): Eight worlds worked out in full: the invitation to send, the settings to type in, the moment the paths meet, and how each one ends.
+- [A collaborative digital garden](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/collaborative-garden/): Six neighbours, six beds, one shared record of a growing season that nobody can tidy up or rewrite once it is over.
+- [A festival history](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/festival-history/): Five stages keep five separate records across six days, and on the closing night they meet, so the festival ends as one thing instead of five.
+- [A musical composition](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/musical-composition/): Four players hold four voices for a month, a meeting is a chord two people sign together, and the piece is finished only when every voice has ended itself.
+- [A community time capsule](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/community-time-capsule/): One path for each year of a group's life, filled quietly over twelve months and opened out loud on a single evening that everyone can put in the diary.
+- [A classroom constellation](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/classroom-constellation/): One path per student across a term, so a class learns what "confirmed" means by waiting for it instead of being told about it.
+- [A museum exhibition](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/museum-exhibition/): Visitors shape a bounded work across the run of a show, and the finished history stays readable long after the walls come down.
+- [A city or neighbourhood story](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/neighbourhood-story/): One path per street, meeting where the streets actually meet, with a record that holds no addresses and no names.
+- [An artist and audience collaboration](https://bitcoinuniverseio.github.io/chainbloom/docs/examples/artist-and-audience/): The artist keeps one line and hands the other four to the audience, and every answer the artist gives is a signature both people put on the same moment.
+
+## For you
+
+- [For you](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/): Eleven short pages, one for each kind of person who arrives here. Find the one that sounds like you, read it in four minutes, and skip the rest.
+- [If you are new here](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/new-visitors/): The ninety second version of ChainBloom, the one thing worth looking at first, and clear permission to stop reading afterwards.
+- [If you want to take part](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/participants/): What you need before your first step, what it actually costs, what stays yours afterwards, and the three things that can never be undone.
+- [If you want to create a world](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/world-creators/): The four choices that can never be changed once you broadcast, how to write an invitation people actually answer, and how to look after the people who answer it.
+- [If you make or curate work](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/artists-and-curators/): A bounded, ordered, openly interpretable record behaves like a material you work with, not a platform you publish on. Holding a path is not a copyright claim.
+- [If you run a community](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/communities/): How to build a ritual that repeats, keep many voices instead of flattening them into one, moderate before the invitation goes out, and avoid turning taking part into a score.
+- [Museums and cultural organizations](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/museums-and-cultural-organizations/): Programme a ChainBloom world as a commission: what to budget for real network fees, how to keep it accessible, what survives the run, and what to put on the wall.
+- [Educators](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/educators/): What a class actually learns by running a ChainBloom world (shared state, ordering, irreversibility, and collaboration), plus the real limits on cost, consent, age, and keys.
+- [Brands and sponsors](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/brands-and-sponsors/): Sponsorship can fund an artist, a programme, access, and production. It cannot buy the history, a reward scheme, or any claim about value.
+- [Developers](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/developers/): What the ChainBloom package gives you today, the shape of an integration, and which four files to read first.
+- [Wallet and explorer integrators](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/wallet-and-explorer-integrators/): Two behaviours decide whether ChainBloom is safe inside your product: never spend a live path output in an ordinary payment, and never show a preview as if it were confirmed.
+- [Indexers and operators](https://bitcoinuniverseio.github.io/chainbloom/docs/audiences/indexers-and-operators/): What it takes to serve the same ChainBloom history as everyone else: a Bitcoin node, deterministic replay, rollback on reorganization, and failing closed on an invalid spend.
+
+## Public programs
+
+- [Public programs](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/): The operational half of ChainBloom: how a museum, festival, school or community group runs a world as a real public programme, and what it owes the people who take part.
+- [Organizations, exhibitions and public programs](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/organizations/): What kinds of public programme suit a ChainBloom world, what the budget actually buys, the promises you must never make, and how to judge success without counting trades.
+- [Running a world as an exhibition](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/exhibitions/): The floor-level detail of putting a ChainBloom world in a gallery: the staffed station, the wall text, visitors with no wallet, fees on an institutional budget, and what survives closing night.
+- [Education and classroom use](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/education/): How to run a ChainBloom world across a school or university term: what it teaches, consent and age, who holds the keys, what it costs per student, and a version that spends nothing at all.
+- [Community moderation and participant privacy](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/moderation-and-privacy/): Nobody can remove a confirmed contribution from Bitcoin, so moderation happens before and around a world rather than after it. A contribution also reveals more than people expect.
+- [Accessibility for creative worlds](https://bitcoinuniverseio.github.io/chainbloom/docs/programs/accessibility/): What a ChainBloom experience owes its audience: text for every visual, a still for anything that moves, colour that is never the only signal, keyboard access, and plain words about cost.
+
+## Technical reference
+
+- [Technical reference](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/): Everything ChainBloom enforces, read from the source: marker bytes, transaction shapes, validation codes, state, and reorganization handling.
+- [Protocol architecture](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/): The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action.
+- [Transaction lifecycle](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/transaction-lifecycle/): Where every input and output must sit in a ChainBloom transaction, operation by operation, with the value and script type each position requires.
+- [Data structures](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/data-structures/): Every field of WorldState, LaneState, EventState and the rest, with the exact rule behind each lane status and world status.
+- [Validation rules](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/validation-rules/): Every check validateProtocolTransaction runs, grouped and named by the issue code it emits, including the two rules people get wrong most often.
+- [Reorganizations](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/reorganizations/): How a ChainBloom view stays correct when Bitcoin replaces its newest blocks: contiguous apply, one-block rollback, and replay from a common ancestor.
+- [Indexer requirements](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/indexer-requirements/): What a service must do so that anyone replaying the same Bitcoin blocks rebuilds exactly the same ChainBloom history, event for event.
+- [TypeScript SDK](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/): Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine.
+- [Command line](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/cli/): Every command the chainbloom binary has, with a real invocation, the JSON it prints, and the error shape it uses when something goes wrong.
+- [Wallet integration](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/integration-wallets/): The three things a wallet owes a ChainBloom user, in priority order, with the exact rule for recognising a path output and the exact rules for signing one.
+- [Explorer and gallery integration](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/integration-explorers/): What a viewer must show for a reader to trust it, what it must never claim, and why a rendering of a world is a reading rather than the record.
+- [Test vectors](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/test-vectors/): Eleven fixed byte strings that tell you whether your ChainBloom reader agrees with every other one. Five markers that must parse and six that must be refused.
+- [Error and issue codes](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/errors/): Every code ChainBloom can produce, the difference between a thrown error and a recorded issue, and what to do about the five you will meet most.
+- [Security model](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/security-model/): What ChainBloom protects, what it cannot protect, and the small number of things that are yours to do. Written so you can decide before you sign anything.
+- [Reliability and continuity](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/reliability/): Why a ChainBloom history survives the failure of any website that shows it, what a good service does while it is behind, and how to check a moment yourself.
+- [Governance and contributing](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/governance/): How the protocol is looked after, what stewardship is there to protect, how a change gets proposed, and the private path for reporting a security problem.
+- [Version, changes and what is next](https://bitcoinuniverseio.github.io/chainbloom/docs/reference/changelog/): The current version stated plainly, what the 0.1.0 package actually contains, and an honest list of the parts that are not finished.
+
+## Help
+
+- [Help](https://bitcoinuniverseio.github.io/chainbloom/docs/help/): Four pages for when something breaks, when a word makes no sense, or when you need to know what is actually switched on before you spend anything.
+- [Troubleshooting and common errors](https://bitcoinuniverseio.github.io/chainbloom/docs/help/troubleshooting/): What the message on your screen means, why it happened, and the next thing to do, arranged by what you see rather than by which part of the code complained.
+- [Questions worth asking](https://bitcoinuniverseio.github.io/chainbloom/docs/help/faq/): Short honest answers to what people actually ask about ChainBloom, including the several where the answer is no, and the ones where it is not yet.
+- [Complete glossary](https://bitcoinuniverseio.github.io/chainbloom/docs/help/glossary/): Every word this documentation uses, defined once in full, in alphabetical order, with links to the pages where each one actually matters.
+- [What is running today](https://bitcoinuniverseio.github.io/chainbloom/docs/help/status/): What is live today, what remains unsupported, and how the production ChainBloom read path is verified.
+
+## Machine readable
+
+- [docs.manifest.json](https://bitcoinuniverseio.github.io/chainbloom/docs.manifest.json): the
+  documentation manifest for this repository.
+- [sitemap.xml](https://bitcoinuniverseio.github.io/chainbloom/sitemap.xml): every page above,
+  as a sitemap.
+- [robots.txt](https://bitcoinuniverseio.github.io/chainbloom/robots.txt): the crawl policy.
+
+## Source
+
+- [Repository](https://github.com/bitcoinuniverseio/chainbloom): the protocol
+  library, the command line tool, the interoperability vectors, and the
+  source of these pages.
