@@ -263,6 +263,8 @@ async function main() {
     'utf8',
   );
   await writeSitemap(written);
+  const manifest = await publishManifest();
+  await writeLlmsTxt(pages, nav, manifest);
 
   console.log(
     `Documentation built: ${pages.length} pages, ${flat.length} in navigation, ` +
@@ -305,6 +307,78 @@ function buildJourneyData(byId) {
       };
     }),
   }));
+}
+
+/**
+ * Write site/llms.txt: one absolute link per published page, with the
+ * description that page already carries in its front matter. It is generated
+ * from the same page list as the sitemap, so it cannot name a page that was
+ * not built.
+ */
+async function writeLlmsTxt(pages, nav, manifest) {
+  const byId = new Map(pages.map((page) => [page.id, page]));
+  const home = byId.get('');
+  const lines = [
+    `# ${SITE.name}`,
+    '',
+    `> ${SITE.tagline}`,
+    '>',
+    '> ChainBloom is a Bitcoin protocol for shared creative history. People join',
+    '> a world, add to a path, and every step is a real Bitcoin transaction that',
+    '> anyone can replay from the chain.',
+    '',
+    'ChainBloom has no project token, no custody, and no trading venue. The',
+    'Bitcoin Universe capability snapshot records no marketplace for ChainBloom,',
+    'so no Bitcoin Universe product implements a buy, sell, or settle path for',
+    'anything created with it.',
+    '',
+    'Every link below is a page this site publishes.',
+    '',
+    '## Site',
+    '',
+    `- [${SITE.name}](${SITE.origin}${SITE.basePath}/): the public introduction,`,
+    '  with the five actions and the questions worth asking before you take part.',
+    `- [${home.title}](${SITE.origin}${home.url}): ${home.description}`,
+    '',
+  ];
+
+  for (const section of nav) {
+    lines.push(`## ${section.title}`, '');
+    for (const page of section.pages) {
+      lines.push(`- [${page.title}](${SITE.origin}${page.url}): ${page.description}`);
+    }
+    lines.push('');
+  }
+
+  lines.push(
+    '## Machine readable',
+    '',
+    `- [docs.manifest.json](${SITE.origin}${SITE.basePath}/docs.manifest.json): the`,
+    '  documentation manifest for this repository.',
+    `- [sitemap.xml](${SITE.origin}${SITE.basePath}/sitemap.xml): every page above,`,
+    '  as a sitemap.',
+    `- [robots.txt](${SITE.origin}${SITE.basePath}/robots.txt): the crawl policy.`,
+    '',
+    '## Source',
+    '',
+    `- [Repository](https://github.com/${manifest.repository}): the protocol`,
+    '  library, the command line tool, the interoperability vectors, and the',
+    '  source of these pages.',
+    '',
+  );
+
+  await writeFile(join(ROOT, 'site', 'llms.txt'), lines.join('\n'), 'utf8');
+}
+
+/**
+ * Publish the repository manifest at the site root. The authored copy stays at
+ * the repository root; this is the copy tooling can fetch over HTTP. Returns
+ * the parsed manifest so llms.txt can name the same repository.
+ */
+async function publishManifest() {
+  const source = await readFile(join(ROOT, 'docs.manifest.json'), 'utf8');
+  await writeFile(join(ROOT, 'site', 'docs.manifest.json'), source, 'utf8');
+  return JSON.parse(source);
 }
 
 async function writeSitemap(docsUrls) {

@@ -37,7 +37,7 @@ describe('binary codec', () => {
     expect(() => networkIdFromName('mars')).toThrow(ChainBloomError);
   });
 
-  it('rejects non-canonical fields and payload lengths', () => {
+  it('rejects malformed fields and payload lengths', () => {
     expect(() =>
       encodeMarker(NETWORK.REGTEST, {
         operation: 'CREATE',

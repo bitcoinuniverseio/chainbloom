@@ -43,9 +43,9 @@ Options:
   -h, --help      display help for command
 
 Commands:
-  marker          Encode or decode canonical markers
+  marker          Encode or decode protocol markers
   tx              Parse a raw Bitcoin transaction
-  psbt            Build a canonical unsigned PSBT from JSON
+  psbt            Build a deterministic unsigned PSBT from JSON
   vectors         Verify bundled interoperability vectors
   state           Replay indexed blocks and print deterministic state
   help [command]  display help for command

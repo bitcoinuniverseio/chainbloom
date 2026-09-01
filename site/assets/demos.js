@@ -1771,7 +1771,7 @@
         date +
         '.</text>' +
         '<text x="90" y="540" fill="#9eb5c7" font-family="sans-serif" font-size="22">A record of reading. Not a token, a balance, a right, or proof of anything on Bitcoin.</text>' +
-        '<text x="90" y="580" fill="#7ee0bd" font-family="sans-serif" font-size="22">bitcoinuniverse.github.io/chainbloom/docs</text>' +
+        '<text x="90" y="580" fill="#7ee0bd" font-family="sans-serif" font-size="22">bitcoinuniverseio.github.io/chainbloom/docs</text>' +
         '</svg>'
       );
     }

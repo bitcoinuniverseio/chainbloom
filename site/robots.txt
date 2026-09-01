@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bitcoinuniverse.github.io/chainbloom/sitemap.xml
+Sitemap: https://bitcoinuniverseio.github.io/chainbloom/sitemap.xml
