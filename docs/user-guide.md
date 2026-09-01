@@ -1,7 +1,7 @@
 # Take part in ChainBloom
 
 > This page has moved. Read
-> [Joining a world](https://bitcoinuniverse.github.io/chainbloom/docs/participate/join-a-world/)
+> [Joining a world](https://bitcoinuniverseio.github.io/chainbloom/docs/participate/join-a-world/)
 > for the current version, which covers fees, review, and confirmation in detail.
 
 [Open ChainBloom](https://inscribe.bitcoinuniverse.io/chainbloom) to find a

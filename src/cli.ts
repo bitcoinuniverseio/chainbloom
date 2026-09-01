@@ -37,7 +37,7 @@ const program = new Command()
   .description('Create and explore ChainBloom histories on Bitcoin')
   .showHelpAfterError();
 
-const marker = program.command('marker').description('Encode or decode canonical markers');
+const marker = program.command('marker').description('Encode or decode protocol markers');
 marker
   .command('encode')
   .requiredOption('-n, --network <network>')
@@ -67,7 +67,7 @@ program
 
 program
   .command('psbt')
-  .description('Build a canonical unsigned PSBT from JSON')
+  .description('Build a deterministic unsigned PSBT from JSON')
   .command('build')
   .requiredOption('-o, --operation <operation>')
   .requiredOption('-f, --file <path>')
