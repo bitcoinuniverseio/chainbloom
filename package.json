@@ -54,7 +54,7 @@
     "prepublishOnly": "npm run ci"
   },
   "dependencies": {
-    "bitcoinjs-lib": "^7.0.1",
+    "bitcoinjs-lib": "^7.0.2",
     "commander": "^15.0.0"
   },
   "devDependencies": {
