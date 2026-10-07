@@ -27,3 +27,10 @@ transaction record.
 
 Reliability is a shared practice: transparent services, careful wallets, and
 participants who review before signing all contribute to a better experience.
+
+## Indexer availability during database contention
+
+Database lease contention does not grant a second writer. The indexer can keep
+its liveness endpoint available and retry leadership while readiness remains
+degraded. Clients should display the last confirmed indexed height and pending
+catch-up state rather than treating process liveness as current chain coverage.
