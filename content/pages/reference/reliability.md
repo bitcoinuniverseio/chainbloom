@@ -108,3 +108,9 @@ Screenshots prove nothing; a txid and a block prove a great deal. That asymmetry
 Honesty about reliability includes honesty about what exists. The protocol, its vectors, and the state engine are written and checked. The public index that would let anyone browse confirmed worlds is **not switched on**, so there are no live worlds to read from a public read API today, and no counts of anything.
 
 That does not weaken anything on this page -- it is precisely why the page matters. The rules and the vectors are what let a public index be turned on, replaced, or run by someone else later without asking anyone's permission or losing a single confirmed moment. [What is running](/docs/help/status) is kept current and says exactly where things stand.
+## Indexer availability during database contention
+
+Database lease contention does not grant a second writer. The indexer can keep
+its liveness endpoint available and retry leadership while readiness remains
+degraded. Clients should display the last confirmed indexed height and pending
+catch-up state rather than treating process liveness as current chain coverage.
