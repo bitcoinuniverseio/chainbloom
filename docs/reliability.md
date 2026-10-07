@@ -34,3 +34,6 @@ Database lease contention does not grant a second writer. The indexer can keep
 its liveness endpoint available and retry leadership while readiness remains
 degraded. Clients should display the last confirmed indexed height and pending
 catch-up state rather than treating process liveness as current chain coverage.
+
+Pending-transaction maintenance works in small guarded groups. Retrying it does
+not change the confirmed block ledger or permit a second writer.
