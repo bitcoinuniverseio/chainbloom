@@ -56,6 +56,10 @@ jobs:
       # package, so both have to exist before the site is uploaded.
       - run: npm run build
       - run: npm run build:docs
+      - name: Generate production version metadata
+        run: node site/version-build/generate.mjs
+        env:
+          BUILD_CHANNEL: production
       - run: npm run check:site
       - run: npm run check:docs
       - name: Record the immutable deployment revision
