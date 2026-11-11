@@ -4,6 +4,10 @@ COPY package.json package-lock.json* ./
 RUN npm ci
 COPY . .
 RUN npm run ci
+# The CLI image does not serve the site. Supply the source revision to also
+# validate site metadata when building from a Git-free Docker context.
+ARG BUILD_SHA
+RUN if [ -n "$BUILD_SHA" ]; then node site/version-build/generate.mjs; fi
 RUN npm prune --omit=dev
 
 FROM node:24.19.0-bookworm-slim AS cli

@@ -28,4 +28,5 @@ jobs:
           persist-credentials: false
       - uses: bitcoinuniverseio/universe-ci-actions/universe-node-env@8e24bc760556caa5ec8c7c497baaad2e9adcc912 # v1 # v1
       - run: npm run ci
+      - run: node site/version-build/generate.mjs
       - run: npm pack --dry-run
