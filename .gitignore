@@ -12,3 +12,7 @@ Thumbs.db
 
 # Generated documentation pages. Built by "npm run build:docs".
 /site/docs/
+
+# Build-specific site metadata.
+/site/version.json
+/site/public/version-build.js
