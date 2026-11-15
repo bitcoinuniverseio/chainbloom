@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "chainbloom",
+  "name": "Chainbloom",
+  "classification": "protocol",
+  "repository": "bitcoinuniverseio/chainbloom",
+  "documentationUrl": "https://docs.bitcoinuniverse.io/protocols/chainbloom/",
+  "docsRoot": "docs",
+  "sourceRef": "main",
+  "lifecycle": "experimental",
+  "chains": [
+    {
+      "chain": "bitcoin",
+      "networks": [
+        "mainnet"
+      ]
+    }
+  ],
+  "protocols": [
+    "chainbloom"
+  ],
+  "audiences": [
+    "user",
+    "protocol-implementer",
+    "app-developer"
+  ],
+  "owners": [
+    "bitcoinuniverseio"
+  ],
+  "lastVerified": {
+    "commit": "7902ec746948c790d0eace51203af017937fe4b5",
+    "timestamp": "2026-09-01T02:00:00Z"
+  },
+  "securityClassification": "public"
+}

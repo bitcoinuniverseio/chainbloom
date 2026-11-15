@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en" data-page="reference/protocol-architecture" data-section="reference">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Protocol architecture · ChainBloom</title>
+<meta name="description" content="The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="Protocol architecture · ChainBloom" />
+<meta property="og:description" content="The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: Protocol architecture" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Protocol architecture · ChainBloom" />
+<meta name="twitter:description" content="The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/reference/" />
+<link rel="next" href="/chainbloom/docs/reference/transaction-lifecycle/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Protocol architecture","description":"The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Technical reference","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/"},{"@type":"ListItem","position":3,"name":"Protocol architecture","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/protocol-architecture/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/"  data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/"  data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/" aria-current="page" data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/"  data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/"  data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/"  data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/reference/">Technical reference</a></li><li aria-current="page">Protocol architecture</li></ol></nav>
+<h1>Protocol architecture</h1>
+<p class="page-meta"><span class="tag tag-reference">Technical reference</span><span>Checked against @chainbloom/protocol@0.1.0</span><span>Last reviewed 2026-07-31</span><span>7 min read</span></p>
+<div class="page-lede"><p>The design in one page: what ChainBloom fixes for everyone, what it leaves open, and the exact bytes of the marker that names an action.</p></div>
+<div class="prose">
+<div class="lead"><p>Read this page and you will know exactly what every independent reader of the chain must compute the same way, and exactly what is yours to decide. That line is the whole design. Everything above it is fixed forever; everything below it is where your product gets to be different.</p></div>
+<h2 id="five-ideas">Five ideas<a class="anchor" href="#five-ideas" aria-label="Link to this section">#</a></h2>
+<h3 id="keep-the-shared-agreement-small">Keep the shared agreement small<a class="anchor" href="#keep-the-shared-agreement-small" aria-label="Link to this section">#</a></h3>
+<p>The consensus surface is one <button type="button" class="glossary-term" data-term="op-return" aria-describedby="glossary-tip">op-return<span class="glossary-inline">A Bitcoin output that stores a small amount of data and holds no value.</span></button> output of at most 72 bytes. Nothing else in a ChainBloom transaction carries meaning that two indexers could read differently.</p>
+<p>That is a deliberate ceiling, not a limitation waiting to be lifted. Every byte you add to a shared format is a byte two implementations can disagree about, and a byte every future reader must keep parsing. The record holds numbers that name choices. It holds no images, no text beyond a world title, and no instructions about how anything should look.</p>
+<h3 id="a-world-is-created-by-one-transaction">A world is created by one transaction<a class="anchor" href="#a-world-is-created-by-one-transaction" aria-label="Link to this section">#</a></h3>
+<p>One CREATE transaction fixes the shape of a <button type="button" class="glossary-term" data-term="world" aria-describedby="glossary-tip">world<span class="glossary-inline">A bounded shared story with a fixed number of paths and a known ending.</span></button> and its identity at the same time. The world id <strong>is</strong> the txid of that transaction. There is no registry, no name reservation, and no second step.</p>
+<p>CREATE fixes five things that can never be edited:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>Field</th><th>Range</th><th>What it decides</th></tr></thead><tbody><tr><td><code>ruleset</code></td><td>1</td><td>Which version of these rules the world follows</td></tr><tr><td><code>laneCount</code></td><td>1 to 8</td><td>How many paths exist</td></tr><tr><td><code>durationBlocks</code></td><td>144 to 52,560</td><td>How long the world stays open, in blocks</td></tr><tr><td><code>maxSteps</code></td><td>1 to 512</td><td>How far one path may travel</td></tr><tr><td><code>seed</code></td><td>16 bytes</td><td>A shared starting point for arranging the world</td></tr></tbody></table></div>
+<p>A title of at most 32 ASCII bytes matching <code>^[A-Za-z0-9 ._:-]*$</code> rides along. <code>durationBlocks</code> is measured in blocks because blocks are the only clock everybody already shares: 144 blocks is roughly 1 day, 52,560 is roughly 365 days.</p>
+<h3 id="one-live-output-per-path">One live output per path<a class="anchor" href="#one-live-output-per-path" aria-label="Link to this section">#</a></h3>
+<p>Each <button type="button" class="glossary-term" data-term="path" aria-describedby="glossary-tip">path<span class="glossary-inline">One thread inside a world that moves forward one confirmed step at a time.</span></button> holds exactly one live Bitcoin output, called a <button type="button" class="glossary-term" data-term="carrier" aria-describedby="glossary-tip">carrier<span class="glossary-inline">The single small Bitcoin output that holds a path in place.</span></button> and called a <em>lane</em> everywhere in the code. To move a path forward you spend that output and create the next one, worth exactly 1000 satoshis and always <button type="button" class="glossary-term" data-term="taproot" aria-describedby="glossary-tip">P2TR<span class="glossary-inline">The current standard type of Bitcoin output, written as P2TR.</span></button>.</p>
+<p>This is the load-bearing idea. Bitcoin will not let one output be spent twice, so a path cannot fork, cannot be reordered, and cannot be rewritten by whoever shouts loudest. The state engine keeps this as a map from outpoint to lane id (<code>liveOutpoints</code> in <a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/src/state.ts" target="_blank" rel="noreferrer noopener">src/state.ts<span class="link-out" aria-hidden="true">↗</span></a>), and <code>getLiveLaneByOutpoint</code> is how a transaction is recognised as touching a path at all.</p>
+<p>The same idea has a sharp edge. A confirmed transaction that spends a live carrier and is <em>not</em> a valid ChainBloom event ends that path as <code>ABANDONED</code>. Nothing is invented to replace it.</p>
+<h3 id="five-operations">Five operations<a class="anchor" href="#five-operations" aria-label="Link to this section">#</a></h3>
+<p>There are 5 operations and no plans for a sixth in ruleset 1.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>Opcode</th><th>Byte</th><th>Path inputs</th><th>Path outputs</th><th>Payload bytes</th></tr></thead><tbody><tr><td><code>CREATE</code></td><td><code>0x01</code></td><td>0</td><td>one per lane</td><td>23 + title length</td></tr><tr><td><code>BLOOM</code></td><td><code>0x02</code></td><td>1</td><td>1</td><td>4</td></tr><tr><td><code>GRAFT</code></td><td><code>0x03</code></td><td>1</td><td>1</td><td>35</td></tr><tr><td><code>RENDEZVOUS</code></td><td><code>0x04</code></td><td>2</td><td>2</td><td>4</td></tr><tr><td><code>CLOSE</code></td><td><code>0x05</code></td><td>1</td><td>0</td><td>1</td></tr></tbody></table></div>
+<p><code>GRAFT</code> is shown to people as an <em>echo</em> and <code>RENDEZVOUS</code> as a <button type="button" class="glossary-term" data-term="meeting" aria-describedby="glossary-tip">meeting<span class="glossary-inline">One transaction where two paths share a moment and both continue.</span></button>. The code never uses the friendly names, and neither should your API.</p>
+<h3 id="presentation-is-left-open">Presentation is left open<a class="anchor" href="#presentation-is-left-open" aria-label="Link to this section">#</a></h3>
+<p><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/src/render.ts" target="_blank" rel="noreferrer noopener">src/render.ts<span class="link-out" aria-hidden="true">↗</span></a> ships <code>projectBloom</code> and <code>renderWorldSvg</code>, and both are explicitly non-consensus. They place events by hashing the world seed, the event txid, and the operation with sha256, and they draw from 16 fixed colours.</p>
+<p>None of that is binding. Two galleries may render the same confirmed world completely differently and both be correct, because the record says <code>glyph</code> is 7, not what a 7 looks like. If you want a house style, build one. You cannot be wrong about it.</p>
+<h2 id="the-marker">The marker<a class="anchor" href="#the-marker" aria-label="Link to this section">#</a></h2>
+<h3 id="where-it-must-sit">Where it must sit<a class="anchor" href="#where-it-must-sit" aria-label="Link to this section">#</a></h3>
+<p>A ChainBloom transaction must contain <strong>exactly one</strong> ChainBloom-looking output, and it must be at <code>vout 0</code> with a value of zero satoshis.</p>
+<p>&quot;ChainBloom-looking&quot; is decided by <code>isPotentialChainBloomScript</code> in <a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/src/script.ts" target="_blank" rel="noreferrer noopener">src/script.ts<span class="link-out" aria-hidden="true">↗</span></a>: an <code>OP_RETURN</code> output whose first push begins with the four magic bytes <code>43424c4d</code>. Two such outputs, or one sitting at <code>vout 1</code>, raises <code>MARKER_POSITION</code>. A non-zero value at <code>vout 0</code> raises <code>MARKER_VALUE</code>.</p>
+<p>The script must be one minimal direct push and nothing else: <code>OP_RETURN</code>, one length byte from 1 to 72, then exactly that many bytes. A second push, an <code>OP_PUSHDATA1</code> where a direct push would fit, or any trailing opcode raises <code>NON_MINIMAL_OP_RETURN</code> from <code>decodeMinimalOpReturn</code>.</p>
+<h3 id="the-header">The header<a class="anchor" href="#the-header" aria-label="Link to this section">#</a></h3>
+<p>The first 8 bytes are fixed for every operation.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Marker layout"><table><thead><tr><th>Offset</th><th>Bytes</th><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><code>0</code></td><td><code>4</code></td><td><code>magic</code></td><td><code>43424c4d</code>, the letters CBLM</td></tr><tr><td><code>4</code></td><td><code>1</code></td><td><code>version</code></td><td><code>1</code></td></tr><tr><td><code>5</code></td><td><code>1</code></td><td><code>network</code></td><td>mainnet 0, testnet4 1, signet 2, regtest 3</td></tr><tr><td><code>6</code></td><td><code>1</code></td><td><code>opcode</code></td><td>0x01 to 0x05</td></tr><tr><td><code>7</code></td><td><code>1</code></td><td><code>payload length</code></td><td>the exact number of bytes that follow</td></tr><tr><td><code>8</code></td><td><code>varies</code></td><td><code>payload</code></td><td>the fields of the chosen action</td></tr></tbody></table></div>
+<p>Each header field has its own refusal. Fewer than 8 bytes is <code>TRUNCATED_HEADER</code>. Wrong magic is <code>INVALID_MAGIC</code>. More than 72 bytes is <code>MARKER_TOO_LARGE</code>. A version other than 1 is <code>UNSUPPORTED_VERSION</code>. A network byte outside the table below is <code>RESERVED_NETWORK</code>, an opcode outside <code>0x01</code> to <code>0x05</code> is <code>RESERVED_OPCODE</code>, and a declared payload length that does not consume exactly the remaining bytes is <code>INVALID_PAYLOAD_LENGTH</code>.</p>
+<p>Note the last one carefully: the length byte is not a maximum. <code>decodeMarker</code> in <a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/src/codec.ts" target="_blank" rel="noreferrer noopener">src/codec.ts<span class="link-out" aria-hidden="true">↗</span></a> requires <code>bytes.length === HEADER_BYTES + payloadLength</code>, so one stray trailing byte fails the whole marker.</p>
+<h3 id="what-each-payload-carries">What each payload carries<a class="anchor" href="#what-each-payload-carries" aria-label="Link to this section">#</a></h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>Operation</th><th>Fields, in order</th></tr></thead><tbody><tr><td><code>CREATE</code></td><td>ruleset, laneCount, durationBlocks (2 bytes), maxSteps (2 bytes), seed (16 bytes), title length, title</td></tr><tr><td><code>BLOOM</code></td><td>glyph, palette, motion, magnitude</td></tr><tr><td><code>GRAFT</code></td><td>targetEventTxid (32 bytes), relation, glyph, palette</td></tr><tr><td><code>RENDEZVOUS</code></td><td>bridgeStyle, glyph, palette, intensity</td></tr><tr><td><code>CLOSE</code></td><td>reason</td></tr></tbody></table></div>
+<p>Every field is one byte unless the table says otherwise, and every one is range-checked on both encode and decode. <code>glyph</code> is 0 to 31, <code>palette</code> 0 to 15, <code>motion</code> 0 to 7, <code>relation</code> 0 to 15, <code>bridgeStyle</code> 0 to 15. <code>magnitude</code>, <code>intensity</code>, and <code>reason</code> use the full byte, 0 to 255. Anything outside a range raises <code>INTEGER_OUT_OF_RANGE</code>.</p>
+<h2 id="networks">Networks<a class="anchor" href="#networks" aria-label="Link to this section">#</a></h2>
+<p>The network byte is part of the header, so a marker built for one network is refused on another rather than being read into the wrong world.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Network bytes"><table><thead><tr><th>Network</th><th>Byte</th><th>Constant</th></tr></thead><tbody><tr><td>mainnet</td><td><code>0</code></td><td><code>NETWORK.MAINNET</code></td></tr><tr><td>testnet4</td><td><code>1</code></td><td><code>NETWORK.TESTNET4</code></td></tr><tr><td>signet</td><td><code>2</code></td><td><code>NETWORK.SIGNET</code></td></tr><tr><td>regtest</td><td><code>3</code></td><td><code>NETWORK.REGTEST</code></td></tr></tbody></table></div>
+<p>The validator compares the marker&#39;s network against the context it was given and raises <code>NETWORK_MISMATCH</code> on a difference. An indexer configured for mainnet therefore ignores signet markers instead of half-reading them.</p>
+<h2 id="build-a-marker-by-hand">Build a marker by hand<a class="anchor" href="#build-a-marker-by-hand" aria-label="Link to this section">#</a></h2>
+<div class="prose-demo" data-demo="marker-explorer"><div class="demo-fallback"><p>Without scripts, work the header out on paper. Take a <code>CREATE</code> on mainnet for a world called <code>Dawn Chorus</code> with three lanes.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>Offset</th><th>Bytes</th><th>Value</th><th>Meaning</th></tr></thead><tbody><tr><td>0</td><td>4</td><td><code>43424c4d</code></td><td>the letters CBLM</td></tr><tr><td>4</td><td>1</td><td><code>01</code></td><td>version 1</td></tr><tr><td>5</td><td>1</td><td><code>00</code></td><td>mainnet</td></tr><tr><td>6</td><td>1</td><td><code>01</code></td><td><code>CREATE</code></td></tr><tr><td>7</td><td>1</td><td><code>22</code></td><td>34 payload bytes follow</td></tr></tbody></table></div>
+<p>The payload length is 34 because <code>CREATE</code> is 23 fixed bytes plus the title, and <code>Dawn Chorus</code> is 11 ASCII bytes. The whole marker is 42 bytes, comfortably under the 72-byte ceiling. Change the title to something 50 bytes long and the encoder raises <code>MARKER_TOO_LARGE</code> before the transaction is ever built.</p>
+<p>With scripts, the same encoder that ships in the package runs here in your browser and shows every byte as you change a field. Nothing is sent anywhere.</p></div></div>
+<h2 id="what-is-deliberately-absent">What is deliberately absent<a class="anchor" href="#what-is-deliberately-absent" aria-label="Link to this section">#</a></h2>
+<p>It is worth being blunt about the things the protocol does not do, because integrators keep looking for them.</p>
+<p>There is no owner field. A path is controlled by whoever can spend its carrier, and that is all the chain says. It is not a claim about identity, authorship, or any legal right.</p>
+<p>There is no transfer operation, no price, no fee to the protocol, and no marketplace. The 1000 satoshis in a carrier are the smallest practical amount that can carry a path forward, and they come back to the spender when a path is completed.</p>
+<p>There is no naming registry and no uniqueness rule on titles. Two worlds may share a title. They can never share a world id, because the id is a txid.</p>
+<p>There is no content in the marker beyond the numbers listed above. If a world needs images, audio, or long text, those live in your application and are referenced by txid, not carried on chain.</p>
+<aside class="callout callout-note" role="note"><p class="callout-label"><span aria-hidden="true">◆</span>Note</p><div class="callout-body"><p>One optional check sits outside the marker entirely. When a validator runs with <code>requireWitnessSignatures</code> on, it also inspects sighash flags on each spent input. See <a href="/chainbloom/docs/reference/validation-rules/">validation rules</a> for what it accepts.</p></div></aside>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>Now read the transaction shapes</h2>
+<p>The exact input and output positions for all five operations, in tables you can build against.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/reference/transaction-lifecycle/">Transaction lifecycle</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/reference/transaction-lifecycle/">
+<span class="related-section">Technical reference</span>
+<strong>Transaction lifecycle</strong>
+<span class="related-desc">Where every input and output must sit in a ChainBloom transaction, operation by operation, with the value and script type each position requires.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/validation-rules/">
+<span class="related-section">Technical reference</span>
+<strong>Validation rules</strong>
+<span class="related-desc">Every check validateProtocolTransaction runs, grouped and named by the issue code it emits, including the two rules people get wrong most often.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/sdk/">
+<span class="related-section">Technical reference</span>
+<strong>TypeScript SDK</strong>
+<span class="related-desc">Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/reference/"><span>Previous</span><strong>Technical reference</strong></a><a class="pager pager-next" href="/chainbloom/docs/reference/transaction-lifecycle/"><span>Next</span><strong>Transaction lifecycle</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#five-ideas">Five ideas</a></li><li class="toc-level-3"><a href="#keep-the-shared-agreement-small">Keep the shared agreement small</a></li><li class="toc-level-3"><a href="#a-world-is-created-by-one-transaction">A world is created by one transaction</a></li><li class="toc-level-3"><a href="#one-live-output-per-path">One live output per path</a></li><li class="toc-level-3"><a href="#five-operations">Five operations</a></li><li class="toc-level-3"><a href="#presentation-is-left-open">Presentation is left open</a></li><li class="toc-level-2"><a href="#the-marker">The marker</a></li><li class="toc-level-3"><a href="#where-it-must-sit">Where it must sit</a></li><li class="toc-level-3"><a href="#the-header">The header</a></li><li class="toc-level-3"><a href="#what-each-payload-carries">What each payload carries</a></li><li class="toc-level-2"><a href="#networks">Networks</a></li><li class="toc-level-2"><a href="#build-a-marker-by-hand">Build a marker by hand</a></li><li class="toc-level-2"><a href="#what-is-deliberately-absent">What is deliberately absent</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="reference/protocol-architecture">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

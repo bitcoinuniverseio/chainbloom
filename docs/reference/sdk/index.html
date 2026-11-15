@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en" data-page="reference/sdk" data-section="reference">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TypeScript SDK · ChainBloom</title>
+<meta name="description" content="Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="TypeScript SDK · ChainBloom" />
+<meta property="og:description" content="Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: TypeScript SDK" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TypeScript SDK · ChainBloom" />
+<meta name="twitter:description" content="Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/reference/indexer-requirements/" />
+<link rel="next" href="/chainbloom/docs/reference/cli/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"TypeScript SDK","description":"Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Technical reference","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/"},{"@type":"ListItem","position":3,"name":"SDK","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/sdk/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/"  data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/"  data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/"  data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/" aria-current="page" data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/"  data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/"  data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/reference/">Technical reference</a></li><li aria-current="page">SDK</li></ol></nav>
+<h1>TypeScript SDK</h1>
+<p class="page-meta"><span class="tag tag-reference">Technical reference</span><span>Checked against @chainbloom/protocol@0.1.0</span><span>Last reviewed 2026-07-31</span><span>5 min read</span></p>
+<div class="page-lede"><p>Install the package from the repository, encode markers, build every PSBT, validate a transaction, and replay blocks with the reference state engine.</p></div>
+<div class="prose">
+<div class="lead"><p>@chainbloom/protocol is the rules, not a client for someone else&#39;s rules. With it you can build a valid ChainBloom transaction, reject an invalid one, and rebuild an entire history from raw blocks, offline, with no service in the middle and nobody to ask.</p></div>
+<h2 id="install-it-from-the-repository">Install it from the repository<a class="anchor" href="#install-it-from-the-repository" aria-label="Link to this section">#</a></h2>
+<p>The package is <strong>not published to npm yet</strong>. There is no registry install, and any page that tells you otherwise is wrong. Today you build it from source:</p>
+<figure class="code-block" data-language="bash"><div class="code-title"><span>BASH</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-bash">git clone https://github.com/bitcoinuniverse/chainbloom.git
+cd chainbloom
+npm ci
+npm run build</code></pre></figure>
+<p>That produces <code>dist/index.js</code>, <code>dist/index.d.ts</code>, and <code>dist/cli.js</code>. To use it from another project, point npm at the checkout:</p>
+<figure class="code-block" data-language="bash"><div class="code-title"><span>BASH</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-bash">npm install ../chainbloom</code></pre></figure>
+<p>Two constraints, both enforced:</p>
+<ul><li><strong>Node 24.19.0.</strong> The <code>engines</code> field is exact, not a suggestion.</li><li><strong>ESM only.</strong> The package sets <code>&quot;type&quot;: &quot;module&quot;</code> and its export map offers <code>import</code> alone. <code>require(&#39;@chainbloom/protocol&#39;)</code> does not work and is not going to.</li></ul>
+<p>Runtime dependencies are <code>bitcoinjs-lib</code> and <code>commander</code>. Nothing else, and nothing that talks to a network.</p>
+<h2 id="encode-and-decode-a-marker">Encode and decode a marker<a class="anchor" href="#encode-and-decode-a-marker" aria-label="Link to this section">#</a></h2>
+<p>A <button type="button" class="glossary-term" data-term="marker" aria-describedby="glossary-tip">marker<span class="glossary-inline">The short piece of data in a transaction that says what the action is.</span></button> is the 8-byte header plus a payload, at most 72 bytes in total, carried in the OP_RETURN at vout 0. <code>encodeMarker</code> builds one from a typed payload and refuses anything out of range. <code>decodeMarker</code> reverses it and refuses anything malformed.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>marker-round-trip.ts</span><em class="code-verified">checked by tests</em></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import {
+  NETWORK,
+  bytesToHex,
+  decodeMarker,
+  encodeMarker,
+} from &#39;@chainbloom/protocol&#39;;
+
+const marker = encodeMarker(NETWORK.SIGNET, {
+  operation: &#39;BLOOM&#39;,
+  glyph: 7,
+  palette: 3,
+  motion: 2,
+  magnitude: 200,
+});
+
+const decoded = decodeMarker(marker);
+
+console.log(bytesToHex(marker));
+console.log(decoded.operation, decoded.payloadLength, marker.length);</code></pre></figure>
+<p>That prints:</p>
+<figure class="code-block" data-language="text"><div class="code-title"><span>TEXT</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-text">43424c4d01020204070302c8
+BLOOM 4 12</code></pre></figure>
+<p>Twelve bytes in total: the 8-byte header, plus the payload length the decoder reports back. Push <code>glyph</code> past 31 and <code>encodeMarker</code> throws <code>INTEGER_OUT_OF_RANGE</code> with the field name, the value, and the bounds in <code>details</code>, rather than writing a marker no indexer will accept.</p>
+<h2 id="read-a-published-vector">Read a published vector<a class="anchor" href="#read-a-published-vector" aria-label="Link to this section">#</a></h2>
+<p>The repository ships the interoperability vectors under <code>vectors/</code>. Decoding one is the fastest way to prove your build is wired up, and the fastest way to check a decoder you wrote in another language against a byte string somebody else can also read.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>decode-vector.ts</span><em class="code-verified">checked by tests</em></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import { decodeMarkerHex } from &#39;@chainbloom/protocol&#39;;
+
+const marker = decodeMarkerHex(
+  &#39;43424c4d0103011b010200900005000102030405060708090a0b0c0d0e0f044461776e&#39;,
+);
+
+console.log(marker.operation, marker.network, marker.payloadLength);
+console.log(JSON.stringify(marker.payload, null, 2));</code></pre></figure>
+<p>That prints:</p>
+<figure class="code-block" data-language="text"><div class="code-title"><span>TEXT</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-text">CREATE 3 27
+{
+  &quot;operation&quot;: &quot;CREATE&quot;,
+  &quot;ruleset&quot;: 1,
+  &quot;laneCount&quot;: 2,
+  &quot;durationBlocks&quot;: 144,
+  &quot;maxSteps&quot;: 5,
+  &quot;seed&quot;: &quot;000102030405060708090a0b0c0d0e0f&quot;,
+  &quot;title&quot;: &quot;Dawn&quot;
+}</code></pre></figure>
+<p><code>decodeMarkerHex</code> is <code>decodeMarker</code> with a hex string in front of it. Both throw <code>ChainBloomError</code> with a code you can switch on: <code>TRUNCATED_HEADER</code>, <code>INVALID_MAGIC</code>, <code>UNSUPPORTED_VERSION</code>, <code>RESERVED_NETWORK</code>, <code>RESERVED_OPCODE</code>, <code>INVALID_PAYLOAD_LENGTH</code>, and the rest are listed in <a href="/chainbloom/docs/reference/errors/">error reference</a>.</p>
+<h2 id="build-a-psbt">Build a PSBT<a class="anchor" href="#build-a-psbt" aria-label="Link to this section">#</a></h2>
+<p>There are 5 builders, one per operation. Every one returns an unsigned <code>bitcoinjs-lib</code> <button type="button" class="glossary-term" data-term="psbt" aria-describedby="glossary-tip">psbt<span class="glossary-inline">A part-signed Bitcoin transaction: a draft your wallet can review and sign.</span></button> at transaction version 2 with every input sequence set to 0xfffffffd, the marker at vout 0 with value 0, and any <button type="button" class="glossary-term" data-term="carrier" aria-describedby="glossary-tip">carrier<span class="glossary-inline">The single small Bitcoin output that holds a path in place.</span></button> outputs at exactly 1000 satoshis on <button type="button" class="glossary-term" data-term="taproot" aria-describedby="glossary-tip">taproot<span class="glossary-inline">The current standard type of Bitcoin output, written as P2TR.</span></button> scripts. You supply inputs, output keys, change, and locktime. The builder supplies the shape.</p>
+<h3 id="create">CREATE<a class="anchor" href="#create" aria-label="Link to this section">#</a></h3>
+<p><code>buildCreatePsbt</code> opens a world. You pass one x-only output key per path, and the count must match <code>laneCount</code> exactly or you get <code>LANE_COUNT_MISMATCH</code>. <code>CREATE</code> spends no carrier, so every input is a fee input.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>create-world.ts</span><em class="code-verified">checked by tests</em></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import { NETWORK, buildCreatePsbt } from &#39;@chainbloom/protocol&#39;;
+
+const psbt = buildCreatePsbt({
+  network: NETWORK.SIGNET,
+  payload: {
+    operation: &#39;CREATE&#39;,
+    ruleset: 1,
+    laneCount: 2,
+    durationBlocks: 144,
+    maxSteps: 5,
+    seed: &#39;000102030405060708090a0b0c0d0e0f&#39;,
+    title: &#39;Dawn&#39;,
+  },
+  rootOutputKeysHex: [
+    &#39;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#39;,
+    &#39;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&#39;,
+  ],
+  feeInputs: [
+    {
+      txid: &#39;1111111111111111111111111111111111111111111111111111111111111111&#39;,
+      vout: 0,
+      value: 50_000n,
+      scriptPubKeyHex: &#39;00141111111111111111111111111111111111111111&#39;,
+    },
+  ],
+  extraOutputs: [
+    {
+      value: 46_000n,
+      scriptPubKeyHex: &#39;00141111111111111111111111111111111111111111&#39;,
+    },
+  ],
+});
+
+console.log(psbt.version, psbt.txOutputs.length);
+console.log(psbt.txInputs[0].sequence.toString(16));
+console.log(psbt.toBase64().slice(0, 32));</code></pre></figure>
+<p>That prints:</p>
+<figure class="code-block" data-language="text"><div class="code-title"><span>TEXT</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-text">2 4
+fffffffd
+cHNidP8BANYCAAAAARERERERERERERER</code></pre></figure>
+<p>Four outputs: the marker, two root carriers of 1000 satoshis each, and change. The 50,000 satoshi input less 48,000 satoshis of outputs leaves 2,000 satoshis for the miner. The builder checks that outputs do not exceed inputs (<code>INSUFFICIENT_INPUT_VALUE</code>) but it does not choose your fee. That is yours to set and yours to get right.</p>
+<h3 id="bloom-and-graft">BLOOM and GRAFT<a class="anchor" href="#bloom-and-graft" aria-label="Link to this section">#</a></h3>
+<p>Both take one carrier at vin 0 and produce one successor at vout 1. The shapes are identical; only the payload differs.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>bloom.ts</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import { NETWORK, buildBloomPsbt } from &#39;@chainbloom/protocol&#39;;
+
+const psbt = buildBloomPsbt({
+  network: NETWORK.SIGNET,
+  payload: { operation: &#39;BLOOM&#39;, glyph: 7, palette: 3, motion: 2, magnitude: 200 },
+  carrier: {
+    laneId: `${worldId}:0`,
+    txid: currentOutpoint.txid,
+    vout: currentOutpoint.vout,
+    value: 1000n,
+    scriptPubKeyHex: currentScriptPubKeyHex,
+    tapInternalKeyHex: internalKey,
+  },
+  successorOutputKeyHex: nextOutputKey,
+  feeInputs,
+  extraOutputs: [change],
+});</code></pre></figure>
+<p>A carrier input that is not exactly 1,000 satoshis on a P2TR script is rejected at build time with <code>INVALID_CARRIER_INPUT</code>, before you have signed anything. <code>buildGraftPsbt</code> is the same call with a <code>GRAFT</code> payload carrying <code>targetEventTxid</code>, <code>relation</code>, <code>glyph</code>, and <code>palette</code>.</p>
+<h3 id="rendezvous">RENDEZVOUS<a class="anchor" href="#rendezvous" aria-label="Link to this section">#</a></h3>
+<p>Two carriers in, two successors out. You pass the participants in whatever order suits your code and the builder sorts them by <code>laneId</code> itself, because the validator requires vin 0 and vin 1 to be in lexicographic lane order and will emit <code>RENDEZVOUS_LANE_ORDER</code> if they are not.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>meet.ts</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">const psbt = buildRendezvousPsbt({
+  network: NETWORK.SIGNET,
+  payload: { operation: &#39;RENDEZVOUS&#39;, bridgeStyle: 4, glyph: 18, palette: 9, intensity: 220 },
+  participants: [
+    { carrier: mine, successorOutputKeyHex: myNextKey },
+    { carrier: theirs, successorOutputKeyHex: theirNextKey },
+  ],
+  feeInputs,
+  extraOutputs: [change],
+});</code></pre></figure>
+<p>Passing the same lane twice throws <code>DUPLICATE_LANE</code>. Because both participants must sign, this PSBT is meant to be handed around: build once, sign twice, broadcast once.</p>
+<h3 id="close">CLOSE<a class="anchor" href="#close" aria-label="Link to this section">#</a></h3>
+<p><code>buildClosePsbt</code> takes a carrier and produces no successor. The marker is the only protocol output, so the 1000 satoshis that were riding the <button type="button" class="glossary-term" data-term="path" aria-describedby="glossary-tip">path<span class="glossary-inline">One thread inside a world that moves forward one confirmed step at a time.</span></button> come back to you through change, minus the fee. This is the one action that cannot be followed by another on that path.</p>
+<h2 id="validate-a-transaction">Validate a transaction<a class="anchor" href="#validate-a-transaction" aria-label="Link to this section">#</a></h2>
+<p><code>validateProtocolTransaction</code> is the same function the state engine runs. It needs to know which outputs are live carriers, which is what the <code>view</code> argument is for. Pass a <code>ChainBloomState</code> that has already applied the confirmed blocks.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>validate.ts</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import {
+  ChainBloomState,
+  NETWORK,
+  parseTransactionHex,
+  validateProtocolTransaction,
+} from &#39;@chainbloom/protocol&#39;;
+
+const state = new ChainBloomState({
+  network: NETWORK.SIGNET,
+  requireWitnessSignatures: true,
+});
+state.replay(confirmedBlocks);
+
+const transaction = parseTransactionHex(rawHex);
+const result = validateProtocolTransaction(transaction, {
+  network: NETWORK.SIGNET,
+  height: state.tipHeight! + 1,
+  view: state,
+  prevouts: prevoutsByOutpointKey,
+  requireWitnessSignatures: true,
+});
+
+if (!result.valid) {
+  for (const issue of result.issues) {
+    console.error(`${issue.code} at ${issue.path}: ${issue.message}`);
+  }
+}</code></pre></figure>
+<p><code>result</code> also carries <code>marker</code> (the decoded payload), <code>carrierLaneIds</code> (which paths this transaction touches), and <code>successorMappings</code> (which output continues which path). Set <code>requireWitnessSignatures</code> to <code>true</code> only for confirmed transactions with witnesses present; it is what produces <code>MISSING_WITNESS</code>, <code>MISSING_TAPROOT_SIGNATURE</code>, and <code>UNSAFE_SIGHASH</code>.</p>
+<h2 id="replay-blocks">Replay blocks<a class="anchor" href="#replay-blocks" aria-label="Link to this section">#</a></h2>
+<p><code>ChainBloomState</code> holds confirmed state and nothing else.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>replay.ts</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">const state = new ChainBloomState({ network: NETWORK.SIGNET });
+
+state.replay(blocks);            // reset, then apply in order
+state.applyBlock(nextBlock);     // must extend the tip, or NON_CONTIGUOUS_BLOCK
+state.rollbackTip(orphanedHash); // undo exactly one block
+
+const snapshot = state.snapshot();
+console.log(snapshot.tipHeight, snapshot.worlds.length, snapshot.lanes.length);</code></pre></figure>
+<p><code>snapshot()</code> sorts worlds and paths by id and events by height then transaction index, so two independent replays of the same blocks produce the same object and can be compared with a diff. That determinism is the point; see <a href="/chainbloom/docs/reference/indexer-requirements/">indexer requirements</a> for what to do with it.</p>
+<p>For unconfirmed transactions use <code>state.preview(transaction)</code>, or wrap the state in a <code>MempoolOverlay</code> when you also want <code>conflictsWith</code> populated for fee bumps.</p>
+<h2 id="when-something-is-wrong">When something is wrong<a class="anchor" href="#when-something-is-wrong" aria-label="Link to this section">#</a></h2>
+<p>Everything the package throws is a <code>ChainBloomError</code> with three fields: <code>name</code> is always <code>ChainBloomError</code>, <code>code</code> is a stable string, and <code>details</code> carries the numbers behind the message.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>handle.ts</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import { ChainBloomError } from &#39;@chainbloom/protocol&#39;;
+
+try {
+  encodeMarker(network, payload);
+} catch (error) {
+  if (error instanceof ChainBloomError) {
+    console.error(error.code, error.details);
+  }
+}</code></pre></figure>
+<p>Switch on <code>code</code>, never on <code>message</code>. Messages are written for people and may be reworded; codes are part of the contract.</p>
+<h2 id="the-exported-surface">The exported surface<a class="anchor" href="#the-exported-surface" aria-label="Link to this section">#</a></h2>
+<p>Every declaration the package exports, read from the generated type declarations at build time:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Exported names"><table><thead><tr><th>Export</th><th>Kind</th></tr></thead><tbody><tr><td><code>asChainBloomError</code></td><td>function</td></tr><tr><td><code>assertIntegerInRange</code></td><td>function</td></tr><tr><td><code>buildBloomPsbt</code></td><td>function</td></tr><tr><td><code>buildClosePsbt</code></td><td>function</td></tr><tr><td><code>buildCreatePsbt</code></td><td>function</td></tr><tr><td><code>buildGraftPsbt</code></td><td>function</td></tr><tr><td><code>buildRendezvousPsbt</code></td><td>function</td></tr><tr><td><code>bytesToHex</code></td><td>function</td></tr><tr><td><code>CARRIER_VALUE_SATS</code></td><td>value</td></tr><tr><td><code>ChainBloomError</code></td><td>class</td></tr><tr><td><code>ChainBloomState</code></td><td>class</td></tr><tr><td><code>classifyNativeSegwit</code></td><td>function</td></tr><tr><td><code>concatBytes</code></td><td>function</td></tr><tr><td><code>decodeAscii</code></td><td>function</td></tr><tr><td><code>decodeMarker</code></td><td>function</td></tr><tr><td><code>decodeMarkerHex</code></td><td>function</td></tr><tr><td><code>decodeMinimalOpReturn</code></td><td>function</td></tr><tr><td><code>encodeAscii</code></td><td>function</td></tr><tr><td><code>encodeMarker</code></td><td>function</td></tr><tr><td><code>encodeMinimalOpReturn</code></td><td>function</td></tr><tr><td><code>extractOpReturnFirstPush</code></td><td>function</td></tr><tr><td><code>HEADER_BYTES</code></td><td>value</td></tr><tr><td><code>hexToBytes</code></td><td>function</td></tr><tr><td><code>isChainBloomMagic</code></td><td>function</td></tr><tr><td><code>isNetworkId</code></td><td>function</td></tr><tr><td><code>isP2trScript</code></td><td>function</td></tr><tr><td><code>isPotentialChainBloomScript</code></td><td>function</td></tr><tr><td><code>jsonStringify</code></td><td>function</td></tr><tr><td><code>laneId</code></td><td>function</td></tr><tr><td><code>MAX_BRIDGE_STYLE</code></td><td>value</td></tr><tr><td><code>MAX_DURATION_BLOCKS</code></td><td>value</td></tr><tr><td><code>MAX_GLYPH</code></td><td>value</td></tr><tr><td><code>MAX_LANES</code></td><td>value</td></tr><tr><td><code>MAX_MARKER_BYTES</code></td><td>value</td></tr><tr><td><code>MAX_MAX_STEPS</code></td><td>value</td></tr><tr><td><code>MAX_MOTION</code></td><td>value</td></tr><tr><td><code>MAX_PALETTE</code></td><td>value</td></tr><tr><td><code>MAX_RELATION</code></td><td>value</td></tr><tr><td><code>MAX_TITLE_BYTES</code></td><td>value</td></tr><tr><td><code>MempoolOverlay</code></td><td>class</td></tr><tr><td><code>MIN_DURATION_BLOCKS</code></td><td>value</td></tr><tr><td><code>MIN_LANES</code></td><td>value</td></tr><tr><td><code>MIN_MAX_STEPS</code></td><td>value</td></tr><tr><td><code>NETWORK</code></td><td>value</td></tr><tr><td><code>NETWORK_NAME</code></td><td>value</td></tr><tr><td><code>networkIdFromName</code></td><td>function</td></tr><tr><td><code>networkName</code></td><td>function</td></tr><tr><td><code>normalizeTxid</code></td><td>function</td></tr><tr><td><code>OP_RETURN</code></td><td>value</td></tr><tr><td><code>OPCODE</code></td><td>value</td></tr><tr><td><code>OPERATION_NAME</code></td><td>value</td></tr><tr><td><code>outpointKey</code></td><td>function</td></tr><tr><td><code>P2TR_SCRIPT_BYTES</code></td><td>value</td></tr><tr><td><code>p2trScriptHex</code></td><td>function</td></tr><tr><td><code>parseTransactionHex</code></td><td>function</td></tr><tr><td><code>projectBloom</code></td><td>function</td></tr><tr><td><code>PROTOCOL_MAGIC</code></td><td>value</td></tr><tr><td><code>PROTOCOL_MAGIC_BYTES</code></td><td>value</td></tr><tr><td><code>PROTOCOL_VERSION</code></td><td>value</td></tr><tr><td><code>RBF_SEQUENCE</code></td><td>value</td></tr><tr><td><code>readU16BE</code></td><td>function</td></tr><tr><td><code>renderWorldSvg</code></td><td>function</td></tr><tr><td><code>reverseBytes</code></td><td>function</td></tr><tr><td><code>RULESET_VERSION</code></td><td>value</td></tr><tr><td><code>SEED_BYTES</code></td><td>value</td></tr><tr><td><code>sha256Hex</code></td><td>function</td></tr><tr><td><code>SIGHASH_ALL</code></td><td>value</td></tr><tr><td><code>SIGHASH_DEFAULT</code></td><td>value</td></tr><tr><td><code>TITLE_PATTERN</code></td><td>value</td></tr><tr><td><code>TX_VERSION</code></td><td>value</td></tr><tr><td><code>TXID_BYTES</code></td><td>value</td></tr><tr><td><code>validateProtocolTransaction</code></td><td>function</td></tr><tr><td><code>writeU16BE</code></td><td>function</td></tr><tr><td><code>ZERO_VALUE</code></td><td>value</td></tr></tbody></table></div>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>Same rules, from a terminal</h2>
+<p>Every function on this page has a command-line equivalent you can pipe into a test.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/reference/cli/">Read the CLI reference</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/reference/cli/">
+<span class="related-section">Technical reference</span>
+<strong>Command line</strong>
+<span class="related-desc">Every command the chainbloom binary has, with a real invocation, the JSON it prints, and the error shape it uses when something goes wrong.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/validation-rules/">
+<span class="related-section">Technical reference</span>
+<strong>Validation rules</strong>
+<span class="related-desc">Every check validateProtocolTransaction runs, grouped and named by the issue code it emits, including the two rules people get wrong most often.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/test-vectors/">
+<span class="related-section">Technical reference</span>
+<strong>Test vectors</strong>
+<span class="related-desc">Eleven fixed byte strings that tell you whether your ChainBloom reader agrees with every other one. Five markers that must parse and six that must be refused.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/reference/indexer-requirements/"><span>Previous</span><strong>Indexer requirements</strong></a><a class="pager pager-next" href="/chainbloom/docs/reference/cli/"><span>Next</span><strong>Command line</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#install-it-from-the-repository">Install it from the repository</a></li><li class="toc-level-2"><a href="#encode-and-decode-a-marker">Encode and decode a marker</a></li><li class="toc-level-2"><a href="#read-a-published-vector">Read a published vector</a></li><li class="toc-level-2"><a href="#build-a-psbt">Build a PSBT</a></li><li class="toc-level-3"><a href="#create">CREATE</a></li><li class="toc-level-3"><a href="#bloom-and-graft">BLOOM and GRAFT</a></li><li class="toc-level-3"><a href="#rendezvous">RENDEZVOUS</a></li><li class="toc-level-3"><a href="#close">CLOSE</a></li><li class="toc-level-2"><a href="#validate-a-transaction">Validate a transaction</a></li><li class="toc-level-2"><a href="#replay-blocks">Replay blocks</a></li><li class="toc-level-2"><a href="#when-something-is-wrong">When something is wrong</a></li><li class="toc-level-2"><a href="#the-exported-surface">The exported surface</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="reference/sdk">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

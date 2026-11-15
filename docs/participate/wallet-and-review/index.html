@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en" data-page="participate/wallet-and-review" data-section="participate">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wallet connection and transaction review · ChainBloom</title>
+<meta name="description" content="Connecting a wallet shares one address and never your keys. This page shows what to read on a signing screen before you approve a ChainBloom step, and what should make you stop." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/participate/wallet-and-review/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="What to read before you sign a ChainBloom step" />
+<meta property="og:description" content="Six things to check on every signing screen, a stop list, and what wallet authors still need to build." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/participate/wallet-and-review/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: Wallet connection and transaction review" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What to read before you sign a ChainBloom step" />
+<meta name="twitter:description" content="Six things to check on every signing screen, a stop list, and what wallet authors still need to build." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/participate/complete-a-path/" />
+<link rel="next" href="/chainbloom/docs/participate/fees-and-confirmation/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Wallet connection and transaction review","description":"Connecting a wallet shares one address and never your keys. This page shows what to read on a signing screen before you approve a ChainBloom step, and what should make you stop.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/participate/wallet-and-review/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Take part","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/participate/"},{"@type":"ListItem","position":3,"name":"Wallet and review","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/participate/wallet-and-review/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/" aria-current="page" data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/"  data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/"  data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/"  data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/"  data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/"  data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/participate/">Take part</a></li><li aria-current="page">Wallet and review</li></ol></nav>
+<h1>Wallet connection and transaction review</h1>
+<p class="page-meta"><span class="tag tag-participant">Take part</span><span>Last reviewed 2026-07-31</span><span>6 min read</span></p>
+<div class="page-lede"><p>Connecting a wallet shares one address and never your keys. This page shows what to read on a signing screen before you approve a ChainBloom step, and what should make you stop.</p></div>
+<div class="prose">
+<div class="lead"><p>Signing is the one moment in ChainBloom you cannot take back. Read this once and you will recognise a correct step on sight, and spot a wrong one while it still costs you nothing.</p></div>
+<h2 id="what-connecting-a-wallet-does">What connecting a wallet does<a class="anchor" href="#what-connecting-a-wallet-does" aria-label="Link to this section">#</a></h2>
+<p>Connecting a wallet does one thing: it hands an application an address, and permission to ask you to sign something.</p>
+<p>From that address alone, an application can work out which <button type="button" class="glossary-term" data-term="path" aria-describedby="glossary-tip">paths<span class="glossary-inline">One thread inside a world that moves forward one confirmed step at a time.</span></button> you currently hold, assemble an unsigned transaction that spends the right output, and hand it back to you for checking. In the ChainBloom workspace inside <a href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">InScribe<span class="link-out" aria-hidden="true">↗</span></a>, that build step returns an unsigned <button type="button" class="glossary-term" data-term="psbt" aria-describedby="glossary-tip">psbt<span class="glossary-inline">A part-signed Bitcoin transaction: a draft your wallet can review and sign.</span></button> together with a plain preview: which path maps to which input, every output, the total input value, the miner fee, the change, the fee rate, the locktime, and any warnings.</p>
+<p>The preview is a proposal. Nothing has happened yet.</p>
+<h2 id="what-it-does-not-do">What it does not do<a class="anchor" href="#what-it-does-not-do" aria-label="Link to this section">#</a></h2>
+<p>It does not share your private keys or your recovery phrase. Those stay in your wallet, and a PSBT is designed exactly so they never have to leave it.</p>
+<p>It does not grant a standing permission. Bitcoin has no allowance to switch on and forget about. Every step is one transaction, signed once, by you, and then it is over.</p>
+<p>It does not prove who you are. Holding the output that carries a path lets you take that path forward. It is not evidence of identity, authorship, or any legal claim over what the world contains.</p>
+<aside class="callout callout-note" role="note"><p class="callout-label"><span aria-hidden="true">◆</span>Note</p><div class="callout-body"><p>An address is public information. Handing one to an application is closer to giving out a postal address than a key. What matters is what you sign afterwards.</p></div></aside>
+<h2 id="what-to-read-before-you-sign">What to read before you sign<a class="anchor" href="#what-to-read-before-you-sign" aria-label="Link to this section">#</a></h2>
+<p>Six things, in this order. Each one takes seconds.</p>
+<h3 id="the-action">The action<a class="anchor" href="#the-action" aria-label="Link to this section">#</a></h3>
+<p>Every ChainBloom transaction carries a <button type="button" class="glossary-term" data-term="marker" aria-describedby="glossary-tip">marker<span class="glossary-inline">The short piece of data in a transaction that says what the action is.</span></button> naming one operation: <code>CREATE</code>, <code>BLOOM</code>, <code>GRAFT</code>, <code>RENDEZVOUS</code>, or <code>CLOSE</code>. Those five are opening a world, adding a moment, answering an earlier moment, meeting another path, and ending a path on purpose. If the screen says <code>CLOSE</code> and you meant to add a moment, stop. Completing a path is deliberate and final.</p>
+<h3 id="the-world">The world<a class="anchor" href="#the-world" aria-label="Link to this section">#</a></h3>
+<p>A world id is the transaction id of the <code>CREATE</code> that opened it. Compare it with the world you think you are joining, character by character at both ends.</p>
+<p>The marker also carries a network byte. A marker built for one network is invalid on another and validators report <code>NETWORK_MISMATCH</code>, so a mismatch here is a sign that something upstream is wrong.</p>
+<h3 id="the-path">The path<a class="anchor" href="#the-path" aria-label="Link to this section">#</a></h3>
+<p>A path id reads <code>&lt;worldId&gt;:&lt;laneNumber&gt;</code>, numbered from 0. Check that the input at <code>vin 0</code> is the <button type="button" class="glossary-term" data-term="outpoint" aria-describedby="glossary-tip">outpoint<span class="glossary-inline">The address of one specific Bitcoin output: a transaction id and an index.</span></button> you recorded when you last took this path forward. That means the <code>txid:vout</code> pair, not just the txid.</p>
+<p>For a meeting there are two path inputs, at <code>vin 0</code> and <code>vin 1</code>, and the protocol orders them by path id. Two inputs are correct for a meeting and wrong for anything else.</p>
+<h3 id="every-output">Every output<a class="anchor" href="#every-output" aria-label="Link to this section">#</a></h3>
+<p>Read the whole list, not the first line:</p>
+<ul><li><code>vout 0</code> is the marker: an OP_RETURN output carrying zero value and at most 72 bytes. It must be first, and it must be the only ChainBloom marker in the transaction.</li><li>The successor <button type="button" class="glossary-term" data-term="carrier" aria-describedby="glossary-tip">carriers<span class="glossary-inline">The single small Bitcoin output that holds a path in place.</span></button> come next: one at <code>vout 1</code> for a bloom or an echo, two at <code>vout 1</code> and <code>vout 2</code> for a meeting, one per path for a create. Each is exactly 1,000 satoshis and each is a Taproot output.</li><li>Change comes back to you. A completed path has no successor at all; its 1,000 satoshis return to you with the change.</li></ul>
+<h3 id="the-amount">The amount<a class="anchor" href="#the-amount" aria-label="Link to this section">#</a></h3>
+<p>Add it up. Total input, minus every output, is the fee. The 1,000 satoshis in a path output are not spent. They are carried to the next step and released when the path is completed. If the numbers do not resolve to something close to the fee you chose, do not sign.</p>
+<h3 id="the-fee">The fee<a class="anchor" href="#the-fee" aria-label="Link to this section">#</a></h3>
+<p>Fees are real money and they are paid to miners, not to ChainBloom. Check the rate in sat/vB and the total in satoshis. <a href="/chainbloom/docs/participate/fees-and-confirmation/">Network fees and confirmation</a> explains what a sensible rate looks like and what happens while you wait.</p>
+<h2 id="the-life-of-one-step">The life of one step<a class="anchor" href="#the-life-of-one-step" aria-label="Link to this section">#</a></h2>
+<div class="prose-demo" data-demo="tx-journey"><div class="demo-fallback"><p>A ChainBloom contribution passes through seven stages. Nothing before stage six can be relied on, and nothing after it can be undone.</p>
+<ol><li><strong>Plan.</strong> You choose an action and a path. Nothing is signed and nothing is spent.</li><li><strong>Build.</strong> An unsigned PSBT is assembled: the marker at <code>vout 0</code>, the successor carrier or carriers, the path input at <code>vin 0</code>, fee inputs after it, and change.</li><li><strong>Review.</strong> You read the decoded plan (action, world, path, outputs, amount, fee) and compare it with what you meant to do.</li><li><strong>Sign.</strong> Your wallet signs the inputs it owns. Keys never leave it. Every input carries sequence 0xfffffffd and the transaction is version 2.</li><li><strong>Broadcast.</strong> The signed transaction reaches nodes and waits in the <button type="button" class="glossary-term" data-term="mempool" aria-describedby="glossary-tip">mempool<span class="glossary-inline">Where a broadcast transaction waits before it is confirmed.</span></button>. It is visible, it is replaceable, and it is not yet part of the world.</li><li><strong>Confirm.</strong> A miner includes it in a block. This is the moment the step becomes real for everyone.</li><li><strong>Settle.</strong> Indexers apply that block and the path advances by one step. Until the next block arrives, that step cannot be built on: a parent must already be confirmed in an earlier block, or validation returns <code>UNCONFIRMED_LINEAGE_PARENT</code>.</li></ol></div></div>
+<h2 id="stop-if-any-of-these-is-not-true">Stop if any of these is not true<a class="anchor" href="#stop-if-any-of-these-is-not-true" aria-label="Link to this section">#</a></h2>
+<p>Tick a line only when you have actually checked it. If one of them fails, do not sign. Nothing is lost by walking away at this point.</p>
+<div class="prose-checklist" data-checklist="review-before-signing"><ul><li>The action shown is the action I intended.</li><li>The world id matches the world I meant to take part in.</li><li>The input at <code>vin 0</code> is my path&#39;s outpoint, and I recorded that outpoint myself.</li><li>There is exactly one OP_RETURN output, it is <code>vout 0</code>, and it carries zero value.</li><li>Every path output is exactly 1,000 satoshis and every one of them is a Taproot output.</li><li>The number of path inputs matches the action: one for a bloom, echo or completion, two for a meeting.</li><li>The change address belongs to me.</li><li>The fee is an amount I would pay knowingly.</li></ul></div>
+<aside class="callout callout-warning" role="note"><p class="callout-label"><span aria-hidden="true">▲</span>Before you sign</p><div class="callout-body"><p>Two more stop signals, both outside the transaction. If somebody sends you a ready-made transaction to sign and you cannot decode it yourself, do not sign it. If anybody asks for your recovery phrase for any reason (support, recovery, verification, a prize), that is theft, without exception.</p></div></aside>
+<h2 id="what-no-wallet-does-for-you-yet">What no wallet does for you yet<a class="anchor" href="#what-no-wallet-does-for-you-yet" aria-label="Link to this section">#</a></h2>
+<p>No released wallet recognises a ChainBloom path output. To a wallet today, a live path is an ordinary 1,000-satoshi coin: small, unlabelled, and a prime candidate to be swept into the next payment you make. That is the single most likely way to lose a path, and it is covered in <a href="/chainbloom/docs/participate/protect-your-path/">protecting a live path</a>.</p>
+<p>Until that changes, protection is something you do by hand:</p>
+<ul><li>Hold path outputs in an account or wallet you never spend from.</li><li>Write down the outpoint the moment a step confirms.</li><li>Use coin control, and refuse any transaction that includes an output you cannot account for.</li><li>Check before you sweep or consolidate, every time.</li></ul>
+<p>If you write wallet software, the same problem is solvable properly: recognise the marker, label the carrier, warn before it is spent by an ordinary payment, and show the decoded action on the signing screen instead of a bare OP_RETURN. <a href="/chainbloom/docs/reference/integration-wallets/">Wallet integration</a> sets out what to parse, what to display, and what never to claim on a user&#39;s behalf.</p>
+<h2 id="after-you-sign">After you sign<a class="anchor" href="#after-you-sign" aria-label="Link to this section">#</a></h2>
+<p>Broadcasting puts the transaction in the mempool, not in the world. A <button type="button" class="glossary-term" data-term="confirmation" aria-describedby="glossary-tip">confirmation<span class="glossary-inline">A transaction being included in a Bitcoin block.</span></button> is what makes your contribution part of the shared history, and only a confirmed step can be built on. Until then it can still be replaced by a version of itself paying a higher fee, which is sometimes exactly what you want.</p>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>Know what you are protecting</h2>
+<p>Your path lives in one small output, and an ordinary payment can end it by accident.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/participate/protect-your-path/">Read protecting a live path</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/participate/protect-your-path/">
+<span class="related-section">Take part</span>
+<strong>Protecting a live path</strong>
+<span class="related-desc">A live path is one specific small Bitcoin output, and an ordinary payment that spends it ends the path for good. Here is how to make sure that never happens.</span>
+</a><a class="related-card" href="/chainbloom/docs/participate/fees-and-confirmation/">
+<span class="related-section">Take part</span>
+<strong>Network fees and confirmation expectations</strong>
+<span class="related-desc">There are only two costs, a miner fee and the small amount of bitcoin carried inside each path output that returns to you when the path completes. This page shows how both behave.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/integration-wallets/">
+<span class="related-section">Technical reference</span>
+<strong>Wallet integration</strong>
+<span class="related-desc">The three things a wallet owes a ChainBloom user, in priority order, with the exact rule for recognising a path output and the exact rules for signing one.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/participate/complete-a-path/"><span>Previous</span><strong>Completing a path</strong></a><a class="pager pager-next" href="/chainbloom/docs/participate/fees-and-confirmation/"><span>Next</span><strong>Network fees and confirmation expectations</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#what-connecting-a-wallet-does">What connecting a wallet does</a></li><li class="toc-level-2"><a href="#what-it-does-not-do">What it does not do</a></li><li class="toc-level-2"><a href="#what-to-read-before-you-sign">What to read before you sign</a></li><li class="toc-level-3"><a href="#the-action">The action</a></li><li class="toc-level-3"><a href="#the-world">The world</a></li><li class="toc-level-3"><a href="#the-path">The path</a></li><li class="toc-level-3"><a href="#every-output">Every output</a></li><li class="toc-level-3"><a href="#the-amount">The amount</a></li><li class="toc-level-3"><a href="#the-fee">The fee</a></li><li class="toc-level-2"><a href="#the-life-of-one-step">The life of one step</a></li><li class="toc-level-2"><a href="#stop-if-any-of-these-is-not-true">Stop if any of these is not true</a></li><li class="toc-level-2"><a href="#what-no-wallet-does-for-you-yet">What no wallet does for you yet</a></li><li class="toc-level-2"><a href="#after-you-sign">After you sign</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="participate/wallet-and-review">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

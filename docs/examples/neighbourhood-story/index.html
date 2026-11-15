@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" data-page="examples/neighbourhood-story" data-section="examples">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A city or neighbourhood story · ChainBloom</title>
+<meta name="description" content="One path per street, meeting where the streets actually meet, with a record that holds no addresses and no names." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/examples/neighbourhood-story/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="A city or neighbourhood story" />
+<meta property="og:description" content="Seven streets, four and a half months, one shared record. Includes the privacy rules that matter when a path stands for a place people live." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/examples/neighbourhood-story/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: A city or neighbourhood story" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A city or neighbourhood story" />
+<meta name="twitter:description" content="Seven streets, four and a half months, one shared record. Includes the privacy rules that matter when a path stands for a place people live." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/examples/museum-exhibition/" />
+<link rel="next" href="/chainbloom/docs/examples/artist-and-audience/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"A city or neighbourhood story","description":"One path per street, meeting where the streets actually meet, with a record that holds no addresses and no names.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/examples/neighbourhood-story/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Example worlds","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/examples/"},{"@type":"ListItem","position":3,"name":"Neighbourhood story","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/examples/neighbourhood-story/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/"  data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/" aria-current="page" data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/"  data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/"  data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/"  data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/"  data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/examples/">Example worlds</a></li><li aria-current="page">Neighbourhood story</li></ol></nav>
+<h1>A city or neighbourhood story</h1>
+<p class="page-meta"><span class="tag tag-participant">Example worlds</span><span>Last reviewed 2026-07-31</span><span>8 min read</span></p>
+<div class="page-lede"><p>One path per street, meeting where the streets actually meet, with a record that holds no addresses and no names.</p></div>
+<div class="prose">
+<div class="lead"><p>Seven streets keep seven separate lines for four and a half months, and the lines cross exactly where the streets do. What you get at the end is a record of a place that no council, no landlord, and no platform can quietly revise, and that contains no address, no name, and no photograph of anybody.</p></div>
+<aside class="callout callout-simulation" role="note"><p class="callout-label"><span aria-hidden="true">◈</span>Simulation</p><div class="callout-body"><p>Eastbank is invented as a worked example. There is no such neighbourhood project and no such record on any network. The settings are values the protocol accepts; the streets are made up.</p></div></aside>
+<h2 id="the-invitation">The invitation<a class="anchor" href="#the-invitation" aria-label="Link to this section">#</a></h2>
+<p>This went through seven letterboxes and onto the noticeboard outside the shop.</p>
+<blockquote><p><strong>Eastbank Seven Streets</strong></p></blockquote>
+<p>&gt;</p>
+<blockquote><p>From April to August, each of our seven streets keeps its own line in one shared record.</p></blockquote>
+<p>&gt;</p>
+<blockquote><p>Roughly twice a week your street adds a moment to its line: a shape, a colour set, a movement, and how strongly it lands. Four numbers. What they mean is written on the legend on the noticeboard, and we agreed it together at the meeting in March.</p></blockquote>
+<p>&gt;</p>
+<blockquote><p>Where two streets meet in real life, their two lines can meet in the record. Both streets have to agree and both have to sign, on the same day, in the same room. Afterwards both lines carry on as themselves.</p></blockquote>
+<p>&gt;</p>
+<blockquote><p>Nothing about this record names anybody, and nothing about it can be edited later, including by whoever started it.</p></blockquote>
+<p>The reason to spell out the last sentence on a public noticeboard is that most neighbours have been asked to contribute to something like this before, and have watched it disappear when the organiser lost interest or the website stopped paying its bill.</p>
+<h2 id="the-settings">The settings<a class="anchor" href="#the-settings" aria-label="Link to this section">#</a></h2>
+<p>A <button type="button" class="glossary-term" data-term="world" aria-describedby="glossary-tip">world<span class="glossary-inline">A bounded shared story with a fixed number of paths and a known ending.</span></button> fixes its shape at creation. Nothing below can be edited afterwards, so this belongs on the agenda of the first meeting, not the last.</p>
+<figure class="prose-figure"><div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>Setting</th><th>This world</th><th>What the protocol allows</th></tr></thead><tbody><tr><td>Title</td><td><code>Eastbank Seven Streets</code></td><td>up to 32 ASCII bytes, pattern <code>^[A-Za-z0-9 ._:-]*$</code></td></tr><tr><td>Paths</td><td>7 (one per street)</td><td>1 to 8</td></tr><tr><td>Duration</td><td>20,000 blocks, about four and a half months</td><td>144 to 52,560 blocks</td></tr><tr><td>Steps per path</td><td>40</td><td>1 to 512</td></tr><tr><td>Held per live path</td><td>1,000 satoshis</td><td>fixed by the protocol</td></tr><tr><td>Most moments possible</td><td>280</td><td>seven paths of 40 steps</td></tr></tbody></table></div><figcaption>Eastbank Seven Streets: the settings, and the range the protocol allows</figcaption></figure>
+<p>Seven <button type="button" class="glossary-term" data-term="path" aria-describedby="glossary-tip">paths<span class="glossary-inline">One thread inside a world that moves forward one confirmed step at a time.</span></button> and 40 steps each is at most 280 moments, about two a day across the run, or roughly two a week per street. That rhythm is deliberate. A neighbourhood record made daily becomes a chore by week three; one made twice a week stays something people look forward to.</p>
+<p>The harder decision is not in the table. It is <strong>who holds the key for a street</strong>, because a path can only be moved by whoever holds it. Two arrangements work in practice:</p>
+<ul><li><strong>A steward per street.</strong> One named neighbour holds the key and signs what the street decides. Simple, and it concentrates both the effort and the responsibility.</li><li><strong>A single operator, seven keys.</strong> One person or organisation signs for all seven, and each street&#39;s choices are made in the open and written down before signing. Slower to feel like ownership, harder to lose.</li></ul>
+<p>There is no arrangement where a street votes on chain. The protocol has one signature per path and no notion of a group.</p>
+<h2 id="what-one-contribution-means">What one contribution means<a class="anchor" href="#what-one-contribution-means" aria-label="Link to this section">#</a></h2>
+<p>A street&#39;s moment is a <button type="button" class="glossary-term" data-term="bloom" aria-describedby="glossary-tip">bloom<span class="glossary-inline">One creative moment added to a path.</span></button>, and on the chain it is four small numbers:</p>
+<ul><li><strong>Glyph</strong>: the shape. 32 values, 0 to 31.</li><li><strong>Palette</strong>: the colour set. 16 values, 0 to 15.</li><li><strong>Motion</strong>: how it moves. 8 values, 0 to 7.</li><li><strong>Magnitude</strong>: one byte for how strongly it lands.</li></ul>
+<p>Nothing else is written. No street name, no coordinate, no photograph, no sentence. That is the single most important fact on this page and the rest of it follows from it.</p>
+<p>The meaning lives in the legend: <em>glyph 4 is a building coming down, glyph 5 is one going up, palette 2 is the week of the flood.</em> Keep the legend on the noticeboard, in the local paper, and in three people&#39;s hands. The record will outlive all of them; the legend will not unless somebody looks after it.</p>
+<h3 id="pointing-back-at-an-earlier-moment">Pointing back at an earlier moment<a class="anchor" href="#pointing-back-at-an-earlier-moment" aria-label="Link to this section">#</a></h3>
+<p>An <button type="button" class="glossary-term" data-term="echo" aria-describedby="glossary-tip">echo<span class="glossary-inline">A step that points back to an earlier confirmed moment.</span></button> is a step that names an earlier event and says how it relates to it: a relation number, one of 16, plus a glyph and a palette. It is the right action for <em>the same corner, one season later</em>, or <em>this is what that argument turned into</em>.</p>
+<p>Two rules bite in practice. The event you point at must already be confirmed in a strictly earlier block, or the step is rejected with <code>UNCONFIRMED_GRAFT_TARGET</code>. And it must be an event this reader knows about on the same network, or you get <code>UNKNOWN_GRAFT_TARGET</code>. Keep the list of transaction ids somewhere the stewards can reach, or nobody will be able to point at anything.</p>
+<h2 id="the-meeting-moment">The meeting moment<a class="anchor" href="#the-meeting-moment" aria-label="Link to this section">#</a></h2>
+<p>The rule that makes this world worth building: <strong>two lines may meet only where the two streets meet.</strong></p>
+<p>A <button type="button" class="glossary-term" data-term="meeting" aria-describedby="glossary-tip">meeting<span class="glossary-inline">One transaction where two paths share a moment and both continue.</span></button> spends both paths&#39; outputs in one transaction, so both stewards sign the same thing. Do it standing at the junction. Mill Lane and Rope Street meet at the bridge, so that meeting happens on the bridge; the two streets that never touch never meet in the record either, and their absence says something true about the place.</p>
+<p>Choose a bridge style (one of 16) to say what kind of crossing it was, and give the legend a line for each junction. Budget for it: a meeting spends one step on <strong>each</strong> of the two paths. Ten junction meetings costs 20 of your 280 steps.</p>
+<h2 id="how-it-ends">How it ends<a class="anchor" href="#how-it-ends" aria-label="Link to this section">#</a></h2>
+<p>At the end height (creation height plus duration, exclusive) the world becomes <code>EXPIRED</code> and every path still live becomes <code>EXPIRED</code> with the reason <code>WORLD_DURATION_ELAPSED</code>. Nobody chose that; the clock did.</p>
+<p>The better ending is to <button type="button" class="glossary-term" data-term="close" aria-describedby="glossary-tip">complete<span class="glossary-inline">The deliberate ending of one path.</span></button> each of the seven paths in the last week, each with a reason number the legend explains, and to do it in public. A street that finishes its line at the street party has an ending. A street whose line stops because nobody remembered has a silence, and the record cannot tell the two apart unless you make it.</p>
+<p>20,000 blocks is <em>about</em> four and a half months. Blocks do not keep to a calendar, so set the closing date a fortnight before the end height and keep the margin.</p>
+<h2 id="what-a-neighbour-does">What a neighbour does<a class="anchor" href="#what-a-neighbour-does" aria-label="Link to this section">#</a></h2>
+<div class="prose-steps"><h3 id="bring-something-to-the-meeting">Bring something to the meeting<a class="anchor" href="#bring-something-to-the-meeting" aria-label="Link to this section">#</a></h3>
+<p>The street decides its moment together (an event, a change, a loss, a repair) and translates it into four numbers using the legend.</p>
+<h3 id="build-the-step">Build the step<a class="anchor" href="#build-the-step" aria-label="Link to this section">#</a></h3>
+<p>The steward opens the ChainBloom workspace in <a href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">InScribe<span class="link-out" aria-hidden="true">↗</span></a>. The Act surface produces an unsigned transaction and a preview showing which path moves, the outputs, the miner fee, the change, and any warnings.</p>
+<h3 id="read-the-preview-aloud">Read the preview aloud<a class="anchor" href="#read-the-preview-aloud" aria-label="Link to this section">#</a></h3>
+<p>In front of the people whose moment it is. This is the last point at which anything can be changed.</p>
+<h3 id="sign-and-broadcast">Sign and broadcast<a class="anchor" href="#sign-and-broadcast" aria-label="Link to this section">#</a></h3>
+<p>One signature, from the steward&#39;s key.</p>
+<h3 id="wait-for-a-block-then-write-the-id-on-the-noticeboard">Wait for a block, then write the id on the noticeboard<a class="anchor" href="#wait-for-a-block-then-write-the-id-on-the-noticeboard" aria-label="Link to this section">#</a></h3>
+<p>Until a miner includes it, nothing is settled. Once it confirms, the transaction id is the receipt, and anybody can check it without asking the steward.</p></div>
+<p>A path can take at most one step per block, because a step whose own parent is not yet confirmed in an earlier block is rejected with <code>UNCONFIRMED_LINEAGE_PARENT</code>. In practice: one moment per street per meeting, and no rushing two through at once.</p>
+<h2 id="privacy-of-place-and-of-people">Privacy of place and of people<a class="anchor" href="#privacy-of-place-and-of-people" aria-label="Link to this section">#</a></h2>
+<h3 id="place">Place<a class="anchor" href="#place" aria-label="Link to this section">#</a></h3>
+<p>The chain holds no addresses. Your legend does, and the legend is the part you control, so set its granularity deliberately.</p>
+<aside class="callout callout-safety" role="note"><p class="callout-label"><span aria-hidden="true">⬢</span>Safety</p><div class="callout-body"><ul><li>Make a path a <strong>street or a district</strong>, never a building, a shop, or a household. A path labelled <code>3 Mill Lane</code> identifies a family permanently.</li><li>Choose labels that at least twenty households share. If a street has four homes, fold it into a wider district.</li><li>Never publish a schedule saying which street contributes on which evening. That is a public timetable of when specific people are out.</li><li>Do not put a coordinate, a plot number, or a photograph of a front door in the published legend. The record does not need them and cannot forget them.</li></ul></div></aside>
+<p>There is an asymmetry worth stating to the group: the chain record is permanent and the legend is not. You can stop publishing a legend, but you cannot recall copies of it, and you cannot detach it from a record that will still be there. Treat everything you write beside the world as though it is as permanent as the world.</p>
+<h3 id="people">People<a class="anchor" href="#people" aria-label="Link to this section">#</a></h3>
+<p>Each step is signed by a key, and a key that gets reused links this project to whatever else that address has done. That is the ordinary Bitcoin privacy problem and it does not go away here.</p>
+<ul><li>Fund the world from a wallet kept for this project only.</li><li>Give each street a fresh key rather than an address a neighbour already uses.</li><li>Do not publish the mapping from steward to key. The street&#39;s name in the legend is enough.</li><li>Read <a href="/chainbloom/docs/participate/protect-your-path/">protect your path</a> before the first step, not after.</li></ul>
+<aside class="callout callout-warning" role="note"><p class="callout-label"><span aria-hidden="true">▲</span>Before you sign</p><div class="callout-body"><p>Keep path outputs away from any wallet that might sweep them into an ordinary payment. If a confirmed transaction spends a live path output and is not a valid ChainBloom event, that path is marked <code>ABANDONED</code> with the reason <code>INVALID_CONFIRMED_SPEND</code>. Nothing is invented to replace it, and no one can undo it. A street&#39;s line simply stops, permanently, in a way that looks the same as neglect.</p></div></aside>
+<h3 id="stories-photographs-and-the-things-people-tell-you">Stories, photographs, and the things people tell you<a class="anchor" href="#stories-photographs-and-the-things-people-tell-you" aria-label="Link to this section">#</a></h3>
+<p>Everything a neighbour says at a doorstep stays off the chain, and that is a feature. But the project will collect it anyway (that is usually the point), so agree the rules for that material at the start: written permission before publishing, a named person responsible, and a clear answer to &quot;can I change my mind later&quot; for the parts you can still change. The four numbers are not among them.</p>
+<p>Where you would show live activity for the world (who added what, and when), there is nothing to link to yet. The public index is not switched on. See <a href="/chainbloom/docs/help/status/">what is running</a>, and keep the noticeboard list of transaction ids in the meantime.</p>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>Agree the rules before the first step</h2>
+<p>Who speaks for a street, what the legend may name, and what never goes in writing.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/programs/moderation-and-privacy/">Read moderation and privacy</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/programs/moderation-and-privacy/">
+<span class="related-section">Public programs</span>
+<strong>Community moderation and participant privacy</strong>
+<span class="related-desc">Nobody can remove a confirmed contribution from Bitcoin, so moderation happens before and around a world rather than after it. A contribution also reveals more than people expect.</span>
+</a><a class="related-card" href="/chainbloom/docs/audiences/communities/">
+<span class="related-section">For you</span>
+<strong>If you run a community</strong>
+<span class="related-desc">How to build a ritual that repeats, keep many voices instead of flattening them into one, moderate before the invitation goes out, and avoid turning taking part into a score.</span>
+</a><a class="related-card" href="/chainbloom/docs/participate/protect-your-path/">
+<span class="related-section">Take part</span>
+<strong>Protecting a live path</strong>
+<span class="related-desc">A live path is one specific small Bitcoin output, and an ordinary payment that spends it ends the path for good. Here is how to make sure that never happens.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/examples/museum-exhibition/"><span>Previous</span><strong>A museum exhibition</strong></a><a class="pager pager-next" href="/chainbloom/docs/examples/artist-and-audience/"><span>Next</span><strong>An artist and audience collaboration</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#the-invitation">The invitation</a></li><li class="toc-level-2"><a href="#the-settings">The settings</a></li><li class="toc-level-2"><a href="#what-one-contribution-means">What one contribution means</a></li><li class="toc-level-3"><a href="#pointing-back-at-an-earlier-moment">Pointing back at an earlier moment</a></li><li class="toc-level-2"><a href="#the-meeting-moment">The meeting moment</a></li><li class="toc-level-2"><a href="#how-it-ends">How it ends</a></li><li class="toc-level-2"><a href="#what-a-neighbour-does">What a neighbour does</a></li><li class="toc-level-3"><a href="#bring-something-to-the-meeting">Bring something to the meeting</a></li><li class="toc-level-3"><a href="#build-the-step">Build the step</a></li><li class="toc-level-3"><a href="#read-the-preview-aloud">Read the preview aloud</a></li><li class="toc-level-3"><a href="#sign-and-broadcast">Sign and broadcast</a></li><li class="toc-level-3"><a href="#wait-for-a-block-then-write-the-id-on-the-noticeboard">Wait for a block, then write the id on the noticeboard</a></li><li class="toc-level-2"><a href="#privacy-of-place-and-of-people">Privacy of place and of people</a></li><li class="toc-level-3"><a href="#place">Place</a></li><li class="toc-level-3"><a href="#people">People</a></li><li class="toc-level-3"><a href="#stories-photographs-and-the-things-people-tell-you">Stories, photographs, and the things people tell you</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="examples/neighbourhood-story">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

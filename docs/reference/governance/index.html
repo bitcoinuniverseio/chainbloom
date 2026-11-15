@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" data-page="reference/governance" data-section="reference">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Governance and contributing · ChainBloom</title>
+<meta name="description" content="How the protocol is looked after, what stewardship is there to protect, how a change gets proposed, and the private path for reporting a security problem." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/governance/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="ChainBloom governance and contributing" />
+<meta property="og:description" content="What the project protects, how changes are discussed in the open, and how to report a security issue privately and safely." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/governance/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: Governance and contributing" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ChainBloom governance and contributing" />
+<meta name="twitter:description" content="What the project protects, how changes are discussed in the open, and how to report a security issue privately and safely." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/reference/reliability/" />
+<link rel="next" href="/chainbloom/docs/reference/changelog/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Governance and contributing","description":"How the protocol is looked after, what stewardship is there to protect, how a change gets proposed, and the private path for reporting a security problem.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/governance/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Technical reference","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/"},{"@type":"ListItem","position":3,"name":"Governance","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/governance/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/"  data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/"  data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/"  data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/"  data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/"  data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/" aria-current="page" data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/reference/">Technical reference</a></li><li aria-current="page">Governance</li></ol></nav>
+<h1>Governance and contributing</h1>
+<p class="page-meta"><span class="tag tag-reference">Technical reference</span><span>Checked against @chainbloom/protocol@0.1.0</span><span>Last reviewed 2026-07-31</span><span>6 min read</span></p>
+<div class="page-lede"><p>How the protocol is looked after, what stewardship is there to protect, how a change gets proposed, and the private path for reporting a security problem.</p></div>
+<div class="prose">
+<div class="lead"><p>A shared history is only trustworthy if the rules that read it stay predictable. ChainBloom is stewarded in the open, in public conversations anyone can join, and this page says what that stewardship is for, how a change is made, and how to raise a problem safely. Most of it is short on purpose.</p></div>
+<h2 id="what-stewardship-protects">What stewardship protects<a class="anchor" href="#what-stewardship-protects" aria-label="Link to this section">#</a></h2>
+<p>Governance here is not about controlling a project. It is about protecting four properties that make the work usable, in roughly this order of stubbornness.</p>
+<p><strong>A stable meaning for confirmed actions.</strong> A <button type="button" class="glossary-term" data-term="world" aria-describedby="glossary-tip">world<span class="glossary-inline">A bounded shared story with a fixed number of paths and a known ending.</span></button> that has already ended must read the same way in ten years as it does today. Every world records the <button type="button" class="glossary-term" data-term="ruleset" aria-describedby="glossary-tip">ruleset<span class="glossary-inline">The version of the rules a world was created under.</span></button> it was created under -- ruleset 1 at present -- and a rule change gets a new ruleset number rather than a new interpretation of an old one. This is the property that is defended hardest, because it is the only one that cannot be repaired after the fact.</p>
+<p><strong>The separation between history and presentation.</strong> What happened is settled by Bitcoin. How it looks is not. Rendering is explicitly non-consensus, so galleries, applications, and exhibitions may interpret a world however they like without any of them becoming the authority on it. A proposal that quietly moves a presentation decision into the protocol is a proposal to make one interpretation official, and is treated as such.</p>
+<p><strong>Honest communication about fees and confirmation.</strong> People are signing real Bitcoin transactions with real fees, and a confirmed action cannot be undone. Interfaces built on this protocol should say so plainly, show the fee before signing, and never present an unconfirmed step as settled. Softening that language is not a design improvement.</p>
+<p><strong>Compatibility across applications.</strong> A world made in one application must be readable in every other. That is why unknown opcodes are refused rather than skipped, why markers have exactly one legal encoding, and why the <a href="/chainbloom/docs/reference/test-vectors/">test vectors</a> are published: they make &quot;compatible&quot; a testable claim rather than an intention.</p>
+<h2 id="how-a-change-is-proposed">How a change is proposed<a class="anchor" href="#how-a-change-is-proposed" aria-label="Link to this section">#</a></h2>
+<p>Changes are discussed in public, in the repository, before they are written.</p>
+<p>A proposal is expected to answer three questions in plain language, and answering them well matters more than writing them formally:</p>
+<ol><li><strong>Who does this help, and how?</strong> Named people doing a named thing. &quot;Creators running a class over a term&quot; is a reason; &quot;flexibility&quot; is not.</li><li><strong>What is the safety impact?</strong> Anything touching keys, fees, irreversibility, or privacy needs this section, even if the answer is none.</li><li><strong>What does it do to worlds that already exist?</strong> This is the question that decides how a change is handled.</li></ol>
+<p>Discussion is open to anyone: creators, participants, artists, accessibility advocates, archivists, educators, and the people running services. Familiarity with Bitcoin is not a requirement for having an opinion worth hearing, and a proposal that only its author can understand has not finished being written.</p>
+<p>A change that alters nothing about how existing worlds read -- better documentation, a clearer error message, a faster indexer, a new gallery -- is easy, and moves at the speed of review.</p>
+<h2 id="changes-that-would-touch-a-finished-world">Changes that would touch a finished world<a class="anchor" href="#changes-that-would-touch-a-finished-world" aria-label="Link to this section">#</a></h2>
+<p>These are treated differently, and slowly.</p>
+<p>If a proposal would change how an already-confirmed event reads, the answer is a new ruleset, not a redefinition. Old worlds keep being read under the ruleset they recorded; new worlds may opt into new rules by recording the new number. Nothing that is already settled gets a second meaning.</p>
+<p>That constraint rules out a whole family of otherwise reasonable ideas: reusing a reserved opcode, widening a field, reinterpreting a payload byte, or making a reader lenient about something it currently refuses. It is a real cost, accepted on purpose. A change with wide reach also deserves broad review and clear communication before it touches anyone&#39;s experience, which is the slower half of the work.</p>
+<h2 id="why-security-issues-are-handled-privately-first">Why security issues are handled privately first<a class="anchor" href="#why-security-issues-are-handled-privately-first" aria-label="Link to this section">#</a></h2>
+<p>Because the first person to learn about a weakness should not be the person best placed to use it.</p>
+<p>A public issue describing an unfixed problem is a set of instructions. When keys, funds, or participant privacy could be affected, early publication converts a fixable problem into an incident. So a security report goes through a private channel first, gets assessed, and is fixed before it is described in public.</p>
+<p>That is a delay, not a secret. The outcome is shared openly once a safe remedy exists, and public credit is welcome whenever the reporter wants it and publishing no longer creates avoidable risk. The private window exists to protect people, not the project&#39;s reputation.</p>
+<h2 id="how-to-report-a-security-issue">How to report a security issue<a class="anchor" href="#how-to-report-a-security-issue" aria-label="Link to this section">#</a></h2>
+<p>Use the repository&#39;s <strong>private GitHub Security Advisory</strong> form. Do not open a public issue, and do not post the details in a public discussion.</p>
+<p>Include what actually helps:</p>
+<ul><li>what happened, and what you expected instead;</li><li>which ChainBloom experience or component it affects;</li><li>a safe way to reproduce it;</li><li>transaction ids, and non-secret logs.</li></ul>
+<aside class="callout callout-safety" role="note"><p class="callout-label"><span aria-hidden="true">⬢</span>Safety</p><div class="callout-body"><p>Never put a seed phrase or a private key in a report. They are not evidence and they cannot help. If you think a key has been exposed, stop signing, move remaining funds with a wallet you trust, and get qualified incident help before you write anything up.</p></div></aside>
+<p>Reports get an acknowledgement, an assessment of impact, coordinated work on a remedy, and clear communication about any action people need to take. That last part matters: if participants have to do something, they will be told plainly what and why.</p>
+<p>Community conduct concerns -- harassment, impersonation, doxxing, or anyone attempting to obtain keys or seed phrases -- go privately to the maintainers as well, and are handled with care and confidentiality where possible.</p>
+<h2 id="where-the-documents-live">Where the documents live<a class="anchor" href="#where-the-documents-live" aria-label="Link to this section">#</a></h2>
+<p>Four short files in the repository carry the actual commitments, and none of them takes long to read:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table><thead><tr><th>File</th><th>What it covers</th></tr></thead><tbody><tr><td><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer noopener">CONTRIBUTING.md<span class="link-out" aria-hidden="true">↗</span></a></td><td>How to share an idea or report a problem, and what never to include in a public post</td></tr><tr><td><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer noopener">CODE_OF_CONDUCT.md<span class="link-out" aria-hidden="true">↗</span></a></td><td>The behaviour expected in public spaces, and how concerns are reported</td></tr><tr><td><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/SECURITY.md" target="_blank" rel="noreferrer noopener">SECURITY.md<span class="link-out" aria-hidden="true">↗</span></a></td><td>The private reporting path and what a useful report contains</td></tr><tr><td><a href="https://github.com/bitcoinuniverse/chainbloom/blob/main/GOVERNANCE.md" target="_blank" rel="noreferrer noopener">GOVERNANCE.md<span class="link-out" aria-hidden="true">↗</span></a></td><td>What stewardship protects and how significant changes are reviewed</td></tr></tbody></table></div>
+<p>The protocol itself is MIT licensed. You may build on it, fork it, index it, or render it without asking, and nothing in this page is a permission gate on any of that.</p>
+<h2 id="contributing-without-writing-code">Contributing without writing code<a class="anchor" href="#contributing-without-writing-code" aria-label="Link to this section">#</a></h2>
+<p>Most of what this medium still needs is not code. Nobody has settled yet what a good world looks like, how long one should stay open, how a <button type="button" class="glossary-term" data-term="meeting" aria-describedby="glossary-tip">meeting<span class="glossary-inline">One transaction where two paths share a moment and both continue.</span></button> should feel, or what an ending should mean -- and those answers will come from worlds people actually make.</p>
+<p>Useful contributions include running a world and writing down honestly what worked, translating documentation, testing pages with a screen reader and reporting what breaks, writing an example other people can copy, and teaching this to a room of beginners and reporting where they got stuck. Say clearly whether a contribution is official project work or independent community expression, and credit creative work you build on.</p>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>What exists, and what does not</h2>
+<p>The current version, what the package contains today, and the parts that are not finished.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/reference/changelog/">Read the version page</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/reference/changelog/">
+<span class="related-section">Technical reference</span>
+<strong>Version, changes and what is next</strong>
+<span class="related-desc">The current version stated plainly, what the 0.1.0 package actually contains, and an honest list of the parts that are not finished.</span>
+</a><a class="related-card" href="/chainbloom/docs/programs/moderation-and-privacy/">
+<span class="related-section">Public programs</span>
+<strong>Community moderation and participant privacy</strong>
+<span class="related-desc">Nobody can remove a confirmed contribution from Bitcoin, so moderation happens before and around a world rather than after it. A contribution also reveals more than people expect.</span>
+</a><a class="related-card" href="/chainbloom/docs/help/status/">
+<span class="related-section">Help</span>
+<strong>What is running today</strong>
+<span class="related-desc">What is live today, what remains unsupported, and how the production ChainBloom read path is verified.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/reference/reliability/"><span>Previous</span><strong>Reliability and continuity</strong></a><a class="pager pager-next" href="/chainbloom/docs/reference/changelog/"><span>Next</span><strong>Version, changes and what is next</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#what-stewardship-protects">What stewardship protects</a></li><li class="toc-level-2"><a href="#how-a-change-is-proposed">How a change is proposed</a></li><li class="toc-level-2"><a href="#changes-that-would-touch-a-finished-world">Changes that would touch a finished world</a></li><li class="toc-level-2"><a href="#why-security-issues-are-handled-privately-first">Why security issues are handled privately first</a></li><li class="toc-level-2"><a href="#how-to-report-a-security-issue">How to report a security issue</a></li><li class="toc-level-2"><a href="#where-the-documents-live">Where the documents live</a></li><li class="toc-level-2"><a href="#contributing-without-writing-code">Contributing without writing code</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="reference/governance">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en" data-page="reference/errors" data-section="reference">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Error and issue codes · ChainBloom</title>
+<meta name="description" content="Every code ChainBloom can produce, the difference between a thrown error and a recorded issue, and what to do about the five you will meet most." />
+<link rel="canonical" href="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/errors/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ChainBloom documentation" />
+<meta property="og:title" content="ChainBloom error and issue codes" />
+<meta property="og:description" content="A thrown ChainBloomError means your call did not happen. A validation issue means a transaction is not a ChainBloom event. Both are listed here." />
+<meta property="og:url" content="https://bitcoinuniverseio.github.io/chainbloom/docs/reference/errors/" />
+<meta property="og:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta property="og:image:alt" content="ChainBloom: Error and issue codes" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ChainBloom error and issue codes" />
+<meta name="twitter:description" content="A thrown ChainBloomError means your call did not happen. A validation issue means a transaction is not a ChainBloom event. Both are listed here." />
+<meta name="twitter:image" content="https://bitcoinuniverseio.github.io/chainbloom/assets/chainbloom-og.png" />
+<meta name="theme-color" content="#07111f" />
+<link rel="icon" href="/chainbloom/assets/chainbloom-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/chainbloom/assets/docs.css" />
+<link rel="prev" href="/chainbloom/docs/reference/test-vectors/" />
+<link rel="next" href="/chainbloom/docs/reference/security-model/" />
+<script>
+(function(){try{var s=localStorage.getItem('chainbloom-theme');var m=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:m;}catch(e){document.documentElement.dataset.theme='dark';}document.documentElement.classList.add('js');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Error and issue codes","description":"Every code ChainBloom can produce, the difference between a thrown error and a recorded issue, and what to do about the five you will meet most.","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/errors/","dateModified":"2026-07-31","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChainBloom documentation","url":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},"publisher":{"@type":"Organization","name":"ChainBloom"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Documentation","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/"},{"@type":"ListItem","position":2,"name":"Technical reference","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/"},{"@type":"ListItem","position":3,"name":"Errors and issues","item":"https://bitcoinuniverseio.github.io/chainbloom/docs/reference/errors/"}]}]}</script>
+<script src="/chainbloom/assets/docs.js" defer></script>
+</head>
+<body class="docs-body">
+<a class="skip-link" href="#docs-main">Skip to content</a>
+<header class="docs-header">
+<div class="docs-header-inner">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Documentation menu">
+<span class="nav-toggle-bars" aria-hidden="true"></span>
+<span class="nav-toggle-text">Menu</span>
+</button>
+<a class="docs-brand" href="/chainbloom/">
+<img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="150" height="32" />
+<span class="docs-brand-tag">Docs</span>
+</a>
+<div class="docs-header-actions">
+<button type="button" class="search-open" data-search-open>
+<span aria-hidden="true">⌕</span>
+<span class="search-open-label">Search</span>
+<kbd>/</kbd>
+</button>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+<span aria-hidden="true">☼</span><span class="theme-label">Light</span>
+</button>
+<a class="header-cta" href="https://inscribe.bitcoinuniverse.io/chainbloom" target="_blank" rel="noreferrer noopener">Open ChainBloom</a>
+</div>
+</div>
+</header>
+<div class="docs-shell">
+<nav class="docs-sidebar" id="docs-sidebar" aria-label="Documentation">
+<div class="sidebar-inner">
+<a class="sidebar-start" href="/chainbloom/docs/start/">
+<strong>Start here</strong>
+<span>Answer one question, get your path.</span>
+</a>
+<p class="sidebar-heading">Take part</p>
+<ul class="side-list"><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="seed" aria-hidden="true"></span>Start here</summary>
+<ul><li><a href="/chainbloom/docs/start/"  data-progress-page="start">
+<span class="side-label">Choose your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/chainbloom-in-60-seconds/"  data-progress-page="start/chainbloom-in-60-seconds">
+<span class="side-label">ChainBloom in 60 seconds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/why-chainbloom-exists/"  data-progress-page="start/why-chainbloom-exists">
+<span class="side-label">Why it exists</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/start/watch-a-world-grow/"  data-progress-page="start/watch-a-world-grow">
+<span class="side-label">Watch a world grow</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="growth" aria-hidden="true"></span>How it works</summary>
+<ul><li><a href="/chainbloom/docs/learn/"  data-progress-page="learn">
+<span class="side-label">How it works</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/how-a-world-grows/"  data-progress-page="learn/how-a-world-grows">
+<span class="side-label">How a world grows</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/worlds-paths-and-history/"  data-progress-page="learn/worlds-paths-and-history">
+<span class="side-label">Worlds, paths, history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/the-five-actions/"  data-progress-page="learn/the-five-actions">
+<span class="side-label">The five actions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/when-paths-meet/"  data-progress-page="learn/when-paths-meet">
+<span class="side-label">When paths meet</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/bitcoin-and-shared-order/"  data-progress-page="learn/bitcoin-and-shared-order">
+<span class="side-label">Bitcoin and shared order</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/learn/confirmed-and-unconfirmed/"  data-progress-page="learn/confirmed-and-unconfirmed">
+<span class="side-label">Confirmed and unconfirmed</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="hand" aria-hidden="true"></span>Take part</summary>
+<ul><li><a href="/chainbloom/docs/participate/"  data-progress-page="participate">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/create-a-world/"  data-progress-page="participate/create-a-world">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/join-a-world/"  data-progress-page="participate/join-a-world">
+<span class="side-label">Join a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/return-to-a-path/"  data-progress-page="participate/return-to-a-path">
+<span class="side-label">Return to a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/complete-a-path/"  data-progress-page="participate/complete-a-path">
+<span class="side-label">Complete a path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/wallet-and-review/"  data-progress-page="participate/wallet-and-review">
+<span class="side-label">Wallet and review</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/fees-and-confirmation/"  data-progress-page="participate/fees-and-confirmation">
+<span class="side-label">Fees and confirmation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/protect-your-path/"  data-progress-page="participate/protect-your-path">
+<span class="side-label">Protect your path</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/follow-and-return/"  data-progress-page="participate/follow-and-return">
+<span class="side-label">Follow and return</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/participate/explore-timelines/"  data-progress-page="participate/explore-timelines">
+<span class="side-label">Explore timelines</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="garden" aria-hidden="true"></span>Example worlds</summary>
+<ul><li><a href="/chainbloom/docs/examples/"  data-progress-page="examples">
+<span class="side-label">Example worlds</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/collaborative-garden/"  data-progress-page="examples/collaborative-garden">
+<span class="side-label">Collaborative garden</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/festival-history/"  data-progress-page="examples/festival-history">
+<span class="side-label">Festival history</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/musical-composition/"  data-progress-page="examples/musical-composition">
+<span class="side-label">Musical composition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/community-time-capsule/"  data-progress-page="examples/community-time-capsule">
+<span class="side-label">Community time capsule</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/classroom-constellation/"  data-progress-page="examples/classroom-constellation">
+<span class="side-label">Classroom constellation</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/museum-exhibition/"  data-progress-page="examples/museum-exhibition">
+<span class="side-label">Museum exhibition</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/neighbourhood-story/"  data-progress-page="examples/neighbourhood-story">
+<span class="side-label">Neighbourhood story</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/examples/artist-and-audience/"  data-progress-page="examples/artist-and-audience">
+<span class="side-label">Artist and audience</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="people" aria-hidden="true"></span>For you</summary>
+<ul><li><a href="/chainbloom/docs/audiences/"  data-progress-page="audiences">
+<span class="side-label">For you</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/new-visitors/"  data-progress-page="audiences/new-visitors">
+<span class="side-label">New here</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/participants/"  data-progress-page="audiences/participants">
+<span class="side-label">Take part</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/world-creators/"  data-progress-page="audiences/world-creators">
+<span class="side-label">Create a world</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/artists-and-curators/"  data-progress-page="audiences/artists-and-curators">
+<span class="side-label">Artists and curators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/communities/"  data-progress-page="audiences/communities">
+<span class="side-label">Communities</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/museums-and-cultural-organizations/"  data-progress-page="audiences/museums-and-cultural-organizations">
+<span class="side-label">Museums</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/educators/"  data-progress-page="audiences/educators">
+<span class="side-label">Educators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/brands-and-sponsors/"  data-progress-page="audiences/brands-and-sponsors">
+<span class="side-label">Brands and sponsors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/developers/"  data-progress-page="audiences/developers">
+<span class="side-label">Developers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/wallet-and-explorer-integrators/"  data-progress-page="audiences/wallet-and-explorer-integrators">
+<span class="side-label">Wallets and explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/audiences/indexers-and-operators/"  data-progress-page="audiences/indexers-and-operators">
+<span class="side-label">Indexers and operators</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="building" aria-hidden="true"></span>Public programs</summary>
+<ul><li><a href="/chainbloom/docs/programs/"  data-progress-page="programs">
+<span class="side-label">Public programs</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/organizations/"  data-progress-page="programs/organizations">
+<span class="side-label">Organizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/exhibitions/"  data-progress-page="programs/exhibitions">
+<span class="side-label">Exhibitions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/education/"  data-progress-page="programs/education">
+<span class="side-label">Education</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/moderation-and-privacy/"  data-progress-page="programs/moderation-and-privacy">
+<span class="side-label">Moderation and privacy</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/programs/accessibility/"  data-progress-page="programs/accessibility">
+<span class="side-label">Accessibility</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li><li class="side-section">
+<details >
+<summary><span class="side-icon" data-icon="help" aria-hidden="true"></span>Help</summary>
+<ul><li><a href="/chainbloom/docs/help/"  data-progress-page="help">
+<span class="side-label">Help</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/troubleshooting/"  data-progress-page="help/troubleshooting">
+<span class="side-label">Troubleshooting</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/faq/"  data-progress-page="help/faq">
+<span class="side-label">Questions</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/glossary/"  data-progress-page="help/glossary">
+<span class="side-label">Glossary</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/help/status/"  data-progress-page="help/status">
+<span class="side-label">What is running</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<p class="sidebar-heading">Build and operate</p>
+<ul class="side-list"><li class="side-section">
+<details open>
+<summary><span class="side-icon" data-icon="code" aria-hidden="true"></span>Technical reference</summary>
+<ul><li><a href="/chainbloom/docs/reference/"  data-progress-page="reference">
+<span class="side-label">Technical reference</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/protocol-architecture/"  data-progress-page="reference/protocol-architecture">
+<span class="side-label">Protocol architecture</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/transaction-lifecycle/"  data-progress-page="reference/transaction-lifecycle">
+<span class="side-label">Transaction lifecycle</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/data-structures/"  data-progress-page="reference/data-structures">
+<span class="side-label">Data structures</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/validation-rules/"  data-progress-page="reference/validation-rules">
+<span class="side-label">Validation rules</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reorganizations/"  data-progress-page="reference/reorganizations">
+<span class="side-label">Reorganizations</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/indexer-requirements/"  data-progress-page="reference/indexer-requirements">
+<span class="side-label">Indexer requirements</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/sdk/"  data-progress-page="reference/sdk">
+<span class="side-label">SDK</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/cli/"  data-progress-page="reference/cli">
+<span class="side-label">CLI</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-wallets/"  data-progress-page="reference/integration-wallets">
+<span class="side-label">For wallets</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/integration-explorers/"  data-progress-page="reference/integration-explorers">
+<span class="side-label">For explorers</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/test-vectors/"  data-progress-page="reference/test-vectors">
+<span class="side-label">Test vectors</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/errors/" aria-current="page" data-progress-page="reference/errors">
+<span class="side-label">Errors and issues</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/security-model/"  data-progress-page="reference/security-model">
+<span class="side-label">Security model</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/reliability/"  data-progress-page="reference/reliability">
+<span class="side-label">Reliability</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/governance/"  data-progress-page="reference/governance">
+<span class="side-label">Governance</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li><li><a href="/chainbloom/docs/reference/changelog/"  data-progress-page="reference/changelog">
+<span class="side-label">Version and changes</span>
+<span class="side-done" aria-hidden="true"></span>
+</a></li></ul>
+</details>
+</li></ul>
+<div class="sidebar-foot">
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source and issues ↗</a>
+<button type="button" data-progress-reset class="progress-reset">Clear saved progress</button>
+</div>
+</div>
+</nav>
+<main class="docs-main" id="docs-main">
+<article class="docs-article">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/chainbloom/docs/">Documentation</a></li><li><a href="/chainbloom/docs/reference/">Technical reference</a></li><li aria-current="page">Errors and issues</li></ol></nav>
+<h1>Error and issue codes</h1>
+<p class="page-meta"><span class="tag tag-reference">Technical reference</span><span>Checked against @chainbloom/protocol@0.1.0</span><span>Last reviewed 2026-07-31</span><span>7 min read</span></p>
+<div class="page-lede"><p>Every code ChainBloom can produce, the difference between a thrown error and a recorded issue, and what to do about the five you will meet most.</p></div>
+<div class="prose">
+<div class="lead"><p>Every failure in ChainBloom has a short stable code, and knowing which of two kinds it is tells you who has to act. One kind says your call was wrong. The other says a Bitcoin transaction is not a ChainBloom event -- which is a fact about the chain, not a bug in your software.</p></div>
+<h2 id="two-kinds-of-failure">Two kinds of failure<a class="anchor" href="#two-kinds-of-failure" aria-label="Link to this section">#</a></h2>
+<h3 id="a-chainbloomerror-is-thrown">A <code>ChainBloomError</code> is thrown<a class="anchor" href="#a-chainbloomerror-is-thrown" aria-label="Link to this section">#</a></h3>
+<p><code>ChainBloomError</code> extends <code>Error</code>. Its <code>name</code> is <code>ChainBloomError</code>, and it carries a <code>code</code>, a human message, and sometimes a <code>details</code> object with the numbers involved.</p>
+<figure class="code-block" data-language="ts"><div class="code-title"><span>catching one</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-ts">import { ChainBloomError, decodeMarkerHex } from &#39;@chainbloom/protocol&#39;;
+
+try {
+  decodeMarkerHex(&#39;43424c4d01030204070302c800&#39;);
+} catch (error) {
+  if (error instanceof ChainBloomError) {
+    console.log(error.code); // INVALID_PAYLOAD_LENGTH
+  }
+}</code></pre></figure>
+<p>A throw means <strong>nothing happened</strong>. No <button type="button" class="glossary-term" data-term="marker" aria-describedby="glossary-tip">marker<span class="glossary-inline">The short piece of data in a transaction that says what the action is.</span></button> was produced, no PSBT was built, no block was applied to state. Three parts of the library throw: the codec when bytes or fields are wrong, the builders when a draft transaction cannot be assembled honestly, and the state engine when blocks arrive out of order. The thing to fix is the call.</p>
+<p>Anything unexpected is wrapped rather than leaked. <code>asChainBloomError</code> turns an unknown throw into <code>UNEXPECTED_ERROR</code> with the original message, so callers only ever have to handle one shape.</p>
+<h3 id="a-validation-issue-is-recorded">A validation issue is recorded<a class="anchor" href="#a-validation-issue-is-recorded" aria-label="Link to this section">#</a></h3>
+<p><code>validateProtocolTransaction</code> does not throw when a transaction is bad. It returns a <code>ValidationResult</code> with <code>valid</code>, the decoded <code>marker</code> if there was one, and an <code>issues</code> array. Each issue is <code>{ code, message, path }</code>, where <code>path</code> points at the part of the transaction that failed, such as an input index.</p>
+<p>An issue is not a complaint about your code. It is the answer to a question: is this transaction a ChainBloom event? <code>MARKER_VALUE</code>, <code>WORLD_ENDED</code> and <code>RENDEZVOUS_LANE_ORDER</code> all mean the same thing at that level -- no.</p>
+<h2 id="why-the-difference-matters">Why the difference matters<a class="anchor" href="#why-the-difference-matters" aria-label="Link to this section">#</a></h2>
+<p>The two kinds lead to different behaviour, and mixing them up is how software starts inventing history.</p>
+<p>A thrown error stops you before anything is signed or stored. Show it, fix the input, try again.</p>
+<p>A recorded issue may describe a transaction that is already confirmed and can never change. If that transaction spent a live <button type="button" class="glossary-term" data-term="carrier" aria-describedby="glossary-tip">carrier<span class="glossary-inline">The single small Bitcoin output that holds a path in place.</span></button>, the path it spent becomes <code>ABANDONED</code> with the terminal reason <code>INVALID_CONFIRMED_SPEND</code>, and the spend is kept in <code>invalidCarrierSpends</code> with its issue codes. The path stops there. Nothing is substituted, guessed, or rolled forward to keep a story going.</p>
+<aside class="callout callout-note" role="note"><p class="callout-label"><span aria-hidden="true">◆</span>Note</p><div class="callout-body"><p>This is why a wallet that does not know about ChainBloom is a real risk to a path: an ordinary spend of a carrier is a valid Bitcoin transaction and an invalid ChainBloom event. See <a href="/chainbloom/docs/reference/security-model/">the security model</a>.</p></div></aside>
+<h2 id="every-code">Every code<a class="anchor" href="#every-code" aria-label="Link to this section">#</a></h2>
+<p>The table below is built from the source at build time, so it cannot fall behind the implementation. The third column names the file that raises each code, which is usually the fastest way to understand one.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Error and issue codes"><table><thead><tr><th>Code</th><th>Message</th><th>Raised in</th></tr></thead><tbody><tr><td><code>CARRIER_INPUT_MAPPING</code></td><td>Recognized carriers must be exactly at vin …</td><td><code>src/validator.ts</code></td></tr><tr><td><code>CREATE_SPENDS_CARRIER</code></td><td>CREATE may not spend a live carrier</td><td><code>src/validator.ts</code></td></tr><tr><td><code>DUPLICATE_INPUT</code></td><td>Input … is listed more than once</td><td><code>src/builders.ts</code></td></tr><tr><td><code>DUPLICATE_LANE</code></td><td>RENDEZVOUS requires two different lanes</td><td><code>src/builders.ts</code></td></tr><tr><td><code>DUPLICATE_MARKER_OUTPUT</code></td><td>Extra outputs may not contain another ChainBloom marker</td><td><code>src/builders.ts</code></td></tr><tr><td><code>GRAFT_NETWORK_MISMATCH</code></td><td>GRAFT target network differs</td><td><code>src/validator.ts</code></td></tr><tr><td><code>INSUFFICIENT_INPUT_VALUE</code></td><td>Outputs exceed inputs</td><td><code>src/builders.ts</code></td></tr><tr><td><code>INTEGER_OUT_OF_RANGE</code></td><td>… must be an integer from … through …</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>INVALID_BLOCK_HEIGHT</code></td><td>Block height must be a non-negative safe integer</td><td><code>src/state.ts</code></td></tr><tr><td><code>INVALID_CARRIER_INPUT</code></td><td>Carrier must be an exact 1,000-sat P2TR UTXO</td><td><code>src/builders.ts</code></td></tr><tr><td><code>INVALID_CARRIER_SCRIPT</code></td><td>Carrier successor must be standard P2TR</td><td><code>src/validator.ts</code></td></tr><tr><td><code>INVALID_CARRIER_VALUE</code></td><td>Carrier output must be exactly … sats</td><td><code>src/validator.ts</code></td></tr><tr><td><code>INVALID_CREATE</code></td><td>CREATE contains invalid fixed fields</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_HEX</code></td><td>… must be even-length hexadecimal</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>INVALID_INPUT_VALUE</code></td><td>Input value cannot be negative</td><td><code>src/builders.ts</code></td></tr><tr><td><code>INVALID_MAGIC</code></td><td>Marker magic must be …</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_OP_RETURN_SIZE</code></td><td>OP_RETURN pushed data must be 1..… bytes</td><td><code>src/script.ts</code></td></tr><tr><td><code>INVALID_OUTPUT_VALUE</code></td><td>Output value cannot be negative</td><td><code>src/builders.ts</code></td></tr><tr><td><code>INVALID_PAYLOAD_LENGTH</code></td><td>… payload must be exactly … bytes</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_SEED_LENGTH</code></td><td>seed must be … bytes</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_TITLE</code></td><td>title must be 0..32 ASCII bytes from [A-Za-z0-9 ._:-]</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_TITLE_LENGTH</code></td><td>CREATE title length is not exact</td><td><code>src/codec.ts</code></td></tr><tr><td><code>INVALID_TRANSACTION</code></td><td>Unable to parse Bitcoin transaction</td><td><code>src/transaction.ts</code></td></tr><tr><td><code>INVALID_TXID</code></td><td>… must be 32-byte hexadecimal</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>INVALID_U16</code></td><td>Value does not fit in an unsigned 16-bit integer</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>INVALID_VOUT</code></td><td>Input vout must be a uint32</td><td><code>src/builders.ts</code></td></tr><tr><td><code>INVALID_XONLY_KEY</code></td><td>Output key must be 32 bytes</td><td><code>src/builders.ts</code></td></tr><tr><td><code>LANE_COUNT_MISMATCH</code></td><td>CREATE requires exactly lane_count root output keys</td><td><code>src/builders.ts</code></td></tr><tr><td><code>MARKER_POSITION</code></td><td>Transaction must contain exactly one ChainBloom marker at vout 0</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MARKER_TOO_LARGE</code></td><td>Marker exceeds … bytes</td><td><code>src/codec.ts</code></td></tr><tr><td><code>MARKER_VALUE</code></td><td>vout 0 marker value must be zero</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MAX_STEPS_REACHED</code></td><td>Lane has reached max_steps</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_CARRIER_OUTPUT</code></td><td>Required successor output is missing</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_MARKER</code></td><td>Transaction has no vout 0</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_PREVOUT</code></td><td>Fee input prevout context is required</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_ROOT_CARRIER</code></td><td>CREATE root carrier output is missing</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_TAPROOT_SIGNATURE</code></td><td>No Taproot signature found</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_WITNESS</code></td><td>Confirmed input must contain witness data</td><td><code>src/validator.ts</code></td></tr><tr><td><code>MISSING_WORLD</code></td><td>Carrier world is missing</td><td><code>src/validator.ts</code></td></tr><tr><td><code>NETWORK_MISMATCH</code></td><td>Marker network … does not match indexer network …</td><td><code>src/validator.ts</code></td></tr><tr><td><code>NO_BLOCK_TO_ROLLBACK</code></td><td>State has no applied block</td><td><code>src/state.ts</code></td></tr><tr><td><code>NON_ASCII_TEXT</code></td><td>… must contain ASCII only</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>NON_CANONICAL_SEQUENCE</code></td><td>Every input nSequence must be …</td><td><code>src/validator.ts</code></td></tr><tr><td><code>NON_CONTIGUOUS_BLOCK</code></td><td>Block does not extend the current best chain tip</td><td><code>src/state.ts</code></td></tr><tr><td><code>NON_MINIMAL_OP_RETURN</code></td><td>Marker must use one exact minimal direct push with no trailing opcodes</td><td><code>src/script.ts</code></td></tr><tr><td><code>NON_NATIVE_SEGWIT_FEE_INPUT</code></td><td>Fee inputs must spend native SegWit outputs</td><td><code>src/validator.ts</code></td></tr><tr><td><code>NON_NATIVE_SEGWIT_INPUT</code></td><td>Every input must be native SegWit</td><td><code>src/builders.ts</code></td></tr><tr><td><code>NOT_OP_RETURN</code></td><td>Output is not OP_RETURN</td><td><code>src/script.ts</code></td></tr><tr><td><code>RENDEZVOUS_LANE_ORDER</code></td><td>Rendezvous carrier inputs must be ordered lexicographically by lane ID</td><td><code>src/validator.ts</code></td></tr><tr><td><code>RESERVED_NETWORK</code></td><td>Network byte … is reserved</td><td><code>src/codec.ts</code></td></tr><tr><td><code>RESERVED_OPCODE</code></td><td>Opcode byte … is reserved</td><td><code>src/codec.ts</code></td></tr><tr><td><code>ROLLBACK_HASH_MISMATCH</code></td><td>Expected hash is not the current best chain tip</td><td><code>src/state.ts</code></td></tr><tr><td><code>TRUNCATED_HEADER</code></td><td>ChainBloom marker is shorter than 8 bytes</td><td><code>src/codec.ts</code></td></tr><tr><td><code>TRUNCATED_U16</code></td><td>Cannot read an unsigned 16-bit integer</td><td><code>src/bytes.ts</code></td></tr><tr><td><code>UNCONFIRMED_GRAFT_TARGET</code></td><td>GRAFT target must be confirmed in a prior block</td><td><code>src/validator.ts</code></td></tr><tr><td><code>UNCONFIRMED_LINEAGE_PARENT</code></td><td>Carrier parent must be confirmed in a prior block</td><td><code>src/validator.ts</code></td></tr><tr><td><code>UNEXPECTED_ERROR</code></td><td>Unknown error</td><td><code>src/errors.ts</code></td></tr><tr><td><code>UNKNOWN_GRAFT_TARGET</code></td><td>GRAFT target event does not exist</td><td><code>src/validator.ts</code></td></tr><tr><td><code>UNKNOWN_NETWORK_NAME</code></td><td>Unknown ChainBloom network: …</td><td><code>src/codec.ts</code></td></tr><tr><td><code>UNSAFE_SIGHASH</code></td><td>Taproot signatures must use SIGHASH_DEFAULT or SIGHASH_ALL</td><td><code>src/validator.ts</code></td></tr><tr><td><code>UNSUPPORTED_RULESET</code></td><td>CREATE ruleset must be 1</td><td><code>src/codec.ts</code></td></tr><tr><td><code>UNSUPPORTED_VERSION</code></td><td>Unsupported version byte …</td><td><code>src/codec.ts</code></td></tr><tr><td><code>WORLD_ENDED</code></td><td>World is no longer active</td><td><code>src/validator.ts</code></td></tr></tbody></table></div>
+<h2 id="the-five-you-will-meet-most">The five you will meet most<a class="anchor" href="#the-five-you-will-meet-most" aria-label="Link to this section">#</a></h2>
+<h3 id="invalid-magic"><code>INVALID_MAGIC</code><a class="anchor" href="#invalid-magic" aria-label="Link to this section">#</a></h3>
+<p>You handed the decoder an <code>OP_RETURN</code> that is not ChainBloom. Expected, and not a fault, if you are scanning every output of every block -- most data outputs on Bitcoin belong to something else.</p>
+<p><strong>What to do:</strong> call <code>isChainBloomMagic</code> on the bytes first and skip anything that does not match. Do not use exceptions as a filter in a hot indexing loop.</p>
+<h3 id="invalid-payload-length"><code>INVALID_PAYLOAD_LENGTH</code><a class="anchor" href="#invalid-payload-length" aria-label="Link to this section">#</a></h3>
+<p>The declared payload length did not consume every remaining byte. Almost always a hand-assembled marker with a spare byte, or a payload built for a different operation. The <code>trailing-byte</code> <a href="/chainbloom/docs/reference/test-vectors/">test vector</a> is this exact case.</p>
+<p><strong>What to do:</strong> build markers with <code>encodeMarker</code> rather than by hand. If you must assemble bytes yourself, decode the result before you spend anything.</p>
+<h3 id="insufficient-input-value"><code>INSUFFICIENT_INPUT_VALUE</code><a class="anchor" href="#insufficient-input-value" aria-label="Link to this section">#</a></h3>
+<p>A builder refused because the inputs do not cover the outputs plus the fee. Easy to hit because the successor carriers are part of the outputs: every path a transaction continues needs another 1,000 satoshis, and a <button type="button" class="glossary-term" data-term="meeting" aria-describedby="glossary-tip">meeting<span class="glossary-inline">One transaction where two paths share a moment and both continue.</span></button> creates two of them.</p>
+<p><strong>What to do:</strong> add a fee input, or lower the fee rate. The builder will not silently shrink a carrier or drop the change output to make the numbers work.</p>
+<h3 id="unconfirmed-lineage-parent"><code>UNCONFIRMED_LINEAGE_PARENT</code><a class="anchor" href="#unconfirmed-lineage-parent" aria-label="Link to this section">#</a></h3>
+<p>You tried to move a path forward while its own last event is in the same block or later. Lineage is strict: a parent must already be confirmed in an <strong>earlier</strong> block.</p>
+<p><strong>What to do:</strong> wait for one confirmation. This is a fact about timing, not a broken transaction -- the same bytes will be valid a block later. In an interface, say &quot;waiting for the previous step to confirm&quot;, not &quot;invalid&quot;.</p>
+<h3 id="non-contiguous-block"><code>NON_CONTIGUOUS_BLOCK</code><a class="anchor" href="#non-contiguous-block" aria-label="Link to this section">#</a></h3>
+<p><code>applyBlock</code> was given a block that does not extend the current tip. The state engine requires height plus one and a matching previous hash, every time.</p>
+<p><strong>What to do:</strong> feed blocks in order. If you are following a <button type="button" class="glossary-term" data-term="reorganization" aria-describedby="glossary-tip">reorganization<span class="glossary-inline">Bitcoin replacing its most recent blocks with a different branch.</span></button>, call <code>rollbackTip()</code> until the tip is the common ancestor, then apply the new branch. A failure inside a block leaves state exactly as it was before that block, so you never have to reason about a half-applied block.</p>
+<h2 id="codes-that-mean-the-world-said-no">Codes that mean the world said no<a class="anchor" href="#codes-that-mean-the-world-said-no" aria-label="Link to this section">#</a></h2>
+<p>Three codes look like errors and are not. They are a world working correctly:</p>
+<ul><li><code>WORLD_ENDED</code> -- the world is no longer <code>ACTIVE</code>, or the chain has reached its <code>endHeightExclusive</code>. Every live path became <code>EXPIRED</code> with the reason <code>WORLD_DURATION_ELAPSED</code>.</li><li><code>MAX_STEPS_REACHED</code> -- the path has taken every step the world allows. A <code>CLOSE</code> is still accepted, so the path can still be completed on purpose.</li><li><code>CREATE_SPENDS_CARRIER</code> -- someone tried to open a new world with a live carrier as a fee input. The carrier is protected from being consumed by accident.</li></ul>
+<p>Present these as endings and limits, not as failures. A world that ran out of time did the thing it was designed to do.</p>
+<h2 id="how-a-code-reaches-you">How a code reaches you<a class="anchor" href="#how-a-code-reaches-you" aria-label="Link to this section">#</a></h2>
+<p>The CLI prints one JSON object per outcome. Success goes to standard output; a failure goes to standard error and sets exit code 1:</p>
+<figure class="code-block" data-language="json"><div class="code-title"><span>stderr on failure</span></div><button type="button" class="copy-button" data-copy>Copy</button><pre><code class="language-json">{&quot;error&quot;:&quot;RESERVED_OPCODE&quot;,&quot;message&quot;:&quot;Opcode byte 9 is reserved&quot;}</code></pre></figure>
+<p>That shape is stable, so a script can branch on <code>error</code> without parsing prose. Codes are the contract; messages may be reworded for clarity, and <code>details</code> may gain fields.</p>
+</div>
+</article>
+<section class="page-cta">
+<div>
+<p class="page-cta-eyebrow">Next</p>
+<h2>Seeing one of these in the application?</h2>
+<p>The same codes, matched to what you were trying to do and what to try next.</p>
+</div>
+<a class="button primary" href="/chainbloom/docs/help/troubleshooting/">Open troubleshooting</a>
+</section><section class="related" aria-labelledby="related-heading">
+<h2 id="related-heading">Keep going</h2>
+<div class="related-grid"><a class="related-card" href="/chainbloom/docs/reference/validation-rules/">
+<span class="related-section">Technical reference</span>
+<strong>Validation rules</strong>
+<span class="related-desc">Every check validateProtocolTransaction runs, grouped and named by the issue code it emits, including the two rules people get wrong most often.</span>
+</a><a class="related-card" href="/chainbloom/docs/reference/test-vectors/">
+<span class="related-section">Technical reference</span>
+<strong>Test vectors</strong>
+<span class="related-desc">Eleven fixed byte strings that tell you whether your ChainBloom reader agrees with every other one. Five markers that must parse and six that must be refused.</span>
+</a><a class="related-card" href="/chainbloom/docs/help/troubleshooting/">
+<span class="related-section">Help</span>
+<strong>Troubleshooting and common errors</strong>
+<span class="related-desc">What the message on your screen means, why it happened, and the next thing to do, arranged by what you see rather than by which part of the code complained.</span>
+</a></div>
+</section><nav class="pager-row" aria-label="Previous and next page"><a class="pager pager-prev" href="/chainbloom/docs/reference/test-vectors/"><span>Previous</span><strong>Test vectors</strong></a><a class="pager pager-next" href="/chainbloom/docs/reference/security-model/"><span>Next</span><strong>Security model</strong></a></nav>
+</main>
+<aside class="docs-toc" aria-labelledby="toc-heading">
+<p class="toc-heading" id="toc-heading">On this page</p>
+<ul><li class="toc-level-2"><a href="#two-kinds-of-failure">Two kinds of failure</a></li><li class="toc-level-3"><a href="#a-chainbloomerror-is-thrown">A ChainBloomError is thrown</a></li><li class="toc-level-3"><a href="#a-validation-issue-is-recorded">A validation issue is recorded</a></li><li class="toc-level-2"><a href="#why-the-difference-matters">Why the difference matters</a></li><li class="toc-level-2"><a href="#every-code">Every code</a></li><li class="toc-level-2"><a href="#the-five-you-will-meet-most">The five you will meet most</a></li><li class="toc-level-3"><a href="#invalid-magic">INVALID_MAGIC</a></li><li class="toc-level-3"><a href="#invalid-payload-length">INVALID_PAYLOAD_LENGTH</a></li><li class="toc-level-3"><a href="#insufficient-input-value">INSUFFICIENT_INPUT_VALUE</a></li><li class="toc-level-3"><a href="#unconfirmed-lineage-parent">UNCONFIRMED_LINEAGE_PARENT</a></li><li class="toc-level-3"><a href="#non-contiguous-block">NON_CONTIGUOUS_BLOCK</a></li><li class="toc-level-2"><a href="#codes-that-mean-the-world-said-no">Codes that mean the world said no</a></li><li class="toc-level-2"><a href="#how-a-code-reaches-you">How a code reaches you</a></li></ul>
+<button type="button" class="toc-complete" data-mark-read data-page="reference/errors">
+<span class="toc-complete-mark" aria-hidden="true"></span>
+<span class="toc-complete-text">Mark as read</span>
+</button>
+</aside>
+</div>
+<footer class="docs-footer">
+<div class="docs-footer-inner">
+<a class="footer-brand" href="/chainbloom/"><img src="/chainbloom/assets/chainbloom-logo.svg" alt="ChainBloom" width="140" height="30" /></a>
+<p>Shared creation, carried by Bitcoin. No project token, reward, royalty, public mint, or official trading market.</p>
+<nav aria-label="Footer">
+<a href="/chainbloom/docs/">Documentation</a>
+<a href="/chainbloom/docs/help/glossary/">Glossary</a>
+<a href="/chainbloom/docs/help/status/">What is running</a>
+<a href="https://github.com/bitcoinuniverse/chainbloom" target="_blank" rel="noreferrer noopener">Source ↗</a>
+</nav>
+</div>
+</footer>
+<div class="search-layer" data-search-layer hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<h2 class="visually-hidden" id="search-title">Search the documentation</h2>
+<div class="search-field">
+<span aria-hidden="true">⌕</span>
+<input type="search" data-search-input placeholder="Search worlds, paths, fees, validation…" aria-label="Search the documentation" autocomplete="off" spellcheck="false" />
+<button type="button" data-search-close class="search-dismiss">Esc</button>
+</div>
+<div class="search-results" data-search-results role="listbox" aria-label="Search results"></div>
+<p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</div>
+</div>
+<div class="glossary-tip" id="glossary-tip" role="tooltip" hidden></div>
+<div class="live-region" role="status" aria-live="polite" data-live-region></div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">ChainBloom mark</title>
+  <desc id="desc">Two linked stems form a five-petal bloom.</desc>
+  <rect width="96" height="96" rx="23" fill="#07111f"/>
+  <path d="M18 78C32 69 29 52 45 45M78 78C64 69 67 52 51 45" fill="none" stroke="#7ee0bd" stroke-width="4" stroke-linecap="round"/>
+  <g fill="none" stroke="#f4cc62" stroke-width="3">
+    <ellipse cx="48" cy="25" rx="7" ry="15"/>
+    <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(72 48 43)"/>
+    <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(144 48 43)"/>
+    <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(216 48 43)"/>
+    <ellipse cx="48" cy="25" rx="7" ry="15" transform="rotate(288 48 43)"/>
+  </g>
+  <circle cx="48" cy="43" r="7" fill="#ff8b70"/>
+  <circle cx="18" cy="78" r="4" fill="#7ee0bd"/><circle cx="78" cy="78" r="4" fill="#ff8b70"/>
+</svg>
